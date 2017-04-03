@@ -1,0 +1,1 @@
+export const CIRCLE_MENU_CLICK="CIRCLE_MENU_CLICK";
