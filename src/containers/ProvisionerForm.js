@@ -16,10 +16,17 @@ export class ServiceForm extends Component {
   };
   const handleMenuClick = (e, value) => {
     e.preventDefault();
-    console.log(value);
-    setTimeout(() => this.props.applicationActions.setCircleMenuClick(fromJS({
-      "circle_menu_click": false})
-    ), 800)
+    this.props.applicationActions.setActiveMenu(fromJS({
+      "active_menu": value})
+    );
+    setTimeout(() => {
+      this.props.applicationActions.setCircleMenuClick(fromJS({
+        "circle_menu_click": false})
+      );
+      this.props.applicationActions.setActiveMenu(fromJS({
+        "active_menu": -1})
+      );
+    }, 800);
   };
   return (
     <MuiThemeProvider>
@@ -38,7 +45,7 @@ export class ServiceForm extends Component {
                 <span className="ripple" />
               </button>
               <ul className={this.props.applicationAppState.get("circle_menu_click")?"menu open":"menu"}>
-                <li className="menuitem-wrapper">
+                <li className={this.props.applicationAppState.get("active_menu")==1?"menuitem-wrapper spin":"menuitem-wrapper"}>
                   <div className="icon-holder">
                     <a
                         className="menu-item"
@@ -57,12 +64,12 @@ export class ServiceForm extends Component {
                     />
                   </svg>
                 </li>
-                <li className="menuitem-wrapper">
+                <li className={this.props.applicationAppState.get("active_menu")==2?"menuitem-wrapper spin":"menuitem-wrapper"}>
                   <div className="icon-holder">
                     <a
                         className="menu-item"
                         href="#"
-                        onClick={(e)=>handleMenuClick(e,1)}
+                        onClick={(e)=>handleMenuClick(e,2)}
                     >
                       <i className="material-icons">{"face"}</i>
                     </a>
@@ -76,12 +83,12 @@ export class ServiceForm extends Component {
                     />
                   </svg>
                 </li>
-                <li className="menuitem-wrapper">
+                <li className={this.props.applicationAppState.get("active_menu")==3?"menuitem-wrapper spin":"menuitem-wrapper"}>
                   <div className="icon-holder">
                     <a
                         className="menu-item"
                         href="#"
-                        onClick={(e)=>handleMenuClick(e,1)}
+                        onClick={(e)=>handleMenuClick(e,3)}
                     >
                       <i className="material-icons">{"android"}</i>
                     </a>
@@ -95,12 +102,12 @@ export class ServiceForm extends Component {
                     />
                   </svg>
                 </li>
-                <li className="menuitem-wrapper">
+                <li className={this.props.applicationAppState.get("active_menu")==4?"menuitem-wrapper spin":"menuitem-wrapper"}>
                   <div className="icon-holder">
                     <a
                         className="menu-item"
                         href="#"
-                        onClick={(e)=>handleMenuClick(e,1)}
+                        onClick={(e)=>handleMenuClick(e,4)}
                     >
                       <i className="material-icons">{"shopping_cart"}</i>
                     </a>
@@ -114,12 +121,12 @@ export class ServiceForm extends Component {
                     />
                   </svg>
                 </li>
-                <li className="menuitem-wrapper">
+                <li className={this.props.applicationAppState.get("active_menu")==5?"menuitem-wrapper spin":"menuitem-wrapper"}>
                   <div className="icon-holder">
                     <a
                         className="menu-item"
                         href="#"
-                        onClick={(e)=>handleMenuClick(e,1)}
+                        onClick={(e)=>handleMenuClick(e,5)}
                     >
                       <i className="material-icons">{"room"}</i>
                     </a>
