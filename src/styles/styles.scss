@@ -299,6 +299,7 @@ a {
 }
 
 .menu {
+  margin: 0;
   width: 100%;
   height: 100%;
   -webkit-transform: scale(0);
@@ -312,10 +313,10 @@ a {
     top: 50%;
     left: 50%;
     display: inline-block;
-    width: 4rem;
+    width: 6rem;
     height: 80%;
     margin-top: -12rem;
-    margin-left: -2rem;
+    margin-left: -3rem;
     text-align: center;
     &.spin {
       z-index: 5;
@@ -335,9 +336,9 @@ a {
   a {
     position: relative;
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
-    margin-top: 4.5rem;
+    width: 6rem;
+    height: 6rem;
+    margin-top: 2.5rem;
     padding: 1rem;
     border-radius: 100%;
     -webkit-transform: scale(1, 1);
@@ -358,7 +359,7 @@ a {
   position: relative;
   z-index: 1;
   display: inline-block;
-  width: 4rem;
+  width: 6rem;
   height: 100%;
 }
 
@@ -390,9 +391,9 @@ a {
   left: 50%;
   z-index: 10;
   display: block;
-  width: 4rem;
-  height: 4rem;
-  margin: -2rem;
+  width: 6rem;
+  height: 6rem;
+  margin: -3rem;
   padding: 1.3rem;
   background: white;
   border: none;
@@ -452,8 +453,8 @@ a {
   left: -1rem;
   z-index: 10;
   display: block;
-  width: 6rem;
-  height: 6rem;
+  width: 8rem;
+  height: 8rem;
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
   opacity: 0;
@@ -611,12 +612,12 @@ a {
 @keyframes dash {
   0% {
     stroke-dashoffset: 560;
-    stroke-width: 4rem;
+    stroke-width: 6rem;
   }
 
   80% {
     stroke-dashoffset: 0;
-    stroke-width: 4rem;
+    stroke-width: 6rem;
     opacity: 1;
   }
 

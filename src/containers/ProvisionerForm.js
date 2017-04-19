@@ -109,7 +109,7 @@ export class ServiceForm extends Component {
                         href="#"
                         onClick={(e)=>handleMenuClick(e,4)}
                     >
-                      <i className="material-icons">{"shopping_cart"}</i>
+                      <i className="material-icons">{"cart"}</i>
                     </a>
                   </div>
                   <svg className="circle-holder">
