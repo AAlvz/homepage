@@ -1,148 +1,63 @@
 // import FontIcon from "material-ui/FontIcon";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import { fromJS } from "immutable";
-import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
+import { Step, Stepper, StepLabel } from "material-ui/Stepper";
 import * as applicationActions from "../actions/ApplicationActions";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Paper from "material-ui/Paper";
+import RaisedButton from "material-ui/RaisedButton";
 import React, { Component, PropTypes } from "react";
+import SwipeableViews from "react-swipeable-views";
+import TextField from "material-ui/TextField";
 
 export class ServiceForm extends Component {
  render() {
-  const handleShowMenuClick = () => {
-    this.props.applicationActions.setCircleMenuClick(fromJS({
-      "circle_menu_click": !this.props.applicationAppState.get("circle_menu_click")})
-    );
-  };
-  const handleMenuClick = (e, value) => {
-    e.preventDefault();
-    this.props.applicationActions.setActiveMenu(fromJS({
-      "active_menu": value})
-    );
-    setTimeout(() => {
-      this.props.applicationActions.setCircleMenuClick(fromJS({
-        "circle_menu_click": false})
-      );
-      this.props.applicationActions.setActiveMenu(fromJS({
-        "active_menu": -1})
-      );
-    }, 800);
+  const style = {
+   margin: 12,
   };
   return (
     <MuiThemeProvider>
       <div className="small-12 medium-12 large-12 large-centered columns">
         <div className="container">
-          <Paper zDepth={4}>
-            <nav className="oval-menu-wrapper">
-              <button
-                  className={this.props.applicationAppState.get("circle_menu_click")?"menu-btn clicked":"menu-btn"}
-                  id="has-ripple"
-                  onClick={handleShowMenuClick}
-              >
-                <i />
-                <i />
-                <i />
-                <span className="ripple" />
-              </button>
-              <ul className={this.props.applicationAppState.get("circle_menu_click")?"menu open":"menu"}>
-                <li className={this.props.applicationAppState.get("active_menu")==1?"menuitem-wrapper spin":"menuitem-wrapper"}>
-                  <div className="icon-holder">
-                    <a
-                        className="menu-item"
-                        href="#"
-                        onClick={(e)=>handleMenuClick(e,1)}
-                    >
-                      <i className="material-icons">{"home"}</i>
-                    </a>
-                  </div>
-                  <svg className="circle-holder">
-                    <circle
-                        cx={"50%"}
-                        cy={"50%"}
-                        fill={"none"}
-                        r={"88"}
-                    />
-                  </svg>
-                </li>
-                <li className={this.props.applicationAppState.get("active_menu")==2?"menuitem-wrapper spin":"menuitem-wrapper"}>
-                  <div className="icon-holder">
-                    <a
-                        className="menu-item"
-                        href="#"
-                        onClick={(e)=>handleMenuClick(e,2)}
-                    >
-                      <i className="material-icons">{"face"}</i>
-                    </a>
-                  </div>
-                  <svg className="circle-holder">
-                    <circle
-                        cx={"50%"}
-                        cy={"50%"}
-                        fill={"none"}
-                        r={"88"}
-                    />
-                  </svg>
-                </li>
-                <li className={this.props.applicationAppState.get("active_menu")==3?"menuitem-wrapper spin":"menuitem-wrapper"}>
-                  <div className="icon-holder">
-                    <a
-                        className="menu-item"
-                        href="#"
-                        onClick={(e)=>handleMenuClick(e,3)}
-                    >
-                      <i className="material-icons">{"android"}</i>
-                    </a>
-                  </div>
-                  <svg className="circle-holder">
-                    <circle
-                        cx={"50%"}
-                        cy={"50%"}
-                        fill={"none"}
-                        r={"88"}
-                    />
-                  </svg>
-                </li>
-                <li className={this.props.applicationAppState.get("active_menu")==4?"menuitem-wrapper spin":"menuitem-wrapper"}>
-                  <div className="icon-holder">
-                    <a
-                        className="menu-item"
-                        href="#"
-                        onClick={(e)=>handleMenuClick(e,4)}
-                    >
-                      <i className="material-icons">{"cart"}</i>
-                    </a>
-                  </div>
-                  <svg className="circle-holder">
-                    <circle
-                        cx={"50%"}
-                        cy={"50%"}
-                        fill={"none"}
-                        r={"88"}
-                    />
-                  </svg>
-                </li>
-                <li className={this.props.applicationAppState.get("active_menu")==5?"menuitem-wrapper spin":"menuitem-wrapper"}>
-                  <div className="icon-holder">
-                    <a
-                        className="menu-item"
-                        href="#"
-                        onClick={(e)=>handleMenuClick(e,5)}
-                    >
-                      <i className="material-icons">{"room"}</i>
-                    </a>
-                  </div>
-                  <svg className="circle-holder">
-                    <circle
-                        cx={"50%"}
-                        cy={"50%"}
-                        fill={"none"}
-                        r={"88"}
-                    />
-                  </svg>
-                </li>
-              </ul>
-            </nav>
-          </Paper>
+          <Stepper activeStep={2}>
+            <Step>
+              <StepLabel>{"Nombre de proyecto"}</StepLabel>
+            </Step>
+            <Step>
+              <StepLabel>{"Stack"}</StepLabel>
+            </Step>
+            <Step>
+              <StepLabel>{"DataBase"}</StepLabel>
+            </Step>
+            <Step>
+              <StepLabel>{"Add-ons"}</StepLabel>
+            </Step>
+          </Stepper>
+          <SwipeableViews
+              index={1}
+          >
+            <div>
+              <h1 className="align-center">{"Obtenga entornos de trabajo inmediatos con una configuración rápida y lleve a cualquier nivel"}</h1>
+              <TextField
+                  floatingLabelText={"Nombre del Proyecto"}
+                  fullWidth
+                  name={"projectName"}
+                  type="text"
+              />
+              <RaisedButton label={"Siguiente"} primary={true} style={style} />
+            </div>
+            <div>
+              <h1 className="align-center">{"Selecciona el Stack que utilizas"}</h1>
+              <TextField
+                  floatingLabelText={"Nombre del Proyecto"}
+                  fullWidth
+                  name={"projectName"}
+                  type="text"
+              />
+              <RaisedButton label={"Siguiente"} primary={true} style={style} />
+            </div>
+          </SwipeableViews>
         </div>
       </div>
     </MuiThemeProvider>
