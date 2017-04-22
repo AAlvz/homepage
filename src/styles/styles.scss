@@ -12,7 +12,6 @@ $icon-redis: '\e606';
 $icon-erlang: '\e616';
 $icon-angularjs: '\e61c';
 $icon-django: '\e63f';
-$icon-codeigniter: '\e667';
 $icon-mongodb: '\eb43';
 $icon-mysql: '\eb61';
 $icon-nodejs: '\eb69';
@@ -44,7 +43,12 @@ $icon-logo-path4: '\e97c';
 $icon-logo-path5: '\e97d';
 $icon-logo-path6: '\e97e';
 $icon-logo-path7: '\e97f';
+$icon-add: '\e145';
 $icon-arrow-forward: '\e5c8';
+$icon-lock: '\e897';
+$icon-backup: '\e923';
+$icon-scalability: '\eb48';
+$icon-performance: '\ebe2';
 $primary-color: rgb(83, 106, 112);
 $secondary-color: rgb(45, 110, 148);
 $tertiary-color: rgb(226, 34, 59);
@@ -205,12 +209,6 @@ input {
 .icon-django {
   &::before {
     content: $icon-django;
-  }
-}
-
-.icon-codeigniter {
-  &::before {
-    content: $icon-codeigniter;
   }
 }
 
@@ -440,9 +438,39 @@ input {
   }
 }
 
+.icon-add {
+  &::before {
+    content: $icon-add;
+  }
+}
+
 .icon-arrow-forward {
   &::before {
     content: $icon-arrow-forward;
+  }
+}
+
+.icon-lock {
+  &::before {
+    content: $icon-lock;
+  }
+}
+
+.icon-backup {
+  &::before {
+    content: $icon-backup;
+  }
+}
+
+.icon-scalability {
+  &::before {
+    content: $icon-scalability;
+  }
+}
+
+.icon-performance {
+  &::before {
+    content: $icon-performance;
   }
 }
 
@@ -462,18 +490,23 @@ input {
     }
   }
 }
+
 .align-center {
   text-align: center;
 }
+
 .align-right {
   text-align: right;
 }
+
 .one-click-app {
   margin-bottom: 1em;
 }
+
 html {
   font-size: 16px;
 }
+
 body {
   background: $secondary-color;
   box-sizing: border-box;
@@ -481,6 +514,7 @@ body {
   font-family: 'SFText-Regular';
   transition: all 0.25s ease-in;
 }
+
 * {
   box-sizing: inherit;
   &::before,
@@ -492,6 +526,18 @@ body {
 a {
   color: white;
   text-decoration: none;
+}
+
+.pdt-2 {
+  padding-top: 2em;
+}
+
+.pdt-3 {
+  padding-top: 3em;
+}
+
+.pdt-5 {
+  padding-top: 5em;
 }
 
 #hexGrid {
@@ -593,9 +639,16 @@ a {
     transform: translate3d(0, 100%, 0);
   }
 }
+/*** ACTIVE EFFECT  *********************************************************************/
+.hexLink {
+  &.active h2, &.active p {
+    background-color: rgba($tertiary-color, 0.9);
+    transform: translate3d(0, 0, 0);
+  }
+}
 /*** HOVER EFFECT  **********************************************************************/
 .hexLink {
-  &:hover h2, &:focus h2, &:hover p, &:focus p {
+  &:hover h2, &:hover p{
     transform: translate3d(0, 0, 0);
   }
 }

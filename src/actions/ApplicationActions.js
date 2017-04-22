@@ -1,9 +1,21 @@
 import * as types from "../constants/ActionTypes";
 
-export function setCircleMenuClick(value) {
-  return { type: types.CIRCLE_MENU_CLICK, value };
+export function setProjectName(value) {
+  return { type: types.SET_PROJECT_NAME, value };
 }
 
-export function setActiveMenu(value) {
-  return { type: types.SET_ACTIVE_MENU, value };
+export function setStack(value) {
+  return { type: types.SET_STACK, value };
+}
+
+export function setDatabase(value) {
+  return { type: types.SET_DATABASE, value };
+}
+
+export function setAddons(value) {
+  return { type: types.SET_ADDONS, value };
+}
+
+export function setActiveStep(value) {
+  return { type: types.SET_ACTIVE_STEP, value };
 }
