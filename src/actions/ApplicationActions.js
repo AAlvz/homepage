@@ -19,3 +19,7 @@ export function setAddons(value) {
 export function setActiveStep(value) {
   return { type: types.SET_ACTIVE_STEP, value };
 }
+
+export function removeStack(value) {
+  return { type: types.REMOVE_STACK, value };
+}

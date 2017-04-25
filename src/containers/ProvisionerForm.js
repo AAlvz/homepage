@@ -3,12 +3,10 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { fromJS } from "immutable";
 import { Step, Stepper, StepLabel } from "material-ui/Stepper";
-import { white } from "material-ui/styles/colors";
 import * as applicationActions from "../actions/ApplicationActions";
 import FontIcon from "material-ui/FontIcon";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import Paper from "material-ui/Paper";
 import RaisedButton from "material-ui/RaisedButton";
 import React, { Component, PropTypes } from "react";
 import SwipeableViews from "react-swipeable-views";
@@ -30,10 +28,15 @@ export class ServiceForm extends Component {
       project_name: e.target.value
     }));
   };
-  const handleChangeStack = (value) => {
-    this.props.applicationActions.setStack(fromJS({
-      stack: value
-    }));
+  const handleChangeStack = (value, insert) => {
+    if(insert)
+      this.props.applicationActions.setStack(fromJS({
+        stack: value
+      }));
+    else
+      this.props.applicationActions.removeStack(fromJS({
+        stack: value
+      }));
   };
   const handleChangeDatabase = (value) => {
     this.props.applicationActions.setDatabase(fromJS({
@@ -82,21 +85,34 @@ export class ServiceForm extends Component {
                     disabled={this.props.applicationAppState.get("project_name")?false:true}
                     label={"Siguiente"}
                     onTouchTap={()=>handleChangeStep(1)}
-                    primary={true}
+                    primary
                     style={style}
                 />
               </div>
             </div>
             <div className="align-center">
               <h1 className="align-center">{"Selecciona el Stack que utilizas"}</h1>
-              <ul id="hexGrid" className="pdt-2">
+              <ul
+                  className="pdt-2"
+                  id="hexGrid"
+              >
                 <li
                     className="hex"
-                    onTouchTap={()=>handleChangeStack("react")}
+                    onTouchTap={()=>handleChangeStack("react",
+                      this.props.applicationAppState.get("stacks")?
+                        this.props.applicationAppState.get("stacks").findIndex(stack =>
+                          stack==="react"
+                        )==-1
+                      :true
+                    )}
                 >
                   <div className="hexIn">
                       <a
-                          className={this.props.applicationAppState.get("stack")=="react"?"hexLink active":"hexLink"}
+                          className={this.props.applicationAppState.get("stacks")?
+                            this.props.applicationAppState.get("stacks").findIndex(stack =>
+                              stack==="react"
+                            )==-1?"hexLink":"hexLink active"
+                          :"hexLink"}
                           href="#"
                       >
                       <FontIcon className={"icon icon-react"}/>
@@ -246,21 +262,24 @@ export class ServiceForm extends Component {
                     disabled={this.props.applicationAppState.get("project_name")?false:true}
                     label={"Anterior"}
                     onTouchTap={()=>handleChangeStep(0)}
-                    primary={true}
+                    primary
                     style={style}
                 />
                 <RaisedButton
                     disabled={this.props.applicationAppState.get("stack")?false:true}
                     label={"Siguiente"}
                     onTouchTap={()=>handleChangeStep(2)}
-                    primary={true}
+                    primary
                     style={style}
                 />
               </div>
             </div>
             <div className="align-center">
               <h1 className="align-center">{"Selecciona la Base de Datos que utilizas"}</h1>
-              <ul id="hexGrid" className="pdt-2">
+              <ul
+                  className="pdt-2"
+                  id="hexGrid"
+              >
                 <li
                     className="hex"
                     onTouchTap={()=>handleChangeDatabase("cassandra")}
@@ -271,10 +290,10 @@ export class ServiceForm extends Component {
                         href="#"
                     >
                       <span className="icon icon-cassandra">
-                        <span className="path1"></span>
-                        <span className="path2"></span>
-                        <span className="path3"></span>
-                        <span className="path4"></span>
+                        <span className="path1"/>
+                        <span className="path2"/>
+                        <span className="path3"/>
+                        <span className="path4"/>
                       </span>
                       <h2>{"Cassandra"}</h2>
                       <p>{"Base de datos clave-valor"}</p>
@@ -362,21 +381,24 @@ export class ServiceForm extends Component {
                     disabled={this.props.applicationAppState.get("stack")?false:true}
                     label={"Anterior"}
                     onTouchTap={()=>handleChangeStep(1)}
-                    primary={true}
+                    primary
                     style={style}
                 />
                 <RaisedButton
                     disabled={this.props.applicationAppState.get("database")?false:true}
                     label={"Siguiente"}
                     onTouchTap={()=>handleChangeStep(3)}
-                    primary={true}
+                    primary
                     style={style}
                 />
               </div>
             </div>
             <div className="align-center">
               <h1 className="align-center">{"Selecciona los Complementos que te gustaría tener"}</h1>
-              <ul id="hexGrid" className="pdt-2">
+              <ul
+                  className="pdt-2"
+                  id="hexGrid"
+              >
                 <li
                     className="hex"
                     onTouchTap={()=>handleChangeAddons("security")}
@@ -458,14 +480,14 @@ export class ServiceForm extends Component {
                     disabled={this.props.applicationAppState.get("database")?false:true}
                     label={"Anterior"}
                     onTouchTap={()=>handleChangeStep(2)}
-                    primary={true}
+                    primary
                     style={style}
                 />
                 <RaisedButton
                     disabled={this.props.applicationAppState.get("addons")?false:true}
                     label={"Siguiente"}
                     onTouchTap={()=>handleChangeStep(4)}
-                    primary={true}
+                    primary
                     style={style}
                 />
               </div>

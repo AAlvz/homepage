@@ -22,7 +22,20 @@ describe("application", () => {
 
     expect(
       Immutable.is(nextState, fromJS({
-        "stack": "Rails"}))
+        "stacks": ["Rails"]}))
+    ).to.be.true;
+  });
+  it("handles REMOVE_STACK", () => {
+    const initialState = fromJS({
+      stacks: ["Rails"]
+    });
+    const action = {type:"REMOVE_STACK", value: fromJS({
+        stack: "Rails"})};
+    const nextState = application(initialState, action);
+
+    expect(
+      Immutable.is(nextState, fromJS({
+        "stacks": []}))
     ).to.be.true;
   });
   it("handles SET_DATABASE", () => {

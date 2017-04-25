@@ -1,5 +1,6 @@
 export const SET_PROJECT_NAME="SET_PROJECT_NAME";
 export const SET_STACK="SET_STACK";
+export const REMOVE_STACK="REMOVE_STACK";
 export const SET_DATABASE="SET_DATABASE";
 export const SET_ADDONS="SET_ADDONS";
 export const SET_ACTIVE_STEP="SET_ACTIVE_STEP";

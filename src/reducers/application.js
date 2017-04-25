@@ -1,5 +1,5 @@
-import { SET_PROJECT_NAME, SET_STACK, SET_DATABASE, SET_ADDONS, SET_ACTIVE_STEP } from "../constants/ActionTypes";
-import { Map } from "immutable";
+import * as types from "../constants/ActionTypes";
+import { Map, List } from "immutable";
 
 const initialState = Map({
   active_step: 0
@@ -7,23 +7,43 @@ const initialState = Map({
 
 export default function application(state = initialState, action) {
   switch (action.type) {
-    case SET_PROJECT_NAME:
+    case types.SET_PROJECT_NAME:
     {
       return state.set("project_name", action.value.get("project_name"));
     }
-    case SET_STACK:
+    case types.SET_STACK:
     {
-      return state.set("stack", action.value.get("stack"));
+      return state.set("stacks", state.get("stacks")?
+        action.value.getIn(["stack", "otro"])?
+          state.get("stacks").filter(stackFiltered=>
+            !stackFiltered.get("otro")
+          ).push(action.value.get("stack"))
+          : state.get("stacks").push(action.value.get("stack"))
+        : List.of(action.value.get("stack"))
+      );
     }
-    case SET_DATABASE:
+    case types.REMOVE_STACK:
+    {
+      return state.set("stacks", state.get("stacks")?
+        action.value.getIn(["stack", "otro"])?
+          state.get("stacks").filter(stackFiltered=>
+            !stackFiltered.get("otro")
+          )
+          : state.get("stacks").filter(stackFiltered=>
+            stackFiltered !== action.value.get("stack")
+          )
+        : List.of()
+      );
+    }
+    case types.SET_DATABASE:
     {
       return state.set("database", action.value.get("database"));
     }
-    case SET_ADDONS:
+    case types.SET_ADDONS:
     {
       return state.set("addons", action.value.get("addons"));
     }
-    case SET_ACTIVE_STEP:
+    case types.SET_ACTIVE_STEP:
     {
       return state.set("active_step", action.value.get("active_step"));
     }

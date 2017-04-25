@@ -3,13 +3,13 @@ import {
   pinkA200,
   grey100, grey300, grey400, grey500,
   white, darkBlack, fullWhite, fullBlack,
-} from 'material-ui/styles/colors';
-import {fade} from 'material-ui/utils/colorManipulator';
-import spacing from 'material-ui/styles/spacing';
+} from "material-ui/styles/colors";
+import {fade} from "material-ui/utils/colorManipulator";
+import spacing from "material-ui/styles/spacing";
 
 export default {
   spacing: spacing,
-  fontFamily: 'SFText-Regular',
+  fontFamily: "SFText-Regular",
   borderRadius: 2,
   palette: {
     primary1Color: "#2fa9b6",
