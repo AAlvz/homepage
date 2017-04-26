@@ -1,8 +1,116 @@
 import * as types from "../constants/ActionTypes";
-import { Map, List } from "immutable";
+import { fromJS, List } from "immutable";
 
-const initialState = Map({
-  active_step: 0
+const initialState = fromJS({
+  active_step: 0,
+  steps: {
+    stacks: {
+      label: "Stack",
+      options: [
+        {
+          description: "NodeJS",
+          icon: ["icon-react",1],
+          isOtro: false,
+          name: "react"
+        },
+        {
+          description: "Functional programming language",
+          icon: ["icon-erlang",1],
+          isOtro: false,
+          name: "erlang"
+        },
+        {
+          description: "NodeJS",
+          icon: ["icon-angularjs",1],
+          isOtro: false,
+          name: "angularjs"
+        },
+        {
+          description: "Python",
+          icon: ["icon-django",1],
+          isOtro: false,
+          name: "django"
+        },
+        {
+          description: "Ruby",
+          icon: ["icon-rails",1],
+          isOtro: false,
+          name: "rails"
+        },
+        {
+          description: "JavaScript environment",
+          icon: ["icon-nodejs",1],
+          isOtro: false,
+          name: "nodejs"
+        },
+        {
+          description: "PHP",
+          icon: ["icon-yii",1],
+          isOtro: false,
+          name: "yii"
+        },
+        {
+          description: "NodeJS",
+          icon: ["icon-ember",1],
+          isOtro: false,
+          name: "ember"
+        },
+        {
+          description: "Javascript",
+          icon: ["icon-meteor",1],
+          isOtro: false,
+          name: "meteor"
+        },
+        {
+          description: "Stack",
+          icon: ["icon-add",1],
+          isOtro: true,
+          name: "otro"
+        }
+      ]
+    },
+    databases: [
+      {
+        description: "Base de datos clave-valor",
+        icon: ["icon-cassandra",4],
+        isOtro: false,
+        name: "cassandra"
+      },
+      {
+        description: "Base de datos en memoria",
+        icon: ["icon-redis",1],
+        isOtro: false,
+        name: "redis"
+      },
+      {
+        description: "Basede datos orientado a documentos",
+        icon: ["icon-mongodb",1],
+        isOtro: false,
+        name: "mongodb"
+      },
+      {
+        description: "Base de datos relacional",
+        icon: ["icon-mysql",1],
+        isOtro: false,
+        name: "mysql"
+      },
+      {
+        description: "Base de datos relacional",
+        icon: ["icon-postgresql",1],
+        isOtro: false,
+        name: "postgresql"
+      },
+      {
+        description: "Base de datos",
+        icon: ["icon-add",1],
+        isOtro: true,
+        name: "otro"
+      }
+    ],
+    addons: {
+
+    }
+  }
 });
 
 export default function application(state = initialState, action) {
