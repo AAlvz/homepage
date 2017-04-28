@@ -4,112 +4,159 @@ import { fromJS, List } from "immutable";
 const initialState = fromJS({
   active_step: 0,
   steps: {
-    stacks: {
-      label: "Stack",
-      options: [
-        {
-          description: "NodeJS",
-          icon: ["icon-react",1],
-          isOtro: false,
-          name: "react"
-        },
-        {
-          description: "Functional programming language",
-          icon: ["icon-erlang",1],
-          isOtro: false,
-          name: "erlang"
-        },
-        {
-          description: "NodeJS",
-          icon: ["icon-angularjs",1],
-          isOtro: false,
-          name: "angularjs"
-        },
-        {
-          description: "Python",
-          icon: ["icon-django",1],
-          isOtro: false,
-          name: "django"
-        },
-        {
-          description: "Ruby",
-          icon: ["icon-rails",1],
-          isOtro: false,
-          name: "rails"
-        },
-        {
-          description: "JavaScript environment",
-          icon: ["icon-nodejs",1],
-          isOtro: false,
-          name: "nodejs"
-        },
-        {
-          description: "PHP",
-          icon: ["icon-yii",1],
-          isOtro: false,
-          name: "yii"
-        },
-        {
-          description: "NodeJS",
-          icon: ["icon-ember",1],
-          isOtro: false,
-          name: "ember"
-        },
-        {
-          description: "Javascript",
-          icon: ["icon-meteor",1],
-          isOtro: false,
-          name: "meteor"
-        },
-        {
-          description: "Stack",
-          icon: ["icon-add",1],
-          isOtro: true,
-          name: "otro"
-        }
-      ]
-    },
+    stacks: [
+      {
+        description: "NodeJS",
+        icon: ["icon-react"],
+        isOtro: false,
+        name: "react",
+        title: "ReactJS"
+      },
+      {
+        description: "Functional programming language",
+        icon: ["icon-erlang"],
+        isOtro: false,
+        name: "erlang",
+        title: "Erlang"
+      },
+      {
+        description: "NodeJS",
+        icon: ["icon-angularjs"],
+        isOtro: false,
+        name: "angularjs",
+        title: "AngularJS"
+      },
+      {
+        description: "Python",
+        icon: ["icon-django"],
+        isOtro: false,
+        name: "django",
+        title: "Djago"
+      },
+      {
+        description: "Ruby",
+        icon: ["icon-rails"],
+        isOtro: false,
+        name: "rails",
+        title: "Rails"
+      },
+      {
+        description: "JavaScript environment",
+        icon: ["icon-nodejs"],
+        isOtro: false,
+        name: "nodejs",
+        title: "NodeJS"
+      },
+      {
+        description: "PHP",
+        icon: ["icon-yii"],
+        isOtro: false,
+        name: "yii",
+        title: "Yii"
+      },
+      {
+        description: "NodeJS",
+        icon: ["icon-ember"],
+        isOtro: false,
+        name: "ember",
+        title: "Ember"
+      },
+      {
+        description: "Javascript",
+        icon: ["icon-meteor"],
+        isOtro: false,
+        name: "meteor",
+        title: "Meteor"
+      },
+      // {
+      //   description: "Stack",
+      //   icon: ["icon-add"],
+      //   isOtro: true,
+      //   name: "otro",
+      //   title: "Otro"
+      // }
+    ],
     databases: [
       {
         description: "Base de datos clave-valor",
-        icon: ["icon-cassandra",4],
+        icon: ["icon-cassandra","path1","path2","path3","path1"],
         isOtro: false,
-        name: "cassandra"
+        name: "cassandra",
+        title: "Cassandra"
       },
       {
         description: "Base de datos en memoria",
-        icon: ["icon-redis",1],
+        icon: ["icon-redis"],
         isOtro: false,
-        name: "redis"
+        name: "redis",
+        title: "Redis"
       },
       {
         description: "Basede datos orientado a documentos",
-        icon: ["icon-mongodb",1],
+        icon: ["icon-mongodb"],
         isOtro: false,
-        name: "mongodb"
+        name: "mongodb",
+        title: "MongoDB"
       },
       {
         description: "Base de datos relacional",
-        icon: ["icon-mysql",1],
+        icon: ["icon-mysql"],
         isOtro: false,
-        name: "mysql"
+        name: "mysql",
+        title: "MySql"
       },
       {
         description: "Base de datos relacional",
-        icon: ["icon-postgresql",1],
+        icon: ["icon-postgresql"],
         isOtro: false,
-        name: "postgresql"
+        name: "postgresql",
+        title: "Postgresql"
       },
-      {
-        description: "Base de datos",
-        icon: ["icon-add",1],
-        isOtro: true,
-        name: "otro"
-      }
+      // {
+      //   description: "Base de datos",
+      //   icon: ["icon-add"],
+      //   isOtro: true,
+      //   name: "otro",
+      //   title: "Otro"
+      // }
     ],
-    addons: {
-
-    }
+    addons: [
+      {
+        description: "Módulo de seguridad",
+        icon: ["icon-lock"],
+        isOtro: false,
+        name: "security",
+        title: "Seguridad"
+      },
+      {
+        description: "Módulo de copias de seguridad",
+        icon: ["icon-backup"],
+        isOtro: false,
+        name: "backup",
+        title: "Copias de seguridad"
+      },
+      {
+        description: "Módulo de escalabilidad",
+        icon: ["icon-scalability"],
+        isOtro: false,
+        name: "scalability",
+        title: "Escalabilidad"
+      },
+      {
+        description: "Módulo de Rendimiento",
+        icon: ["icon-performance"],
+        isOtro: false,
+        name: "performance",
+        title: "Rendimiento"
+      },
+      // {
+      //   description: "Módulo",
+      //   icon: ["icon-add"],
+      //   isOtro: false,
+      //   name: "otro",
+      //   title: "Otro"
+      // }
+    ]
   }
 });
 
@@ -145,7 +192,27 @@ export default function application(state = initialState, action) {
     }
     case types.SET_DATABASE:
     {
-      return state.set("database", action.value.get("database"));
+      return state.set("databases", state.get("databases")?
+        action.value.getIn(["database", "otro"])?
+          state.get("databases").filter(stackFiltered=>
+            !stackFiltered.get("otro")
+          ).push(action.value.get("database"))
+          : state.get("databases").push(action.value.get("database"))
+        : List.of(action.value.get("database"))
+      );
+    }
+    case types.REMOVE_DATABASE:
+    {
+      return state.set("databases", state.get("databases")?
+        action.value.getIn(["database", "otro"])?
+          state.get("databases").filter(stackFiltered=>
+            !stackFiltered.get("otro")
+          )
+          : state.get("databases").filter(stackFiltered=>
+            stackFiltered !== action.value.get("database")
+          )
+        : List.of()
+      );
     }
     case types.SET_ADDONS:
     {

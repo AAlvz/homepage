@@ -20,6 +20,10 @@ export function setActiveStep(value) {
   return { type: types.SET_ACTIVE_STEP, value };
 }
 
+export function removeDatabase(value) {
+  return { type: types.REMOVE_DATABASE, value };
+}
+
 export function removeStack(value) {
   return { type: types.REMOVE_STACK, value };
 }

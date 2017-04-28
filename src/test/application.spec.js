@@ -41,12 +41,25 @@ describe("application", () => {
   it("handles SET_DATABASE", () => {
     const initialState = Map();
     const action = {type:"SET_DATABASE", value: fromJS({
-        database: "mariadb"})};
+        database: "MariaDB"})};
     const nextState = application(initialState, action);
 
     expect(
       Immutable.is(nextState, fromJS({
-        "database": "mariadb"}))
+        "databases": ["MariaDB"]}))
+    ).to.be.true;
+  });
+  it("handles REMOVE_DATABASE", () => {
+    const initialState = fromJS({
+      databases: ["MariaDB"]
+    });
+    const action = {type:"REMOVE_DATABASE", value: fromJS({
+        database: "MariaDB"})};
+    const nextState = application(initialState, action);
+
+    expect(
+      Immutable.is(nextState, fromJS({
+        "databases": []}))
     ).to.be.true;
   });
   it("handles SET_ADDONS", () => {
