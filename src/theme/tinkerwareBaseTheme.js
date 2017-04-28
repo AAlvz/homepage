@@ -12,7 +12,7 @@ export default {
   fontFamily: "SFText-Regular",
   borderRadius: 2,
   palette: {
-    primary1Color: "#2fa9b6",
+    primary1Color: "rgb(47,169,182)",
     primary2Color: cyan700,
     primary3Color: grey400,
     accent1Color: pinkA200,
@@ -28,7 +28,15 @@ export default {
     clockCircleColor: fade(darkBlack, 0.07),
     shadowColor: fullBlack,
   },
+  raisedButton: {
+    disabledColor: "rgba(47,169,182,.46)",
+    disabledTextColor: fullWhite
+  },
   stepper: {
-    textColor: fullWhite
+    textColor: fullWhite,
+    disabledTextColor: grey400
+  },
+  textField: {
+    floatingLabelColor: fullWhite,
   }
 };

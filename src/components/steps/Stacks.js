@@ -27,15 +27,9 @@ const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) 
       />
       <div className="pdt-2">
         <RaisedButton
-            label={"Anterior"}
-            onTouchTap={()=>setActiveStep(0)}
-            primary
-            style={style}
-        />
-        <RaisedButton
-            // disabled={stack?false:true}
+            disabled={stacks.size==0?true:false}
             label={"Siguiente"}
-            onTouchTap={()=>setActiveStep(2)}
+            onTouchTap={()=>setActiveStep(1)}
             primary
             style={style}
         />

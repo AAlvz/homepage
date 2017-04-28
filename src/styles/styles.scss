@@ -7,11 +7,13 @@ $icon-cassandra-path1: '\e902';
 $icon-cassandra-path2: '\e903';
 $icon-cassandra-path3: '\e904';
 $icon-cassandra-path4: '\e905';
+$icon-elixir: '\e906';
+$icon-mariadb: '\e907';
 $icon-react: '\e600';
 $icon-redis: '\e606';
-$icon-erlang: '\e616';
 $icon-angularjs: '\e61c';
 $icon-django: '\e63f';
+$icon-laravel: '\e851';
 $icon-mongodb: '\eb43';
 $icon-mysql: '\eb61';
 $icon-nodejs: '\eb69';
@@ -20,7 +22,6 @@ $icon-rails: '\eba2';
 $icon-ruby: '\ebc9';
 $icon-yii: '\ec01';
 $icon-ember: '\e900';
-$icon-meteor: '\e901';
 $icon-mydevop-path1: '\e925';
 $icon-mydevop-path2: '\e926';
 $icon-mydevop-path3: '\e927';
@@ -46,8 +47,8 @@ $icon-logo-path7: '\e97f';
 $icon-add: '\e145';
 $icon-arrow-forward: '\e5c8';
 $icon-lock: '\e897';
+$icon-ci: '\e629';
 $icon-backup: '\e923';
-$icon-scalability: '\eb48';
 $icon-performance: '\ebe2';
 $primary-color: rgb(83, 106, 112);
 $secondary-color: rgb(45, 110, 148);
@@ -182,6 +183,18 @@ input {
   }
 }
 
+.icon-elixir {
+  &::before {
+    content: $icon-elixir;
+  }
+}
+
+.icon-mariadb {
+  &::before {
+    content: $icon-mariadb;
+  }
+}
+
 .icon-react {
   &::before {
     content: $icon-react;
@@ -194,12 +207,6 @@ input {
   }
 }
 
-.icon-erlang {
-  &::before {
-    content: $icon-erlang;
-  }
-}
-
 .icon-angularjs {
   &::before {
     content: $icon-angularjs;
@@ -209,6 +216,12 @@ input {
 .icon-django {
   &::before {
     content: $icon-django;
+  }
+}
+
+.icon-laravel {
+  &::before {
+    content: $icon-laravel;
   }
 }
 
@@ -257,12 +270,6 @@ input {
 .icon-ember {
   &::before {
     content: $icon-ember;
-  }
-}
-
-.icon-meteor {
-  &::before {
-    content: $icon-meteor;
   }
 }
 
@@ -456,15 +463,15 @@ input {
   }
 }
 
-.icon-backup {
+.icon-ci {
   &::before {
-    content: $icon-backup;
+    content: $icon-ci;
   }
 }
 
-.icon-scalability {
+.icon-backup {
   &::before {
-    content: $icon-scalability;
+    content: $icon-backup;
   }
 }
 

@@ -1,7 +1,7 @@
 import * as types from "../constants/ActionTypes";
 
-export function setProjectName(value) {
-  return { type: types.SET_PROJECT_NAME, value };
+export function setEmail(value) {
+  return { type: types.SET_EMAIL, value };
 }
 
 export function setStack(value) {
@@ -14,6 +14,10 @@ export function setDatabase(value) {
 
 export function setAddons(value) {
   return { type: types.SET_ADDONS, value };
+}
+
+export function removeAddons(value) {
+  return { type: types.REMOVE_ADDONS, value };
 }
 
 export function setActiveStep(value) {

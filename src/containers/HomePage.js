@@ -10,6 +10,7 @@ import tinkerwareBaseTheme from "../theme/tinkerwareBaseTheme";
 export class HomePage extends Component {
  render() {
   const customMuiTheme = getMuiTheme(tinkerwareBaseTheme);
+  console.log(customMuiTheme.textField);
   return (
     <MuiThemeProvider muiTheme={customMuiTheme}>
       <Steps

@@ -13,13 +13,6 @@ const initialState = fromJS({
         title: "ReactJS"
       },
       {
-        description: "Functional programming language",
-        icon: ["icon-erlang"],
-        isOtro: false,
-        name: "erlang",
-        title: "Erlang"
-      },
-      {
         description: "NodeJS",
         icon: ["icon-angularjs"],
         isOtro: false,
@@ -48,6 +41,13 @@ const initialState = fromJS({
         title: "NodeJS"
       },
       {
+        description: "Functional language",
+        icon: ["icon-elixir"],
+        isOtro: false,
+        name: "elixir",
+        title: "Elixir"
+      },
+      {
         description: "PHP",
         icon: ["icon-yii"],
         isOtro: false,
@@ -62,11 +62,11 @@ const initialState = fromJS({
         title: "Ember"
       },
       {
-        description: "Javascript",
-        icon: ["icon-meteor"],
+        description: "PHP",
+        icon: ["icon-laravel"],
         isOtro: false,
-        name: "meteor",
-        title: "Meteor"
+        name: "laravel",
+        title: "Laravel"
       },
       // {
       //   description: "Stack",
@@ -78,11 +78,11 @@ const initialState = fromJS({
     ],
     databases: [
       {
-        description: "Base de datos clave-valor",
-        icon: ["icon-cassandra","path1","path2","path3","path1"],
+        description: "Base de datos mariadb",
+        icon: ["icon-mariadb"],
         isOtro: false,
-        name: "cassandra",
-        title: "Cassandra"
+        name: "mariadb",
+        title: "MariaDb"
       },
       {
         description: "Base de datos en memoria",
@@ -112,6 +112,13 @@ const initialState = fromJS({
         name: "postgresql",
         title: "Postgresql"
       },
+      {
+        description: "Base de datos clave-valor",
+        icon: ["icon-cassandra","path1","path2","path3","path1"],
+        isOtro: false,
+        name: "cassandra",
+        title: "Cassandra"
+      },
       // {
       //   description: "Base de datos",
       //   icon: ["icon-add"],
@@ -136,14 +143,14 @@ const initialState = fromJS({
         title: "Copias de seguridad"
       },
       {
-        description: "Módulo de escalabilidad",
-        icon: ["icon-scalability"],
+        description: "Módulo de CI",
+        icon: ["icon-ci"],
         isOtro: false,
-        name: "scalability",
-        title: "Escalabilidad"
+        name: "CI",
+        title: "CI"
       },
       {
-        description: "Módulo de Rendimiento",
+        description: "Módulo de rendimiento",
         icon: ["icon-performance"],
         isOtro: false,
         name: "performance",
@@ -162,61 +169,49 @@ const initialState = fromJS({
 
 export default function application(state = initialState, action) {
   switch (action.type) {
-    case types.SET_PROJECT_NAME:
+    case types.SET_EMAIL:
     {
-      return state.set("project_name", action.value.get("project_name"));
+      return state.set("email", action.value.get("email"));
     }
     case types.SET_STACK:
     {
-      return state.set("stacks", state.get("stacks")?
-        action.value.getIn(["stack", "otro"])?
-          state.get("stacks").filter(stackFiltered=>
-            !stackFiltered.get("otro")
-          ).push(action.value.get("stack"))
-          : state.get("stacks").push(action.value.get("stack"))
-        : List.of(action.value.get("stack"))
-      );
+      return state.set("stacks", List.of(action.value.get("stack")));
     }
     case types.REMOVE_STACK:
     {
-      return state.set("stacks", state.get("stacks")?
-        action.value.getIn(["stack", "otro"])?
-          state.get("stacks").filter(stackFiltered=>
-            !stackFiltered.get("otro")
-          )
-          : state.get("stacks").filter(stackFiltered=>
-            stackFiltered !== action.value.get("stack")
-          )
-        : List.of()
-      );
+      return state.set("stacks", List.of());
     }
     case types.SET_DATABASE:
     {
-      return state.set("databases", state.get("databases")?
-        action.value.getIn(["database", "otro"])?
-          state.get("databases").filter(stackFiltered=>
-            !stackFiltered.get("otro")
-          ).push(action.value.get("database"))
-          : state.get("databases").push(action.value.get("database"))
-        : List.of(action.value.get("database"))
-      );
+      return state.set("databases", List.of(action.value.get("database")));
     }
     case types.REMOVE_DATABASE:
     {
-      return state.set("databases", state.get("databases")?
-        action.value.getIn(["database", "otro"])?
-          state.get("databases").filter(stackFiltered=>
-            !stackFiltered.get("otro")
-          )
-          : state.get("databases").filter(stackFiltered=>
-            stackFiltered !== action.value.get("database")
-          )
-        : List.of()
-      );
+      return state.set("databases", List.of());
     }
     case types.SET_ADDONS:
     {
-      return state.set("addons", action.value.get("addons"));
+      return state.set("addons", state.get("addons")?
+        action.value.getIn(["addon", "otro"])?
+          state.get("addons").filter(stackFiltered=>
+            !stackFiltered.get("otro")
+          ).push(action.value.get("addon"))
+          : state.get("addons").push(action.value.get("addon"))
+        : List.of(action.value.get("addon"))
+      );
+    }
+    case types.REMOVE_ADDONS:
+    {
+      return state.set("addons", state.get("addons")?
+        action.value.getIn(["addon", "otro"])?
+          state.get("addons").filter(stackFiltered=>
+            !stackFiltered.get("otro")
+          )
+          : state.get("addons").filter(stackFiltered=>
+            stackFiltered !== action.value.get("addon")
+          )
+        : List.of()
+      );
     }
     case types.SET_ACTIVE_STEP:
     {

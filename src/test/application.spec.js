@@ -3,15 +3,15 @@ import { expect } from "chai";
 import application from "../reducers/application";
 
 describe("application", () => {
-  it("handles SET_PROJECT_NAME", () => {
+  it("handles SET_EMAIL", () => {
     const initialState = Map();
-    const action = {type:"SET_PROJECT_NAME", value: fromJS({
-        project_name: "application.web"})};
+    const action = {type:"SET_EMAIL", value: fromJS({
+        email: "some@email.com"})};
     const nextState = application(initialState, action);
 
     expect(
       Immutable.is(nextState, fromJS({
-        "project_name": "application.web"}))
+        "email": "some@email.com"}))
     ).to.be.true;
   });
   it("handles SET_STACK", () => {
@@ -65,12 +65,25 @@ describe("application", () => {
   it("handles SET_ADDONS", () => {
     const initialState = Map();
     const action = {type:"SET_ADDONS", value: fromJS({
-        addons: ["security","performance"]})};
+        addon: "CI"})};
     const nextState = application(initialState, action);
 
     expect(
       Immutable.is(nextState, fromJS({
-        "addons": ["security","performance"]}))
+        "addons": ["CI"]}))
+    ).to.be.true;
+  });
+  it("handles REMOVE_ADDONS", () => {
+    const initialState = fromJS({
+      addons: ["CI"]
+    });
+    const action = {type:"REMOVE_ADDONS", value: fromJS({
+        addon: "CI"})};
+    const nextState = application(initialState, action);
+
+    expect(
+      Immutable.is(nextState, fromJS({
+        "addons": []}))
     ).to.be.true;
   });
   it("handles SET_ACTIVE_STEP", () => {
