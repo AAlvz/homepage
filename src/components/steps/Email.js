@@ -3,7 +3,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import React, { PropTypes } from "react";
 import TextField from "material-ui/TextField";
 
-const Email = ( {setActiveStep, setEmail, email} ) => {
+const Email = ( { handleSaveUser, email, setActiveStep, setEmail} ) => {
   const style = {
    margin: 12,
   };
@@ -34,7 +34,7 @@ const Email = ( {setActiveStep, setEmail, email} ) => {
         <RaisedButton
             disabled={email?false:true}
             label={"Siguiente"}
-            onTouchTap={()=>setActiveStep(4)}
+            onTouchTap={()=>{setActiveStep(4); handleSaveUser();}}
             primary
             style={style}
         />
@@ -45,6 +45,7 @@ const Email = ( {setActiveStep, setEmail, email} ) => {
 
 Email.propTypes = {
   email: PropTypes.string.isRequired,
+  handleSaveUser: PropTypes.func.isRequired,
   setActiveStep: PropTypes.func.isRequired,
   setEmail: PropTypes.func.isRequired
 };

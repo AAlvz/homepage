@@ -13,6 +13,18 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
       active_step: value
     }));
   };
+  const handleSaveUser = () => {
+    console.log("handleSaveUser");
+    applicationActions.requestPostUser(fromJS({
+      "email_address": applicationAppState.get("email")?applicationAppState.get("email"):"",
+      "status": "subscribed",
+      "merge_fields": {
+        "STACK": applicationAppState.get("stacks")?applicationAppState.get("stacks").toJS().toString():"",
+        "DATABASE": applicationAppState.get("databases")?applicationAppState.get("databases").toJS().toString():"",
+        "ADDONS": applicationAppState.get("addons")?applicationAppState.get("addons").toJS().toString():""
+      }
+    }));
+  };
   return (
     <div className="small-12 medium-12 large-12 large-centered columns">
       <div className="container">
@@ -56,6 +68,7 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
           />
           <Email
               email={applicationAppState.get("email")?applicationAppState.get("email"):fromJS("")}
+              handleSaveUser={handleSaveUser}
               setActiveStep={handleChangeStep}
               setEmail={applicationActions.setEmail}
           />

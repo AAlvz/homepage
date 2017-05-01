@@ -20,6 +20,10 @@ export function removeAddons(value) {
   return { type: types.REMOVE_ADDONS, value };
 }
 
+export function requestPostUser(value) {
+  return { type: types.REQUEST_POST_USER, value };
+}
+
 export function setActiveStep(value) {
   return { type: types.SET_ACTIVE_STEP, value };
 }

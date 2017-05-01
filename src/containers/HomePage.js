@@ -6,11 +6,23 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import React, { Component, PropTypes } from "react";
 import Steps from "../components/Steps";
 import tinkerwareBaseTheme from "../theme/tinkerwareBaseTheme";
+import MAILCHIMP_V3 from "mailchimp-v3-api";
+
+let mailchimpAPI = new MAILCHIMP_V3({
+  key: "xxxxxxxxxxxxxxx-xxxx",
+  debug: true,
+  location: "us14"
+});
+
+mailchimpAPI
+	.get("/lists")
+	.then(function(response){
+		console.log(response);
+	});
 
 export class HomePage extends Component {
  render() {
   const customMuiTheme = getMuiTheme(tinkerwareBaseTheme);
-  console.log(customMuiTheme.textField);
   return (
     <MuiThemeProvider muiTheme={customMuiTheme}>
       <Steps

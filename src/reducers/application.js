@@ -2,7 +2,7 @@ import * as types from "../constants/ActionTypes";
 import { fromJS, List } from "immutable";
 
 const initialState = fromJS({
-  active_step: 0,
+  active_step: 3,
   steps: {
     stacks: [
       {
