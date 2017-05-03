@@ -1,22 +1,36 @@
-// This file configures a web server for the production build
-
-/* eslint-disable no-var */
-
-var compression = require("compression");
-var express = require("express");
-var path = require("path");
-var app = express();
+"use strict";
 
 /* eslint-disable no-console */
+let compression = require("compression");
+let express = require("express");
+let path = require("path");
+let app = express();
+let bodyParser = require("body-parser");
+let Mailchimp = require( "mailchimp-v3-api");
+let homepageConfiguration = require("../src/homepageConfiguration");
 
-app.set("port", 3000);
+app.set("port", 3001);
 
 app.use(compression());
 
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
 app.use(express.static(path.join(__dirname, "../dist")));
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../dist/index.html"));
+app.post("/login/", bodyParser.json({ type: "application/json" }), function (req, res) {
+  let mailchimpAPI = new Mailchimp({
+    key: homepageConfiguration.api_key,
+    debug: false,
+    location: homepageConfiguration.location
+  });
+
+  mailchimpAPI
+    .post("/lists/"+homepageConfiguration.list_id+"/members/", req.body)
+    .then(function(response){
+      res.send(response);
+    });
 });
 
 app.listen(app.get("port"), function() {

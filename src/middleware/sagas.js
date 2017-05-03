@@ -14,19 +14,19 @@ export const doRequest = (url, options) => {
 
 export function* doRequestPostUser(user) {
   return yield call(
-    doRequest, "https://us14.api.mailchimp.com/3.0/lists/xxxxxxxxx",
+    doRequest, "/login",
     {
       method:"POST",
       headers: {
-        "Authorization":"Basic xxxxxxx",
         "Accept": "application/json",
+        "Content-Type": "application/json; charset=utf-8"
       },
-      mode:"no-cors",
+      mode:"cors",
       body: JSON.stringify(
         {
           "email_address": user.get("email_address"),
-          "status": "subscribed",
-          "merge_fields": user.get("merge_fields").toJS()
+          "merge_fields": user.get("merge_fields"),
+          "status": "subscribed"
         }
       )
     }
@@ -38,7 +38,7 @@ export function* requestPostUser(data) {
     yield call(doRequestPostUser, data.value);
   }
   catch(error) {
-    console.log(error);
+    // console.log(error);
   }
 }
 

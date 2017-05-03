@@ -14,7 +14,6 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
     }));
   };
   const handleSaveUser = () => {
-    console.log("handleSaveUser");
     applicationActions.requestPostUser(fromJS({
       "email_address": applicationAppState.get("email")?applicationAppState.get("email"):"",
       "status": "subscribed",
