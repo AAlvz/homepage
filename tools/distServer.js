@@ -1,25 +1,28 @@
 "use strict";
 
 /* eslint-disable no-console */
-let compression = require("compression");
-let express = require("express");
-let path = require("path");
 let app = express();
 let bodyParser = require("body-parser");
-let Mailchimp = require( "mailchimp-v3-api");
+let compression = require("compression");
+let express = require("express");
 let homepageConfiguration = require("../src/homepageConfiguration");
+let jsonParser = bodyParser.json({ type: "application/json" });
+let Mailchimp = require( "mailchimp-v3-api");
+let path = require("path");
 
 app.set("port", 3001);
 
 app.use(compression());
 
 app.use(bodyParser.urlencoded({
-  extended: false
+  extended: true
 }));
+
+app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, "../dist")));
 
-app.post("/login/", bodyParser.json({ type: "application/json" }), function (req, res) {
+app.post("/login/", jsonParser, function (req, res) {
   let mailchimpAPI = new Mailchimp({
     key: homepageConfiguration.api_key,
     debug: false,
