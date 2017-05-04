@@ -1,13 +1,13 @@
 # Tinkerware Provision Webpage
 
-[![Build status: Linux](https://travis-ci.org/Tinker-Ware/eyes.svg?branch=developmet)](https://travis-ci.org/Tinker-Ware/eyes)
-[![Dependency Status](https://david-dm.org/Tinker-Ware/eyes.svg?style=flat-square)](https://david-dm.org/Tinker-Ware/eyes)
-[![Coverage Status](https://coveralls.io/repos/github/Tinker-Ware/eyes/badge.svg?branch=developmet)](https://coveralls.io/github/Tinker-Ware/eyes?branch=developmet)
+[![Build status: Linux](https://travis-ci.org/Tinker-Ware/homepage.svg?branch=developmet)](https://travis-ci.org/Tinker-Ware/homepage)
+[![Dependency Status](https://david-dm.org/Tinker-Ware/homepage.svg?style=flat-square)](https://david-dm.org/Tinker-Ware/homepage)
+[![Coverage Status](https://coveralls.io/repos/github/Tinker-Ware/homepage/badge.svg?branch=developmet)](https://coveralls.io/github/Tinker-Ware/homepage?branch=developmet)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.txt)
 [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Tinker-Ware/eyes.svg)](http://isitmaintained.com/project/Tinker-Ware/eyes "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/Tinker-Ware/eyes.svg)](http://isitmaintained.com/project/Tinker-Ware/eyes "Percentage of issues still open")
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/Tinker-Ware/homepage.svg)](http://isitmaintained.com/project/Tinker-Ware/homepage "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/Tinker-Ware/homepage.svg)](http://isitmaintained.com/project/Tinker-Ware/homepage "Percentage of issues still open")
 
 ##Clone submodules
 
@@ -27,7 +27,7 @@ That will update the submodules to make sure you're using the most recent HEAD
 
 ##Initial Machine Setup
  1. **Install [Node 4.0.0 or greater](https://nodejs.org)** - (5.0 or greater is recommended for optimal build performance). Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
- 2. **Install [Git](https://git-scm.com/downloads)**. 
+ 2. **Install [Git](https://git-scm.com/downloads)**.
  3. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome. (Optional, but helpful. The latter offers time-travel debugging.)
  4. run `npm install` to install all the dependences.
 
@@ -38,7 +38,7 @@ Webpack serves your app in memory when you run `npm start`. No physical files ar
 When you run `npm start`:
 
  1. The sass-loader compiles Sass into CSS
- 2. Webpack bundles the compiled CSS into bundle.js. Sounds odd, but it works! 
+ 2. Webpack bundles the compiled CSS into bundle.js. Sounds odd, but it works!
  3. bundle.js contains code that loads styles into the &lt;head&gt; of index.html via JavaScript. This is why you don't see a stylesheet reference in index.html. In fact, if you disable JavaScript in your browser, you'll see the styles don't load either.
 
 When you run `npm run build`:
