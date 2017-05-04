@@ -1,5 +1,7 @@
 /*eslint-disable import/default*/
 
+import "../styles/foundation-grid.scss";
+import "../styles/styles.scss";
 import { Provider } from "react-redux";
 import { Router, browserHistory } from "react-router";
 import { syncHistoryWithStore } from "react-router-redux";
@@ -9,10 +11,7 @@ import React from "react";
 import ReactGA from "react-ga";
 import routes from "../routes/development";
 
-require("../styles/foundation-grid.scss");
-require("../styles/styles.scss");
-
-ReactGA.initialize("UA-92305954-1");
+ReactGA.initialize("UA-86896105-1");
 
 const store = configureStore();
 

@@ -1,6 +1,6 @@
 import { Route, IndexRoute } from "react-router";
 import App from "../components/App";
-import ProvisionerForm from "../containers/ProvisionerForm";
+import HomePage from "../containers/HomePage";
 import React from "react";
 
 export default (
@@ -8,6 +8,6 @@ export default (
       component={App}
       path="/"
   >
-    <IndexRoute component={ProvisionerForm} />
+    <IndexRoute component={HomePage} />
   </Route>
 );
