@@ -1,14 +1,15 @@
 "use strict";
 
 /* eslint-disable no-console */
-let app = express();
 let bodyParser = require("body-parser");
 let compression = require("compression");
 let express = require("express");
-let homepageConfiguration = require("../src/homepageConfiguration");
+let homepageConfiguration = require("./homepageConfiguration");
 let jsonParser = bodyParser.json({ type: "application/json" });
 let Mailchimp = require( "mailchimp-v3-api");
 let path = require("path");
+
+let app = express();
 
 app.set("port", 3001);
 
