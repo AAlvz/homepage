@@ -14,7 +14,7 @@ const Email = ( { handleSaveUser, email, setActiveStep, setEmail} ) => {
   };
   return (
     <div className="align-center">
-      <h1 className="align-center pdt-2">{"Logueate para deployar o crea una cuenta!"}</h1>
+      <h1 className="align-center pdt-2">{"¿A dónde enviamos tu ambiente local?"}</h1>
       <div className="small-12 medium-6 large-6 medium-centered large-centered">
         <TextField
             floatingLabelText={"Correo Electrónico"}

@@ -19,7 +19,7 @@ const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) 
   };
   return (
     <div className="align-center">
-      <h1 className="align-center">{"Selecciona el Stack que utilizas"}</h1>
+      <h1 className="align-center">{"¿Qué framework quieres?"}</h1>
       <Options
           handleChange={handleChangeStack}
           options={stacksOptions}

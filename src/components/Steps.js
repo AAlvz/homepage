@@ -29,16 +29,16 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
       <div className="container">
         <Stepper activeStep={applicationAppState.get("active_step")}>
           <Step>
-            <StepLabel>{"Stack"}</StepLabel>
+            <StepLabel>{"Frameworks"}</StepLabel>
           </Step>
           <Step>
-            <StepLabel>{"DataBase"}</StepLabel>
+            <StepLabel>{"Base de Datos"}</StepLabel>
           </Step>
           <Step>
             <StepLabel>{"Complementos"}</StepLabel>
           </Step>
           <Step>
-            <StepLabel>{"Nombre de proyecto"}</StepLabel>
+            <StepLabel>{"Ambiente local"}</StepLabel>
           </Step>
         </Stepper>
         <SwipeableViews
@@ -73,7 +73,7 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
           />
           <div className="align-center">
             <h1 className="align-center pdt-5">{"Gracias"}</h1>
-            <p className="align-center pdt-2">{"¡Atualmente estamos en beta privada, nos pondremos en contacto contigo proto!"}</p>
+            <p className="align-center pdt-2">{"¡Estamos en beta privada, nos pondremos en contacto contigo pronto para que seas mucho más eficiente!"}</p>
           </div>
         </SwipeableViews>
       </div>
