@@ -6,9 +6,7 @@ import React, { PropTypes } from "react";
 class App extends React.Component {
   render() {
     return (
-      <div className="row">
-        {this.props.children}
-      </div>
+      this.props.children
     );
   }
 }
