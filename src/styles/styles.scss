@@ -1,4 +1,5 @@
 $font-path: '../fonts' !default;
+$icon-tinkerware: '\e908';
 $icon-warning: '\e002';
 $icon-arrow-back: '\e5c4';
 $icon-check: '\e5ca';
@@ -139,6 +140,19 @@ $white-color: #ffffff;
 input {
   // sass-lint:disable-block no-important
   box-shadow: none !important;
+}
+
+.icon {
+  &.icon-tinkerware {
+    font-size: 2em !important;
+    line-height: 1.2em;
+  }
+}
+
+.icon-tinkerware {
+  &::before {
+    content: $icon-tinkerware;
+  }
 }
 
 .icon-warning {

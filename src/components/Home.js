@@ -72,7 +72,7 @@ const Home = () => {
           // onTitleTouchTap={handleTouchTap}
           iconElementRight={myTabs}
           style={styles.appBar}
-          title={<FontIcon className={"icon icon-mydevop-2"}/>}
+          title={<FontIcon className={"icon icon-tinkerware"}/>}
       />
       <div className="align-center header-slider">
         <h1 className="align-center pdt-10 title">{"Your Personal DevOps"}</h1>
