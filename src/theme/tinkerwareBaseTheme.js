@@ -28,6 +28,9 @@ export default {
     clockCircleColor: fade(darkBlack, 0.07),
     shadowColor: fullBlack,
   },
+  appBar: {
+    color: "rgb(45,110,148)"
+  },
   raisedButton: {
     disabledColor: "rgba(47,169,182,.46)",
     disabledTextColor: fullWhite
@@ -35,6 +38,9 @@ export default {
   stepper: {
     textColor: fullWhite,
     disabledTextColor: grey400
+  },
+  tabs: {
+    backgroundColor: "rgb(45,110,148)"
   },
   textField: {
     floatingLabelColor: fullWhite,

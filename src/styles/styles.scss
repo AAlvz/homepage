@@ -409,7 +409,8 @@ input {
 }
 
 .icon-logo {
-  font-size: 2em;
+  font-size: 2.3em;
+  line-height: 1.3em;
 }
 
 .icon-logo .path1 {
@@ -439,7 +440,7 @@ input {
   &::before {
     content: $icon-logo-path4;
     margin-left: -2.7197265625em;
-    color: $white-color;
+    color: rgb(100, 196, 174);
   }
 }
 
@@ -447,7 +448,7 @@ input {
   &::before {
     content: $icon-logo-path5;
     margin-left: -2.7197265625em;
-    color: $white-color;
+    color: rgb(42, 169, 182);
   }
 }
 
@@ -455,7 +456,7 @@ input {
   &::before {
     content: $icon-logo-path6;
     margin-left: -2.7197265625em;
-    color: $white-color;
+    color: rgb(100, 196, 174);
   }
 }
 
@@ -463,7 +464,7 @@ input {
   &::before {
     content: $icon-logo-path7;
     margin-left: -2.7197265625em;
-    color: $white-color;
+    color: rgb(42, 169, 182);
   }
 }
 
