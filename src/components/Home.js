@@ -21,7 +21,7 @@ const Home = () => {
   };
   const onTabClick = (url, openBlank) => {
     if(openBlank)
-      window.open(url, "_blank");
+      window.open(url);
     else
       browserHistory.push(url);
   };
@@ -75,8 +75,8 @@ const Home = () => {
           title={<FontIcon className={"icon icon-tinkerware"}/>}
       />
       <div className="align-center header-slider">
-        <h1 className="align-center pdt-10 title">{"Your Personal DevOps"}</h1>
-        <p className="align-center pdt-2 sub-title">{"¡GO TO PRODUCTION IN ONE CLICK!"}</p>
+        <h1 className="align-center pdt-5 title">{"Your Personal DevOps"}</h1>
+        <p className="align-center pdt-1 sub-title">{"¡GO TO PRODUCTION IN ONE CLICK!"}</p>
       </div>
       <div className="bg-white pdt-3 pdb-3">
         <div className="row">
