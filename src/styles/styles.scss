@@ -1,15 +1,32 @@
 $font-path: '../fonts' !default;
+$icon-automate-path1: '\e90b';
+$icon-automate-path2: '\e90c';
+$icon-automate-path3: '\e90d';
+$icon-automate-path4: '\e90e';
+$icon-automate-path5: '\e90f';
+$icon-automate-path6: '\e910';
+$icon-automate-path7: '\e911';
+$icon-automate-path8: '\e912';
+$icon-automate-path9: '\e913';
+$icon-automate-path10: '\e914';
+$icon-automate-path11: '\e915';
+$icon-automate-path12: '\e916';
+$icon-automate-path13: '\e917';
+$icon-automate-path14: '\e918';
+$icon-automate-path15: '\e919';
+$icon-automate-path16: '\e91a';
+$icon-automate-path17: '\e91b';
+$icon-automate-path18: '\e91c';
+$icon-automate-path19: '\e91d';
 $icon-tinkerware: '\e908';
 $icon-warning: '\e002';
 $icon-arrow-back: '\e5c4';
 $icon-check: '\e5ca';
 $icon-home: '\e95f';
-$icon-project: '\ec1b';
 $icon-cassandra-path1: '\e902';
 $icon-cassandra-path2: '\e903';
 $icon-cassandra-path3: '\e904';
 $icon-cassandra-path4: '\e905';
-$icon-develop: '\e901';
 $icon-elixir: '\e906';
 $icon-mariadb: '\e907';
 $icon-react: '\e600';
@@ -25,6 +42,7 @@ $icon-rails: '\eba2';
 $icon-ruby: '\ebc9';
 $icon-yii: '\ec01';
 $icon-ember: '\e900';
+$icon-integrate: '\e909';
 $icon-mydevop-path1: '\e925';
 $icon-mydevop-path2: '\e926';
 $icon-mydevop-path3: '\e927';
@@ -47,15 +65,16 @@ $icon-logo-path4: '\e97c';
 $icon-logo-path5: '\e97d';
 $icon-logo-path6: '\e97e';
 $icon-logo-path7: '\e97f';
-$icon-add: '\e145';
+$icon-test: '\e90a';
 $icon-arrow-forward: '\e5c8';
 $icon-lock: '\e897';
-$icon-settings: '\e8b8';
 $icon-ci: '\e629';
 $icon-backup: '\e923';
-$icon-performance: '\ebe2';
 $icon-support: '\e949';
-$icon-server: '\ea92';
+$icon-performance: '\ebe2';
+$icon-upgrade: '\ec21';
+$icon-integrate: '\e909';
+$icon-bootstrap: '\ee7d';
 $primary-color: rgb(83, 106, 112);
 $secondary-color: rgb(45, 110, 148);
 $tertiary-color: rgb(226, 34, 59);
@@ -149,6 +168,142 @@ input {
   }
 }
 
+.icon-automate .path1 {
+  &::before {
+    content: $icon-automate-path1;
+  }
+
+}
+.icon-automate .path2 {
+  &::before {
+    content: $icon-automate-path2;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path3 {
+  &::before {
+    content: $icon-automate-path3;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path4 {
+  &::before {
+    content: $icon-automate-path4;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path5 {
+  &::before {
+    content: $icon-automate-path5;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path6 {
+  &::before {
+    content: $icon-automate-path6;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path7 {
+  &::before {
+    content: $icon-automate-path7;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path8 {
+  &::before {
+    content: $icon-automate-path8;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path9 {
+  &::before {
+    content: $icon-automate-path9;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path10 {
+  &::before {
+    content: $icon-automate-path10;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path11 {
+  &::before {
+    content: $icon-automate-path11;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path12 {
+  &::before {
+    content: $icon-automate-path12;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path13 {
+  &::before {
+    content: $icon-automate-path13;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path14 {
+  &::before {
+    content: $icon-automate-path14;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path15 {
+  &::before {
+    content: $icon-automate-path15;
+    margin-left: -0.912109375em;
+  }
+}
+
+.icon-automate .path16 {
+  &::before {
+    content: $icon-automate-path16;
+    margin-left: -0.912109375em;
+    color: rgb(244, 241, 225);
+  }
+}
+
+.icon-automate .path17 {
+  &::before {
+    content: $icon-automate-path17;
+    margin-left: -0.912109375em;
+    color: rgb(244, 241, 225);
+  }
+}
+
+.icon-automate .path18 {
+  &::before {
+    content: $icon-automate-path18;
+    margin-left: -0.912109375em;
+    color: rgb(244, 241, 225);
+  }
+}
+
+.icon-automate .path19 {
+  &::before {
+    content: $icon-automate-path19;
+    margin-left: -0.912109375em;
+    color: rgb(244, 241, 225);
+  }
+}
+
 .icon-tinkerware {
   &::before {
     content: $icon-tinkerware;
@@ -179,12 +334,6 @@ input {
   }
 }
 
-.icon-project {
-  &::before {
-    content: $icon-project;
-  }
-}
-
 .icon-cassandra .path1 {
   &::before {
     content: $icon-cassandra-path1;
@@ -206,12 +355,6 @@ input {
 .icon-cassandra .path4 {
   &::before {
     content: $icon-cassandra-path4;
-  }
-}
-
-.icon-develop {
-  &::before {
-    content: $icon-develop;
   }
 }
 
@@ -302,6 +445,18 @@ input {
 .icon-ember {
   &::before {
     content: $icon-ember;
+  }
+}
+
+.icon-integrate {
+  &::before {
+    content: $icon-integrate;
+  }
+}
+
+.icon-bootstrap {
+  &::before {
+    content: $icon-bootstrap;
   }
 }
 
@@ -482,9 +637,9 @@ input {
   }
 }
 
-.icon-add {
+.icon-test {
   &::before {
-    content: $icon-add;
+    content: $icon-test;
   }
 }
 
@@ -497,12 +652,6 @@ input {
 .icon-lock {
   &::before {
     content: $icon-lock;
-  }
-}
-
-.icon-settings {
-  &::before {
-    content: $icon-settings;
   }
 }
 
@@ -523,11 +672,6 @@ input {
     content: $icon-support;
   }
 }
-.icon-server {
-  &::before {
-    content: $icon-server;
-  }
-}
 
 .icon-performance {
   &::before {
@@ -535,8 +679,27 @@ input {
   }
 }
 
+.icon-upgrade {
+  &::before {
+    content: $icon-upgrade;
+  }
+}
+
 .header-slider{
-  background: url(../imgs/header_bg.jpg) center center no-repeat;
+  video{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+     background: url('../imgs/We-Work-We-Wait.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+  }
   min-height: 880px;
   position: relative;
   .title{
@@ -605,12 +768,20 @@ a {
   text-decoration: none;
 }
 
+.pdb-1 {
+  padding-bottom: 1em;
+}
+
 .pdb-2 {
   padding-bottom: 2em;
 }
 
 .pdb-3 {
   padding-bottom: 3em;
+}
+
+.pdb-4 {
+  padding-bottom: 4em;
 }
 
 .pdt-1 {
@@ -638,6 +809,7 @@ a {
 }
 
 .section-bar{
+  background-color: rgb(45, 110, 148);
   text-align: center;
   .title{
     font-size: 2em;

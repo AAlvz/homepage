@@ -19,7 +19,7 @@ const Addons = ( {setActiveStep, setAddons, removeAddons, addonsOptions, addons}
   };
   return (
     <div className="align-center">
-      <h1 className="align-center">{"Agrega tus complementos"}</h1>
+      <h1 className="align-center">{"Selecciona tus complementos"}</h1>
       <Options
           handleChange={handleChangeAddons}
           options={addonsOptions}

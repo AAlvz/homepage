@@ -38,6 +38,8 @@
     "mailchimp-v3-api": "1.0.0",
     "material-auto-rotating-carousel": "^1.3.1",
     "react-ga": "2.1.2",
+    "react-retina-image": "^2.0.4",
+    "react-slick": "^0.14.11",
     "request": "^2.81.0"
   },
   "devDependencies": {
