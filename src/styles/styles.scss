@@ -1,4 +1,8 @@
 $font-path: '../fonts' !default;
+$icon-demo: '\e901';
+$icon-office: '\e91e';
+$icon-blog: '\e922';
+$icon-linkedin: '\ef28';
 $icon-automate-path1: '\e90b';
 $icon-automate-path2: '\e90c';
 $icon-automate-path3: '\e90d';
@@ -67,10 +71,13 @@ $icon-logo-path6: '\e97e';
 $icon-logo-path7: '\e97f';
 $icon-test: '\e90a';
 $icon-arrow-forward: '\e5c8';
+$icon-help: '\ed57';
 $icon-lock: '\e897';
 $icon-ci: '\e629';
 $icon-backup: '\e923';
 $icon-support: '\e949';
+$icon-quotes-left: '\eb1b';
+$icon-quotes-right: '\eb1c';
 $icon-performance: '\ebe2';
 $icon-upgrade: '\ec21';
 $icon-integrate: '\e909';
@@ -165,6 +172,24 @@ input {
   &.icon-tinkerware {
     font-size: 2em !important;
     line-height: 1.2em;
+  }
+}
+
+.icon-demo {
+  &::before {
+    content: $icon-demo;
+  }
+}
+
+.icon-office {
+  &::before {
+    content: $icon-office;
+  }
+}
+
+.icon-blog {
+  &::before {
+    content: $icon-blog;
   }
 }
 
@@ -460,6 +485,12 @@ input {
   }
 }
 
+.icon-linkedin {
+  &::before {
+    content: $icon-linkedin;
+  }
+}
+
 .icon-mydevop .path1 {
   &::before {
     content: $icon-mydevop-path1;
@@ -649,6 +680,12 @@ input {
   }
 }
 
+.icon-help {
+  &::before {
+    content: $icon-help;
+  }
+}
+
 .icon-lock {
   &::before {
     content: $icon-lock;
@@ -670,6 +707,18 @@ input {
 .icon-support {
   &::before {
     content: $icon-support;
+  }
+}
+
+.icon-quotes-left {
+  &::before {
+    content: $icon-quotes-left;
+  }
+}
+
+.icon-quotes-right {
+  &::before {
+    content: $icon-quotes-right;
   }
 }
 
@@ -703,13 +752,13 @@ input {
   min-height: 880px;
   position: relative;
   .title{
-    font-family: 'SFText-Bold';
+    font-family: 'SFText-Bold' !important;
     font-size: 3em;
     margin-top: 0;
   }
-  .sub-title{
-    font-family: 'SFText-RegularItalic';
-    font-size: 1.3em;
+  .subtitle{
+    font-family: 'SFText-RegularItalic' !important;
+    font-size: 1.66em;
     margin-bottom: 0;
   }
 }
@@ -808,15 +857,18 @@ a {
   background-color: $white-color;
 }
 
-.section-bar{
+.section-bar {
   background-color: rgb(45, 110, 148);
   text-align: center;
   .title{
+    font-family: 'SFText-Bold' !important;
     font-size: 2em;
+    line-height: 1em;
   }
-  .sub-title{
-    font-size: 1em;
-    line-height: 4em;
+  .subtitle{
+    font-family: 'SFText-RegularItalic' !important;
+    font-size: 1.44em;
+    line-height: 1em;
   }
   &.referals {
     .slick-slider .slick-list .slick-track .slick-slide .company-image {
@@ -824,27 +876,63 @@ a {
       display: inline-block;
     }
     .quote{
-
+      font-family: 'SFText-Regular' !important;
+      font-size: 1.66em;
+      .icon {
+        font-size: 2em;
+      }
+    }
+    .links .icon {
+      padding: 8px;
+      &:hover {
+        color: $tertiary-color !important;
+        transition: all 1s ease;
+      }
     }
     .user {
-      font-family: 'SFText-RegularItalic';
+      font-family: 'SFText-RegularItalic' !important;
+      font-size: 1.2em;
     }
   }
 }
 
-.section-content{
+.section-content {
+  .row .columns{
+    &:hover .icon {
+      color: $tertiary-color !important;
+      transition: all 1s ease;
+    }
+    &.how-it-works{
+      padding: 0 2em;
+    }
+  }
   text-align: center;
   color: $primary-color;
-  .icon{
+  .icon {
     color: $quaternary-color !important;
     font-size: 3em !important;
   }
-  .title{
+  .title {
+    font-family: 'SFText-Bold' !important;
+    font-size: 2em;
+  }
+  .subtitle {
+    font-family: 'SFText-RegularItalic' !important;
     font-size: 1.44em;
   }
-  .sub-title{
-    font-size: 1em;
+  .icon-title {
+    font-family: 'SFText-Regular' !important;
+    font-size: 1.44em;
+    font-weight: 600;
   }
+  .icon-subtitle{
+    font-family: 'SFText-Regular' !important;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+}
+.footer{
+  background-color: $primary-color;
 }
 
 #hexGrid {
