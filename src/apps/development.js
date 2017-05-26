@@ -11,8 +11,7 @@ import React from "react";
 import ReactGA from "react-ga";
 import routes from "../routes/development";
 
-require("../facebook-share-image.jpg");
-require("../twitter-share-image.jpg");
+require("../tinkerware-share-image.jpg");
 
 ReactGA.initialize("UA-86896105-1");
 
