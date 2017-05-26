@@ -151,6 +151,7 @@ const Home = () => {
         <p className="align-center pdb-2 subtitle">{"Focus on development. We handle operations."}</p>
         <RaisedButton
             buttonStyle={styles.raisedButton}
+            className="mb-1"
             label="Become Efficient Now"
             labelStyle={styles.raisedButtonLabel}
             onClick={()=>onTabClick("/demo", false)}
@@ -167,7 +168,7 @@ const Home = () => {
             <div>{"Amazon"}</div>
           </Slider>
         </h2>
-        <h3 className="subtitle pdb-4">{"Boost your team performance using devops tools"}</h3>
+        <h3 className="subtitle pdb-4">{"Boost your team performance using DevOps tools"}</h3>
         <div className="row">
           <div className="small-12 medium-4 large-4 columns">
             <FontIcon className={"icon icon-bootstrap"}/>
@@ -254,6 +255,22 @@ const Home = () => {
         <Slider {...settings}>
           <div>
             <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
+              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" Awesome help in different development environments to be more productive "}<FontIcon className={"icon icon-quotes-right"}/></p>
+              <RetinaImage
+                  className="company-image"
+                  src={[require("../imgs/ernesto-troncoso.png"), require("../imgs/ernesto-troncoso_2x.png")]}
+              />
+              <div className="row links">
+                <FontIcon
+                    className="icon icon-office"
+                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
+                />
+              </div>
+              <p className="user">{"Ernesto"}</p>
+            </div>
+          </div>
+          <div>
+            <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
               <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" Tinkerware is a highly recommended company. They have always a lot of disposition and they always exceed expectations. "}<FontIcon className={"icon icon-quotes-right"}/></p>
               <RetinaImage
                   className="company-image"
@@ -274,10 +291,26 @@ const Home = () => {
           </div>
           <div>
             <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
+              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" It’s great for high standards quality for systems "}<FontIcon className={"icon icon-quotes-right"}/></p>
+              <RetinaImage
+                  className="company-image"
+                  src={[require("../imgs/ana-cecilia.png"), require("../imgs/ana-cecilia_2x.png")]}
+              />
+              <div className="row links">
+                <FontIcon
+                    className="icon icon-office"
+                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
+                />
+              </div>
+              <p className="user">{"Ana Duran"}</p>
+            </div>
+          </div>
+          <div>
+            <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
               <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" Our sync process is way more agile, fast and efficient! We used to waste hours. Now it takes a few clicks! "}<FontIcon className={"icon icon-quotes-right"}/></p>
               <RetinaImage
                   className="company-image"
-                  src={[require("../imgs/kiubix-logo.png"), require("../imgs/kiubix-logo_2x.png")]}
+                  src={[require("../imgs/juan-carlos.png"), require("../imgs/juan-carlos_2x.png")]}
               />
               <div className="row links">
                 <FontIcon
@@ -290,26 +323,10 @@ const Home = () => {
           </div>
           <div>
             <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
-              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" Awesome help in different development environments to be more productive "}<FontIcon className={"icon icon-quotes-right"}/></p>
-              <RetinaImage
-                  className="company-image"
-                  src={[require("../imgs/kiubix-logo.png"), require("../imgs/kiubix-logo_2x.png")]}
-              />
-              <div className="row links">
-                <FontIcon
-                    className="icon icon-office"
-                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
-                />
-              </div>
-              <p className="user">{"Ernesto"}</p>
-            </div>
-          </div>
-          <div>
-            <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
               <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" A new and awesome way to create customized development environments for each of our projects! Now we don't suffer for different versions of PHP, MySQL or any of our Test environments or Production "}<FontIcon className={"icon icon-quotes-right"}/></p>
               <RetinaImage
                   className="company-image"
-                  src={[require("../imgs/kiubix-logo.png"), require("../imgs/kiubix-logo_2x.png")]}
+                  src={[require("../imgs/ernesto-troncoso.png"), require("../imgs/ernesto-troncoso_2x.png")]}
               />
               <div className="row links">
                 <FontIcon
@@ -325,23 +342,7 @@ const Home = () => {
               <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" We became more agile implementing these methodologies! "}<FontIcon className={"icon icon-quotes-right"}/></p>
               <RetinaImage
                   className="company-image"
-                  src={[require("../imgs/kiubix-logo.png"), require("../imgs/kiubix-logo_2x.png")]}
-              />
-              <div className="row links">
-                <FontIcon
-                    className="icon icon-office"
-                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
-                />
-              </div>
-              <p className="user">{"Ana Duran"}</p>
-            </div>
-          </div>
-          <div>
-            <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
-              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" It’s great for high standards quality for systems "}<FontIcon className={"icon icon-quotes-right"}/></p>
-              <RetinaImage
-                  className="company-image"
-                  src={[require("../imgs/kiubix-logo.png"), require("../imgs/kiubix-logo_2x.png")]}
+                  src={[require("../imgs/ana-cecilia.png"), require("../imgs/ana-cecilia_2x.png")]}
               />
               <div className="row links">
                 <FontIcon
@@ -378,18 +379,22 @@ const Home = () => {
             <Tab
                 icon={<FontIcon className="icon icon-home" />}
                 label={"HOME"}
+                onClick={()=>onTabClick("/", false)}
             />
             <Tab
                 icon={<FontIcon className="icon icon-demo" />}
                 label={"DEMO"}
+                onClick={()=>onTabClick("/demo", false)}
             />
             <Tab
                 icon={<FontIcon className="icon icon-blog" />}
                 label={"BLOG"}
+                onClick={()=>onTabClick("https://blog.tinkerware.io/", true)}
             />
             <Tab
                 icon={<FontIcon className="icon icon-help" />}
                 label={"HELP"}
+                onClick={()=>onTabClick("http://help.tinkerware.io/", true)}
             />
           </Tabs>
         </div>
