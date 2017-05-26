@@ -3,4 +3,3 @@ module.exports = {
   list_id: "LIST_ID",
   location: "LOCATION"
 };
-.

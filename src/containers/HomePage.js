@@ -4,7 +4,7 @@ import * as applicationActions from "../actions/ApplicationActions";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import React, { Component, PropTypes } from "react";
-import Steps from "../components/Steps";
+import Home from "../components/Home";
 import tinkerwareBaseTheme from "../theme/tinkerwareBaseTheme";
 
 export class HomePage extends Component {
@@ -12,10 +12,7 @@ export class HomePage extends Component {
   const customMuiTheme = getMuiTheme(tinkerwareBaseTheme);
   return (
     <MuiThemeProvider muiTheme={customMuiTheme}>
-      <Steps
-          applicationActions={this.props.applicationActions}
-          applicationAppState={this.props.applicationAppState}
-      />
+      <Home />
     </MuiThemeProvider>
   );
   }

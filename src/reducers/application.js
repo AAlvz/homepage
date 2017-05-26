@@ -183,11 +183,29 @@ export default function application(state = initialState, action) {
     }
     case types.SET_DATABASE:
     {
-      return state.set("databases", List.of(action.value.get("database")));
+      // return state.set("databases", List.of(action.value.get("database")));
+      return state.set("databases", state.get("databases")?
+        action.value.getIn(["database", "otro"])?
+          state.get("databases").filter(stackFiltered=>
+            !stackFiltered.get("otro")
+          ).push(action.value.get("database"))
+          : state.get("databases").push(action.value.get("database"))
+        : List.of(action.value.get("database"))
+      );
     }
     case types.REMOVE_DATABASE:
     {
-      return state.set("databases", List.of());
+      // return state.set("databases", List.of());
+      return state.set("databases", state.get("databases")?
+        action.value.getIn(["database", "otro"])?
+          state.get("databases").filter(stackFiltered=>
+            !stackFiltered.get("otro")
+          )
+          : state.get("databases").filter(stackFiltered=>
+            stackFiltered !== action.value.get("database")
+          )
+        : List.of()
+      );
     }
     case types.SET_ADDONS:
     {
