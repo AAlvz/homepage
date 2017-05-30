@@ -127,10 +127,10 @@ const Home = () => {
               <span className="path7" />
             </span>
           }
-          onTitleTouchTap={()=>onTabClick("/", false)}
           iconElementRight={myTabs}
-          style={styles.appBar}
           iconStyleRight={styles.appBarIconRight}
+          onTitleTouchTap={()=>onTabClick("/", false)}
+          style={styles.appBar}
           title={<FontIcon className={"icon icon-tinkerware"}/>}
       />
       <div className="align-center header-slider">
