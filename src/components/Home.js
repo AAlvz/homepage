@@ -34,6 +34,9 @@ const Home = () => {
       position: "fixed",
       top: 0
     },
+    appBarIconRight: {
+      marginLeft: "-24px"
+    },
     raisedButtonMenu: {
       lineHeight: "29px",
     },
@@ -60,13 +63,13 @@ const Home = () => {
       width: "100%"
     },
     tabButton: {
-      margin: "0 2em",
+      margin: "0 .9em",
       fontFamily: "SFText-Bold"
     },
     tabRaisedButton: {
       fontFamily: "SFText-Bold",
       height: "20px",
-      margin: "0 2em"
+      margin: "0 .9em"
     },
   };
   const onTabClick = (url, openBlank) => {
@@ -124,9 +127,10 @@ const Home = () => {
               <span className="path7" />
             </span>
           }
-          // onTitleTouchTap={handleTouchTap}
+          onTitleTouchTap={()=>onTabClick("/", false)}
           iconElementRight={myTabs}
           style={styles.appBar}
+          iconStyleRight={styles.appBarIconRight}
           title={<FontIcon className={"icon icon-tinkerware"}/>}
       />
       <div className="align-center header-slider">
@@ -147,11 +151,11 @@ const Home = () => {
               type="video/mp4"
           />
         </video>
-        <h1 className="align-center pdt-1 pdt-5 title">{"The perfect DevOps automation platform"}<br/>{"for software development teams"}</h1>
+        <h1 className="align-center pdt-4 title">{"The perfect DevOps automation platform"}<br/>{"for software development teams"}</h1>
         <p className="align-center pdb-2 subtitle">{"Focus on development. We handle operations."}</p>
         <RaisedButton
             buttonStyle={styles.raisedButton}
-            className="mb-1"
+            className="mb-2"
             label="Become Efficient Now"
             labelStyle={styles.raisedButtonLabel}
             onClick={()=>onTabClick("/demo", false)}
@@ -224,13 +228,13 @@ const Home = () => {
       </div>
       <div className="section-bar">
         <div className="row">
-          <div className="small-12 medium-12 large-12 columns pdt-2 pdb-2">
-            <h3 className="title">{"Don't Deploy. Replicate!"}</h3>
+          <div className="small-12 medium-12 large-12 columns pdt-3 pdb-3">
+            <h3 className="title pdb-1">{"Don't Deploy. Replicate!"}</h3>
             <p className="subtitle">{"Get instant working environments with Fast setup and take it to any level"}</p>
           </div>
         </div>
       </div>
-      <div className="section-content bg-white pdt-3 pdb-3">
+      <div className="section-content bg-white pdt-3">
         <h2 className="title pdb-2">{"Developers love our platform"}</h2>
         <div className="row">
           <div className="small-12 medium-4 large-4 columns how-it-works">

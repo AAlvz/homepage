@@ -821,6 +821,10 @@ a {
   margin-bottom: 1em;
 }
 
+.mb-2 {
+  margin-bottom: 2em;
+}
+
 .pdb-1 {
   padding-bottom: 1em;
 }
@@ -849,6 +853,10 @@ a {
   padding-top: 3em;
 }
 
+.pdt-4 {
+  padding-top: 4em;
+}
+
 .pdt-5 {
   padding-top: 5em;
 }
@@ -857,8 +865,12 @@ a {
   padding-top: 10em;
 }
 
-.bg-white{
+.bg-white {
   background-color: $white-color;
+}
+
+.hidden {
+  display: hidden;
 }
 
 .section-bar {
@@ -868,11 +880,13 @@ a {
     font-family: 'SFText-Bold' !important;
     font-size: 2em;
     line-height: 1em;
+    margin: 16px 0;
   }
   .subtitle{
     font-family: 'SFText-RegularItalic' !important;
     font-size: 1.44em;
     line-height: 1em;
+    margin: 16px 0;
   }
   &.referals {
     .slick-slider .slick-list .slick-track .slick-slide .company-image {
@@ -907,7 +921,7 @@ a {
       transition: all 1s ease;
     }
     &.how-it-works{
-      padding: 0 2em;
+      padding: 0 2em 3em;
     }
   }
   text-align: center;
@@ -919,6 +933,7 @@ a {
   .title {
     font-family: 'SFText-Bold' !important;
     font-size: 2em;
+    margin-top: 0;
   }
   .subtitle {
     font-family: 'SFText-RegularItalic' !important;
