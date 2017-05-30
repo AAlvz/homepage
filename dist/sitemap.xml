@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <changefreq>weekly</changefreq>
+    <lastmod>2017-05-30</lastmod>
+    <loc>https://tinkerware.io/demo</loc>
+    <priority>1.0</priority>
+  </sitemap>
+  <sitemap>
+    <changefreq>weekly</changefreq>
+    <lastmod>2017-05-30</lastmod>
+    <loc>https://blog.tinkerware.io</loc>
+    <priority>0.9</priority>
+  </sitemap>
+  <sitemap>
+    <changefreq>weekly</changefreq>
+    <lastmod>2017-05-30</lastmod>
+    <loc>https://help.tinkerware.io</loc>
+    <priority>0.8</priority>
+  </sitemap>
+  <sitemap>
+    <changefreq>weekly</changefreq>
+    <lastmod>2017-05-30</lastmod>
+    <loc>https://mydevop.tinkerware.io</loc>
+    <priority>0.7</priority>
+  </sitemap>
+</sitemapindex>
