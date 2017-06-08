@@ -163,6 +163,34 @@ const Home = () => {
             secondary
         />
       </div>
+      <div className="section-content bg-white pdt-3">
+        <h2 className="title pdb-2">{"Development environments"}</h2>
+        <div className="row">
+          <div className="small-12 medium-4 large-4 columns how-it-works">
+            <RetinaImage
+                src={[require("../imgs/development-environment.png"), require("../imgs/development-environment_2x.png")]}
+            />
+          </div>
+          <div className="small-12 medium-4 large-4 columns how-it-works">
+            <RetinaImage
+                src={[require("../imgs/test-environment.png"), require("../imgs/test-environment_2x.png")]}
+            />
+          </div>
+          <div className="small-12 medium-4 large-4 columns how-it-works">
+            <RetinaImage
+                src={[require("../imgs/production-environment.png"), require("../imgs/production-environment_2x.png")]}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="section-bar">
+        <div className="row">
+          <div className="small-12 medium-12 large-12 columns pdt-3 pdb-3">
+            <h3 className="title pdb-1">{"Se una empresa de tecnología competitiva!"}</h3>
+            <p className="subtitle">{"Se rápido y reacciona de manera ágil ante los factores externos con el fin de incrementar la rentabilidad"}</p>
+          </div>
+        </div>
+      </div>
       <div className="section-content bg-white pdt-3 pdb-3">
         <h2 className="title">{"Be as productive as"}
           <Slider {...sliderCompanies}>
