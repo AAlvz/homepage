@@ -11,6 +11,10 @@ import React from "react";
 import ReactGA from "react-ga";
 import routes from "../routes/development";
 
+require("../tinkerware-share-image.jpg");
+require("../sitemap.xml");
+require("../robots.txt");
+
 ReactGA.initialize("UA-86896105-1");
 
 const store = configureStore();
