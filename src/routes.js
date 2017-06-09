@@ -1,8 +1,8 @@
 import { Route, IndexRoute } from "react-router";
-import App from "../components/App";
-import HomePage from "../containers/HomePage";
+import App from "./components/App";
+import HomePage from "./containers/HomePage";
 import React from "react";
-import StepsPage from "../containers/StepsPage";
+import StepsPage from "./containers/StepsPage";
 
 export default (
   <Route

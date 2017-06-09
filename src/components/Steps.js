@@ -4,8 +4,9 @@ import { Step, Stepper, StepLabel } from "material-ui/Stepper";
 import Addons from "./steps/Addons";
 import DataBases from "./steps/DataBases";
 import Email from "./steps/Email";
+import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
-import React, { PropTypes } from "react";
+import React from "react";
 import Stacks from "./steps/Stacks";
 import SwipeableViews from "react-swipeable-views";
 

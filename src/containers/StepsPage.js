@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import * as applicationActions from "../actions/ApplicationActions";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import React, { Component, PropTypes } from "react";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 import Steps from "../components/Steps";
 import tinkerwareBaseTheme from "../theme/tinkerwareBaseTheme";
 

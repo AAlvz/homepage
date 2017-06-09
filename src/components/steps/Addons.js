@@ -1,7 +1,8 @@
 import { fromJS } from "immutable";
 import Options from "./Options";
+import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
-import React, { PropTypes } from "react";
+import React from "react";
 
 const Addons = ( {setActiveStep, setAddons, removeAddons, addonsOptions, addons} ) => {
   const style = {

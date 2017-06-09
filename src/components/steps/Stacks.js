@@ -1,7 +1,8 @@
 import { fromJS } from "immutable";
 import Options from "./Options";
+import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
-import React, { PropTypes } from "react";
+import React from "react";
 
 const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) => {
   const style = {
