@@ -10,7 +10,11 @@ export default {
    extensions: ["*",".js",".jsx", ".json", ".scss"]
   },
   devtool:"source-map", // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
-  entry: ["babel-polyfill", "whatwg-fetch", path.resolve(__dirname,"src/apps/development")],
+  entry: [
+    "babel-polyfill",
+    "whatwg-fetch",
+    path.resolve(__dirname,"src/index")
+  ],
   target:"web", // necessary per https://webpack.github.io/docs/testing.html#compile-and-test
   output: {
     path: path.resolve(__dirname,"dist"),
@@ -76,9 +80,9 @@ export default {
       {test: /\.ico$/, loader: "file-loader?name=[name].[ext]"},
       {test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader"},
       {test: /\.svg(\?v=\d+.\d+.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml&name=[name].[ext]"},
-      {test: /\.txt$/, loader: "file-loader?name=[name].[ext]" },
+      {test: /\.txt$/, loader: "file-loader?name=[name].[ext]"},
       {test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff&name=[name].[ext]"},
-      {test: /\.xml$/, loader: "file-loader?name=[name].[ext]" },
+      {test: /\.xml$/, loader: "file-loader?name=[name].[ext]"},
       {test: /(\.css|\.scss|\.sass)$/, loader: ExtractTextPlugin.extract("css-loader?sourceMap!postcss-loader!sass-loader?sourceMap")}
     ]
   }

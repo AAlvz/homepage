@@ -1,5 +1,6 @@
-import React, { PropTypes } from "react";
 import isRetina from "is-retina";
+import PropTypes from "prop-types";
+import React from "react";
 
 const RetinaImage = ( {className, src} ) => {
   return (

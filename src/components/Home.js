@@ -164,7 +164,7 @@ const Home = () => {
         />
       </div>
       <div className="section-content bg-white pdt-3">
-        <h2 className="title pdb-2">{"Development environments"}</h2>
+        <h2 className="title pdb-2">{"Get instant environments"}</h2>
         <div className="row">
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
@@ -186,8 +186,8 @@ const Home = () => {
       <div className="section-bar">
         <div className="row">
           <div className="small-12 medium-12 large-12 columns pdt-3 pdb-3">
-            <h3 className="title pdb-1">{"Se una empresa de tecnología competitiva!"}</h3>
-            <p className="subtitle">{"Se rápido y reacciona de manera ágil ante los factores externos con el fin de incrementar la rentabilidad"}</p>
+            <h3 className="title pdb-1">{"Become Agile now!"}</h3>
+            <p className="subtitle">{"React fast against changes to increment your income"}</p>
           </div>
         </div>
       </div>

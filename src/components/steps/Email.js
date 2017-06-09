@@ -1,6 +1,7 @@
 import { fromJS } from "immutable";
+import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
-import React, { PropTypes } from "react";
+import React from "react";
 import TextField from "material-ui/TextField";
 
 const Email = ( { handleSaveUser, email, setActiveStep, setEmail} ) => {
