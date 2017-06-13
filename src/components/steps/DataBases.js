@@ -20,7 +20,7 @@ const Steps = ( {setActiveStep, setDatabase, removeDatabase, databasesOptions, d
   };
   return (
     <div className="align-center">
-      <h1 className="align-center">{"Selecciona tu base de datos"}</h1>
+      <h1 className="align-center">{"Select your Databases"}</h1>
       <Options
           handleChange={handleChangeDatabase}
           options={databasesOptions}
@@ -28,14 +28,14 @@ const Steps = ( {setActiveStep, setDatabase, removeDatabase, databasesOptions, d
       />
       <div className="pdt-2">
         <RaisedButton
-            label={"Anterior"}
+            label={"Previous"}
             onTouchTap={()=>setActiveStep(0)}
             primary
             style={style}
         />
         <RaisedButton
             disabled={databases.size==0?true:false}
-            label={"Siguiente"}
+            label={"Next"}
             onTouchTap={()=>setActiveStep(2)}
             primary
             style={style}

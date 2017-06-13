@@ -78,42 +78,42 @@ const initialState = fromJS({
     ],
     databases: [
       {
-        description: "Base de datos mariadb",
+        description: "Relational Database",
         icon: ["icon-mariadb"],
         isOtro: false,
         name: "mariadb",
         title: "MariaDb"
       },
       {
-        description: "Base de datos en memoria",
+        description: "In-memory data structure store",
         icon: ["icon-redis"],
         isOtro: false,
         name: "redis",
         title: "Redis"
       },
       {
-        description: "Basede datos orientado a documentos",
+        description: "Document Database",
         icon: ["icon-mongodb"],
         isOtro: false,
         name: "mongodb",
         title: "MongoDB"
       },
       {
-        description: "Base de datos relacional",
+        description: "Relational Database",
         icon: ["icon-mysql"],
         isOtro: false,
         name: "mysql",
         title: "MySql"
       },
       {
-        description: "Base de datos relacional",
+        description: "Document Database",
         icon: ["icon-postgresql"],
         isOtro: false,
         name: "postgresql",
         title: "Postgresql"
       },
       {
-        description: "Base de datos clave-valor",
+        description: "Key value Database",
         icon: ["icon-cassandra","path1","path2","path3","path1"],
         isOtro: false,
         name: "cassandra",
@@ -129,32 +129,32 @@ const initialState = fromJS({
     ],
     addons: [
       {
-        description: "Módulo de seguridad",
+        description: "Security module",
         icon: ["icon-lock"],
         isOtro: false,
         name: "security",
-        title: "Seguridad"
+        title: "Security"
       },
       {
-        description: "Módulo de copias de seguridad",
+        description: "Backups module",
         icon: ["icon-backup"],
         isOtro: false,
         name: "backup",
-        title: "Copias de seguridad"
+        title: "Backup"
       },
       {
-        description: "Módulo de CI",
+        description: "CI module",
         icon: ["icon-ci"],
         isOtro: false,
         name: "CI",
         title: "CI"
       },
       {
-        description: "Módulo de rendimiento",
+        description: "Performance module",
         icon: ["icon-performance"],
         isOtro: false,
         name: "performance",
-        title: "Rendimiento"
+        title: "Performance"
       },
       // {
       //   description: "Módulo",

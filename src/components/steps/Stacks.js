@@ -20,7 +20,7 @@ const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) 
   };
   return (
     <div className="align-center">
-      <h1 className="align-center">{"¿Qué framework quieres?"}</h1>
+      <h1 className="align-center">{"Which framework you need?"}</h1>
       <Options
           handleChange={handleChangeStack}
           options={stacksOptions}
@@ -29,7 +29,7 @@ const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) 
       <div className="pdt-2">
         <RaisedButton
             disabled={stacks.size==0?true:false}
-            label={"Siguiente"}
+            label={"Next"}
             onTouchTap={()=>setActiveStep(1)}
             primary
             style={style}

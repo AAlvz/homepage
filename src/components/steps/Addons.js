@@ -20,7 +20,7 @@ const Addons = ( {setActiveStep, setAddons, removeAddons, addonsOptions, addons}
   };
   return (
     <div className="align-center">
-      <h1 className="align-center">{"Selecciona tus complementos"}</h1>
+      <h1 className="align-center">{"Select your Add-ons"}</h1>
       <Options
           handleChange={handleChangeAddons}
           options={addonsOptions}
@@ -28,14 +28,14 @@ const Addons = ( {setActiveStep, setAddons, removeAddons, addonsOptions, addons}
       />
       <div className="pdt-2">
         <RaisedButton
-            label={"Anterior"}
+            label={"Previous"}
             onTouchTap={()=>setActiveStep(1)}
             primary
             style={style}
         />
         <RaisedButton
             disabled={addons.size==0?true:false}
-            label={"Siguiente"}
+            label={"Next"}
             onTouchTap={()=>setActiveStep(3)}
             primary
             style={style}

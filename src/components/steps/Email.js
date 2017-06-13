@@ -15,10 +15,10 @@ const Email = ( { handleSaveUser, email, setActiveStep, setEmail} ) => {
   };
   return (
     <div className="align-center">
-      <h1 className="align-center pdt-2">{"¿A dónde enviamos tu ambiente local?"}</h1>
+      <h1 className="align-center pdt-2">{"Where do we send your local environment?"}</h1>
       <div className="small-12 medium-6 large-6 medium-centered large-centered">
         <TextField
-            floatingLabelText={"Correo Electrónico"}
+            floatingLabelText={"Email"}
             fullWidth
             name={email}
             onChange={handleChangeProjectName}
@@ -27,14 +27,14 @@ const Email = ( { handleSaveUser, email, setActiveStep, setEmail} ) => {
       </div>
       <div className="pdt-5">
         <RaisedButton
-            label={"Anterior"}
+            label={"Previous"}
             onTouchTap={()=>setActiveStep(2)}
             primary
             style={style}
         />
         <RaisedButton
             disabled={email?false:true}
-            label={"Siguiente"}
+            label={"Next"}
             onTouchTap={()=>{setActiveStep(4); handleSaveUser();}}
             primary
             style={style}

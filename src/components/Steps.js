@@ -44,13 +44,13 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
             <StepLabel>{"Frameworks"}</StepLabel>
           </Step>
           <Step>
-            <StepLabel>{"Base de Datos"}</StepLabel>
+            <StepLabel>{"DataBases"}</StepLabel>
           </Step>
           <Step>
-            <StepLabel>{"Complementos"}</StepLabel>
+            <StepLabel>{"Add-ons"}</StepLabel>
           </Step>
           <Step>
-            <StepLabel>{"Ambiente local"}</StepLabel>
+            <StepLabel>{"Local Environment"}</StepLabel>
           </Step>
         </Stepper>
         <SwipeableViews
@@ -84,8 +84,8 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
               setEmail={applicationActions.setEmail}
           />
           <div className="align-center">
-            <h1 className="align-center pdt-3">{"Gracias"}</h1>
-            <p className="align-center pdt-2">{"¡Estamos en beta privada, nos pondremos en contacto contigo pronto para que seas mucho más eficiente!"}</p>
+            <h1 className="align-center pdt-3">{"Thanks"}</h1>
+            <p className="align-center pdt-2">{"We are in private beta, we will contact you soon to become more efficient!"}</p>
             <div className="pdt-5">
               <RaisedButton
                   label={"Go to Home"}
