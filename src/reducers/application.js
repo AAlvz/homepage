@@ -173,6 +173,10 @@ export default function application(state = initialState, action) {
     {
       return state.set("email", action.value.get("email"));
     }
+    case types.SET_CELLPHONE:
+    {
+      return state.set("cellphone", action.value.get("cellphone"));
+    }
     case types.SET_STACK:
     {
       return state.set("stacks", List.of(action.value.get("stack")));

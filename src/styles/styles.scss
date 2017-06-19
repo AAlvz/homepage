@@ -950,6 +950,18 @@ a {
     line-height: 1.5em;
   }
 }
+
+.steps {
+  .title {
+    font-family: 'SFText-Bold' !important;
+    font-size: 2em;
+  }
+  .subtitle {
+    font-family: 'SFText-Regular' !important;
+    font-size: 1.66em;
+  }
+}
+
 .footer{
   background-color: $primary-color;
 }

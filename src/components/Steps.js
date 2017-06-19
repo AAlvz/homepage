@@ -25,12 +25,36 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
       "status": "subscribed",
       "merge_fields": {
         "STACK": applicationAppState.get("stacks")?applicationAppState.get("stacks").toJS().toString():"",
+        "CELLPHONE": applicationAppState.get("cellphone")?applicationAppState.get("cellphone"):"",
         "DATABASE": applicationAppState.get("databases")?applicationAppState.get("databases").toJS().toString():"",
         "ADDONS": applicationAppState.get("addons")?applicationAppState.get("addons").toJS().toString():""
       }
     }));
   };
   const onTabClick = (url, openBlank) => {
+    if(url=="/"){
+        applicationActions.setStack(fromJS({
+          stack: ""
+        }));
+        applicationActions.setCellphone(fromJS({
+          cellphone: ""
+        }));
+        applicationActions.setStack(fromJS({
+          cellphone: ""
+        }));
+        applicationActions.setDatabase(fromJS({
+          database: ""
+        }));
+        applicationActions.setAddons(fromJS({
+          addon: ""
+        }));
+        applicationActions.setEmail(fromJS({
+          email: ""
+        }));
+        applicationActions.setActiveStep(fromJS({
+          active_step: 0
+        }));
+    }
     if(openBlank)
       location.href = url;
     else
@@ -78,14 +102,17 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
               setAddons={applicationActions.setAddons}
           />
           <Email
+              cellphone={applicationAppState.get("cellphone")?applicationAppState.get("cellphone"):fromJS("")}
               email={applicationAppState.get("email")?applicationAppState.get("email"):fromJS("")}
               handleSaveUser={handleSaveUser}
               setActiveStep={handleChangeStep}
+              setCellphone={applicationActions.setCellphone}
               setEmail={applicationActions.setEmail}
           />
-          <div className="align-center">
-            <h1 className="align-center pdt-3">{"Thanks"}</h1>
-            <p className="align-center pdt-2">{"We are in private beta, we will contact you soon to become more efficient!"}</p>
+          <div className="align-center steps">
+            <p className="align-center pdt-3 title">{"Thanks"}</p>
+            <p className="align-center pdt-2 subtitle">{"We are in "}<strong>{"private beta."}</strong></p>
+            <p className="align-center subtitle">{"We will contact you soon to become more efficient!"}</p>
             <div className="pdt-5">
               <RaisedButton
                   label={"Go to Home"}

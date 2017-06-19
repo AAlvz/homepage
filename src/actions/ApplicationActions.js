@@ -4,6 +4,10 @@ export function setEmail(value) {
   return { type: types.SET_EMAIL, value };
 }
 
+export function setCellphone(value) {
+  return { type: types.SET_CELLPHONE, value };
+}
+
 export function setStack(value) {
   return { type: types.SET_STACK, value };
 }

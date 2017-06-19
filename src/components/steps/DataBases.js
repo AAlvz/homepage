@@ -19,8 +19,8 @@ const Steps = ( {setActiveStep, setDatabase, removeDatabase, databasesOptions, d
       }));
   };
   return (
-    <div className="align-center">
-      <h1 className="align-center">{"Select your Databases"}</h1>
+    <div className="align-center steps">
+      <p className="align-center title">{"Select your Databases"}</p>
       <Options
           handleChange={handleChangeDatabase}
           options={databasesOptions}

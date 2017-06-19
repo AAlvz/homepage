@@ -19,8 +19,8 @@ const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) 
       }));
   };
   return (
-    <div className="align-center">
-      <h1 className="align-center">{"Which framework you need?"}</h1>
+    <div className="align-center steps">
+      <p className="align-center title">{"Which framework you need?"}</p>
       <Options
           handleChange={handleChangeStack}
           options={stacksOptions}

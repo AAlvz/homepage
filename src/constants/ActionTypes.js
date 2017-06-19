@@ -7,4 +7,5 @@ export const SET_ACTIVE_MENU="SET_ACTIVE_MENU";
 export const SET_ADDONS="SET_ADDONS";
 export const SET_DATABASE="SET_DATABASE";
 export const SET_EMAIL="SET_EMAIL";
+export const SET_CELLPHONE="SET_CELLPHONE";
 export const SET_STACK="SET_STACK";
