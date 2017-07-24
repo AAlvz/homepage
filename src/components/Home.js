@@ -2,6 +2,7 @@ import { browserHistory } from "react-router";
 import { Tabs, Tab } from "material-ui/Tabs";
 import AppBar from "material-ui/AppBar";
 import FontIcon from "material-ui/FontIcon";
+import Paper from "material-ui/Paper";
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 import RetinaImage from "./RetinaImage";
@@ -37,6 +38,13 @@ const Home = () => {
     appBarIconRight: {
       marginLeft: "-24px"
     },
+    paper: {
+      color: "rgb(83, 106, 112)",
+      display: "inline-block",
+      padding: "0 .5em",
+      textAlign: "center",
+      width: "100%"
+    },
     raisedButtonMenu: {
       lineHeight: "29px",
     },
@@ -51,7 +59,13 @@ const Home = () => {
       fontSize: "1.3em"
     },
     raisedButtonOverlay: {
-      height: "60px",
+      height: "60px"
+    },
+    raisedButtonStyle: {
+      margin: ".5em 0"
+    },
+    pricingRaisedButton: {
+      backgroundColor: "rgb(45, 110, 148)"
     },
     footerTab: {
       backgroundColor: "#546A73",
@@ -136,7 +150,6 @@ const Home = () => {
       <div className="align-center header-slider">
         <video
             autoPlay
-            id="bgvid"
             loop
             muted
             playsInline
@@ -386,6 +399,137 @@ const Home = () => {
             </div>
           </div>
         </Slider>
+      </div>
+      <div className="section-content bg-white">
+        <div className="small-12 medium-12 large-12 columns pdt-2 pdb-2 pricing-list">
+          <div className="row">
+            <h3 className="title pdb-1">{"Pricing"}</h3>
+            <p>{"Prices are per month, per site"}</p>
+          </div>
+          <div className="small-12 medium-2 large-2 large-offset-1 columns">
+            <Paper
+                style={styles.paper}
+                zDepth={1}
+            >
+              <p className="title">{"STARTUP"}</p>
+              <div className="price-content">
+                <p className="price"><span className="symbol">{"$"}</span>{"0.00"}</p>
+              </div>
+              <p className="subtitle">{"Project deploy"}</p>
+              <p className="description">{"Test every feature in isolation with automatically generated staging servers for a git repository"}</p>
+              <RaisedButton
+                  label="Start Free"
+                  labelStyle={styles.raisedButtonLabel}
+                  secondary
+                  style={styles.raisedButtonStyle}
+                  overlayStyle={styles.pricingRaisedButton}
+              />
+            </Paper>
+          </div>
+          <div className="small-12 medium-2 large-2 columns">
+          <Paper
+              style={styles.paper}
+              zDepth={1}
+          >
+            <p className="title">{"DEVELOPMENT"}</p>
+            <div className="price-content">
+              <p className="price"><span className="symbol">{"$"}</span>{"15.00"}</p>
+            </div>
+            <p className="subtitle">{"Agile project development"}</p>
+            <p className="description">{"CLI"}</p>
+            <p className="description">{"Support Channel"}</p>
+            <RaisedButton
+                label="Sign Up Now"
+                labelStyle={styles.raisedButtonLabel}
+                secondary
+                style={styles.raisedButtonStyle}
+                overlayStyle={styles.pricingRaisedButton}
+            />
+          </Paper>
+          </div>
+          <div className="small-12 medium-2 large-2 columns">
+            <Paper
+                style={styles.paper}
+                zDepth={1}
+            >
+              <p className="title">{"MEDIUM"}</p>
+              <div className="price-content">
+                <p className="price"><span className="symbol">{"$"}</span>{"50.00"}</p>
+              </div>
+              <p className="subtitle">{"Agile project team development"}</p>
+              <p className="description">{"CLI"}</p>
+              <p className="description">{"Local Environment"}</p>
+              <p className="description">{"Collaborative Teams"}</p>
+              <p className="description">{"Support Channel"}</p>
+              <RaisedButton
+                  label="Sign Up Now"
+                  labelStyle={styles.raisedButtonLabel}
+                  secondary
+                  style={styles.raisedButtonStyle}
+                  overlayStyle={styles.pricingRaisedButton}
+              />
+            </Paper>
+          </div>
+          <div className="small-12 medium-2 large-2 columns">
+            <Paper
+                style={styles.paper}
+                zDepth={1}
+            >
+              <p className="title">{"LARGE"}</p>
+              <div className="price-content">
+                <p className="price"><span className="symbol">{"$"}</span>{"200.00"}</p>
+              </div>
+              <p className="subtitle">{"Customized tools"}</p>
+              <p className="description">{"CLI"}</p>
+              <p className="description">{"Local Environment"}</p>
+              <p className="description">{"Collaborative Teams"}</p>
+              <p className="description">{"Customized security"}</p>
+              <p className="description">{"Support Channel"}</p>
+              <RaisedButton
+                  label="Sign Up Now"
+                  labelStyle={styles.raisedButtonLabel}
+                  secondary
+                  style={styles.raisedButtonStyle}
+                  overlayStyle={styles.pricingRaisedButton}
+              />
+            </Paper>
+          </div>
+          <div className="small-12 medium-2 large-2 end columns">
+            <Paper
+                style={styles.paper}
+                zDepth={1}
+            >
+              <p className="title">{"ENTERPRISE"}</p>
+              <div className="price-content">
+                <p className="price"><span className="symbol">{"Annual Contracts"}</span></p>
+              </div>
+              <p className="subtitle">{"Mission critical / Complex apps / Transactional"}</p>
+              <p className="description">{"CLI"}</p>
+              <p className="description">{"Local Environment"}</p>
+              <p className="description">{"Collaborative Teams"}</p>
+              <p className="description">{"Customized security"}</p>
+              <p className="description">{"Team performance Metrics"}</p>
+              <p className="description">{"24 / 7 support"}</p>
+              <RaisedButton
+                  label="Sign Up Now"
+                  labelStyle={styles.raisedButtonLabel}
+                  secondary
+                  style={styles.raisedButtonStyle}
+                  overlayStyle={styles.pricingRaisedButton}
+              />
+            </Paper>
+          </div>
+          <div className="row">
+            <div className="small-12 medium-12 large-12 columns addons">
+              <span className="title">{"ADD-ONS"}</span>
+              <span className="addon">{"$10 / additional users"}</span>
+              <span className="addon">{"$40 / automated test environment"}</span>
+              <span className="addon">{"$10 / monitoring"}</span>
+              <span className="addon">{"$21 / additional 3 environments"}</span>
+              <span className="addon">{"$2.5 / 5GB, per environment"}</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="section-content bg-white">
         <div className="row">

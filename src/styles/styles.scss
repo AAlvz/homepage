@@ -949,6 +949,57 @@ a {
     font-size: 1em;
     line-height: 1.5em;
   }
+  .pricing-list {
+    text-align: center;
+    .description, .price-content, .subtitle {
+      font-family: 'SFText-Regular' !important;
+    }
+    .description {
+      font-size: 1em;
+    }
+    .price-content {
+      background-color: $secondary-color;
+      color: #ffffff;
+      padding: 2em .5em;
+      .price {
+        .symbol {
+          font-size: .5em;
+        }
+        font-size: 1.5em;
+        line-height: 1;
+        margin: 0;
+      }
+    }
+    .title {
+      font-family: 'SFText-Bold' !important;
+      font-size: 1.3em;
+      padding: 1em 0;
+      margin: 0;
+    }
+    .subtitle {
+      color: $quaternary-color !important;
+      font-size: 1.1em;
+    }
+    .addons {
+      .addon {
+        font-family: 'SFText-Regular' !important;
+        padding: .5em .7em;
+      }
+      .title {
+        font-family: 'SFText-Bold' !important;
+        padding: .5em 1.5em 0 0;
+      }
+      background-color: $quaternary-color;
+      color: #ffffff;
+      margin: 2em 0;
+      padding: 1em 0;
+    }
+    // $primary-color: rgb(83, 106, 112);
+    // $secondary-color: rgb(45, 110, 148);
+    // $tertiary-color: rgb(226, 34, 59);
+    // $quaternary-color: rgb(47, 169, 182);
+    // $quinary-color: rgb(103, 196, 175);
+  }
 }
 .footer{
   background-color: $primary-color;
