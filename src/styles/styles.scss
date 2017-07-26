@@ -734,6 +734,10 @@ input {
   }
 }
 
+.row {
+  max-width: 82.5rem;
+}
+
 .header-slider{
   video{
     position: fixed;
@@ -815,6 +819,11 @@ body {
 a {
   color: white;
   text-decoration: none;
+}
+
+.no-margin {
+  margin: 0;
+  max-width: 100%;
 }
 
 .mb-1 {
@@ -949,8 +958,34 @@ a {
     font-size: 1em;
     line-height: 1.5em;
   }
+  .addons-list {
+    text-align: center;
+    .addons {
+      .addon {
+        font-family: 'SFText-Regular' !important;
+        line-height: 2em;
+        padding: .5em .7em;
+      }
+      .title {
+        font-family: 'SFText-Bold' !important;
+        padding: .5em 1.5em 0 0;
+      }
+      background-color: $quaternary-color;
+      color: #ffffff;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      padding: 1em 0;
+    }
+    .title {
+      font-family: 'SFText-Bold' !important;
+      font-size: 1.3em;
+      padding: 1em 0;
+      margin: 0;
+    }
+  }
   .pricing-list {
     text-align: center;
+    // display: flex;
     .description, .price-content, .subtitle {
       font-family: 'SFText-Regular' !important;
     }
@@ -970,6 +1005,10 @@ a {
         margin: 0;
       }
     }
+    .pricing {
+      // flex: 1;
+      height: 600px;
+    }
     .title {
       font-family: 'SFText-Bold' !important;
       font-size: 1.3em;
@@ -980,25 +1019,6 @@ a {
       color: $quaternary-color !important;
       font-size: 1.1em;
     }
-    .addons {
-      .addon {
-        font-family: 'SFText-Regular' !important;
-        padding: .5em .7em;
-      }
-      .title {
-        font-family: 'SFText-Bold' !important;
-        padding: .5em 1.5em 0 0;
-      }
-      background-color: $quaternary-color;
-      color: #ffffff;
-      margin: 2em 0;
-      padding: 1em 0;
-    }
-    // $primary-color: rgb(83, 106, 112);
-    // $secondary-color: rgb(45, 110, 148);
-    // $tertiary-color: rgb(226, 34, 59);
-    // $quaternary-color: rgb(47, 169, 182);
-    // $quinary-color: rgb(103, 196, 175);
   }
 }
 .footer{
