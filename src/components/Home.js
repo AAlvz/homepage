@@ -441,6 +441,7 @@ const Home = () => {
               </div>
               <p className="subtitle">{"Agile project development"}</p>
               <p className="description">{"CLI"}</p>
+              <p className="description">{"Disposable server"}</p>
               <p className="description">{"Support Channel"}</p>
               <RaisedButton
                   label="Sign Up Now"
@@ -462,6 +463,7 @@ const Home = () => {
                 </div>
                 <p className="subtitle">{"Agile project team development"}</p>
                 <p className="description">{"CLI"}</p>
+                <p className="description">{"Disposable server"}</p>
                 <p className="description">{"Local Environment"}</p>
                 <p className="description">{"Collaborative Teams"}</p>
                 <p className="description">{"Support Channel"}</p>
@@ -485,6 +487,7 @@ const Home = () => {
                 </div>
                 <p className="subtitle">{"Project team performance"}</p>
                 <p className="description">{"CLI"}</p>
+                <p className="description">{"Disposable server"}</p>
                 <p className="description">{"Local Environment"}</p>
                 <p className="description">{"Collaborative Teams"}</p>
                 <p className="description">{"High performance"}</p>
@@ -509,6 +512,7 @@ const Home = () => {
                 </div>
                 <p className="subtitle">{"Mission critical / Complex apps / Transactional"}</p>
                 <p className="description">{"CLI"}</p>
+                <p className="description">{"Disposable server"}</p>
                 <p className="description">{"Local Environment"}</p>
                 <p className="description">{"Collaborative Teams"}</p>
                 <p className="description">{"Customized security"}</p>
