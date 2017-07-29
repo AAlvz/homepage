@@ -3,7 +3,7 @@ import { Router } from "react-router";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import routes from "../routes";
-import ConnectedIntlProvider from './ConnectedIntlProvider';
+import ConnectedIntlProvider from "./ConnectedIntlProvider";
 
 export default class Root extends Component {
   render() {

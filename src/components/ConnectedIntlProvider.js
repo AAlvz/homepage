@@ -6,9 +6,10 @@ import es from "react-intl/locale-data/es";
 addLocaleData([...en, ...es]);
 
 function mapStateToProps(state) {
-  // const { lang, messages } = state.locales;
-  console.log(state);
-  return { locale: navigator.language, textComponent:{Text}};
+  return {
+    locale: state.applicationAppState.get("navigator_language"),
+    messages: state.translationsAppState.get(state.applicationAppState.get("navigator_language")).toJS()
+  };
 }
 
 export default connect(mapStateToProps)(IntlProvider);

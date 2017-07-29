@@ -32,6 +32,10 @@ export function setActiveStep(value) {
   return { type: types.SET_ACTIVE_STEP, value };
 }
 
+export function setNavigatorLanguage(value) {
+  return { type: types.SET_NAVIGATOR_LANGUAGE, value };
+}
+
 export function removeDatabase(value) {
   return { type: types.REMOVE_DATABASE, value };
 }

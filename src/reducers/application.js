@@ -1,7 +1,16 @@
-import * as types from "../constants/ActionTypes";
 import { fromJS, List } from "immutable";
+import * as types from "../constants/ActionTypes";
+import cookie from "react-cookie";
 
 const initialState = fromJS({
+  navigator_language:
+    cookie.load("navigator_language")?
+      cookie.load("navigator_language").split("-")[0]
+      :navigator.language?
+        ["en", "es"].includes(navigator.language.split("-")[0])?
+          navigator.language.split("-")[0]
+          :"en"
+        :"en",
   active_step: 0,
   steps: {
     stacks: [
@@ -176,6 +185,11 @@ export default function application(state = initialState, action) {
     case types.SET_CELLPHONE:
     {
       return state.set("cellphone", action.value.get("cellphone"));
+    }
+    case types.SET_NAVIGATOR_LANGUAGE:
+    {
+      cookie.save("navigator_language", action.value.get("navigator_language"), { path:"/"});
+      return state.set("navigator_language", action.value.get("navigator_language"));
     }
     case types.SET_STACK:
     {

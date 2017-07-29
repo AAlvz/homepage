@@ -1,13 +1,17 @@
 import { browserHistory } from "react-router";
+import { fromJS } from "immutable";
 import { Tabs, Tab } from "material-ui/Tabs";
 import AppBar from "material-ui/AppBar";
+import DropDownMenu from "material-ui/DropDownMenu";
 import FontIcon from "material-ui/FontIcon";
+import MenuItem from "material-ui/MenuItem";
+import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 import RetinaImage from "./RetinaImage";
 import Slider from "react-slick";
 
-const Home = () => {
+const Home = ({ applicationActions, applicationAppState, intl, formatMessage }) => {
   let settings = {
     dots: true,
     arrows: false,
@@ -56,6 +60,9 @@ const Home = () => {
     footerTab: {
       backgroundColor: "#546A73",
     },
+    menuItem: {
+      backgroundColor: "#546A73",
+    },
     inkTab:{
       backgroundColor: "#546A73",
     },
@@ -72,6 +79,11 @@ const Home = () => {
       margin: "0 .9em"
     },
   };
+  const handleChangeLanguage = (event, index, value) => {
+    applicationActions.setNavigatorLanguage(fromJS({
+      navigator_language: value
+    }));
+  };
   const onTabClick = (url, openBlank) => {
     if(openBlank)
       location.href = url;
@@ -82,30 +94,30 @@ const Home = () => {
     <Tabs style={styles.tabs}>
         <Tab
             buttonStyle={styles.tabButton}
-            label="Home"
+            label={formatMessage(intl.menu.home)}
             onActive={()=>onTabClick("/", false)}
             value={0}
         />
         <Tab
             buttonStyle={styles.tabButton}
-            label="Demo"
+            label={formatMessage(intl.menu.demo)}
             onActive={()=>onTabClick("/demo", false)}
         />
         <Tab
             buttonStyle={styles.tabButton}
-            label="Blog"
+            label={formatMessage(intl.menu.blog)}
             onActive={()=>onTabClick("https://blog.tinkerware.io/", true)}
         />
         <Tab
             buttonStyle={styles.tabButton}
-            label="Help"
+            label={formatMessage(intl.menu.help)}
             onActive={()=>onTabClick("http://help.tinkerware.io/", true)}
         />
         <Tab
             icon={
               <RaisedButton
                   buttonStyle={styles.raisedButtonMenu}
-                  label="Login"
+                  label={formatMessage(intl.menu.login)}
                   onClick={()=>onTabClick("http://mydevop.tinkerware.io/", true)}
                   secondary
               />}
@@ -151,12 +163,12 @@ const Home = () => {
               type="video/mp4"
           />
         </video>
-        <h1 className="align-center pdt-4 title">{"The perfect DevOps automation platform"}<br/>{"for software development teams"}</h1>
-        <p className="align-center pdb-2 subtitle">{"Focus on development. We handle operations."}</p>
+        <h1 className="align-center pdt-4 title">{formatMessage(intl.slider.title)}<br/>{formatMessage(intl.slider.title2)}</h1>
+        <p className="align-center pdb-2 subtitle">{formatMessage(intl.slider.subtitle)}</p>
         <RaisedButton
             buttonStyle={styles.raisedButton}
             className="mb-2"
-            label="Become Efficient Now"
+            label={formatMessage(intl.slider.button)}
             labelStyle={styles.raisedButtonLabel}
             onClick={()=>onTabClick("/demo", false)}
             overlayStyle={styles.raisedButtonOverlay}
@@ -164,21 +176,30 @@ const Home = () => {
         />
       </div>
       <div className="section-content bg-white pdt-3">
-        <h2 className="title pdb-2">{"Get integrated environments in one click"}</h2>
+        <h2 className="title pdb-2">{formatMessage(intl.integrated_environments_section.title)}</h2>
         <div className="row">
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
-                src={[require("../imgs/development-environment.png"), require("../imgs/development-environment_2x.png")]}
+                src={[
+                  formatMessage(intl.integrated_environments_section.local_image_url),
+                  formatMessage(intl.integrated_environments_section.local_image_url_2x)
+                ]}
             />
           </div>
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
-                src={[require("../imgs/test-environment.png"), require("../imgs/test-environment_2x.png")]}
+                src={[
+                  formatMessage(intl.integrated_environments_section.test_image_url),
+                  formatMessage(intl.integrated_environments_section.test_image_url_2x)
+                ]}
             />
           </div>
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
-                src={[require("../imgs/production-environment.png"), require("../imgs/production-environment_2x.png")]}
+                src={[
+                  formatMessage(intl.integrated_environments_section.production_image_url),
+                  formatMessage(intl.integrated_environments_section.production_image_url_2x)
+                ]}
             />
           </div>
         </div>
@@ -432,10 +453,34 @@ const Home = () => {
         </div>
         <div className="row">
           <p className="align-center">{"TINKERWARE © 2017. ALL RIGHT RESERVED"}</p>
+          <DropDownMenu
+              listStyle={styles.menuItem}
+              menuItemStyle={styles.menuItem}
+              onChange={handleChangeLanguage}
+              value={applicationAppState.get("navigator_language")}
+          >
+            <MenuItem
+                label="Language: English"
+                primaryText="English"
+                value={"en"}
+            />
+            <MenuItem
+                label="Language: Spanish"
+                primaryText="Spanish"
+                value={"es"}
+            />
+          </DropDownMenu>
         </div>
       </div>
     </div>
   );
+};
+
+Home.propTypes = {
+  applicationActions: PropTypes.object.isRequired,
+  applicationAppState: PropTypes.object.isRequired,
+  intl: PropTypes.object.isRequired,
+  formatMessage: PropTypes.func.isRequired,
 };
 
 export default Home;
