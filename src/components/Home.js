@@ -11,7 +11,7 @@ import React from "react";
 import RetinaImage from "./RetinaImage";
 import Slider from "react-slick";
 
-const Home = ({ applicationActions, applicationAppState, intl, formatMessage }) => {
+const Home = ({ applicationActions, applicationAppState, intl }) => {
   let settings = {
     dots: true,
     arrows: false,
@@ -94,30 +94,30 @@ const Home = ({ applicationActions, applicationAppState, intl, formatMessage }) 
     <Tabs style={styles.tabs}>
         <Tab
             buttonStyle={styles.tabButton}
-            label={formatMessage(intl.menu.home)}
+            label={intl.get("menu_home")}
             onActive={()=>onTabClick("/", false)}
             value={0}
         />
         <Tab
             buttonStyle={styles.tabButton}
-            label={formatMessage(intl.menu.demo)}
+            label={intl.get("menu_demo")}
             onActive={()=>onTabClick("/demo", false)}
         />
         <Tab
             buttonStyle={styles.tabButton}
-            label={formatMessage(intl.menu.blog)}
+            label={intl.get("menu_blog")}
             onActive={()=>onTabClick("https://blog.tinkerware.io/", true)}
         />
         <Tab
             buttonStyle={styles.tabButton}
-            label={formatMessage(intl.menu.help)}
+            label={intl.get("menu_help")}
             onActive={()=>onTabClick("http://help.tinkerware.io/", true)}
         />
         <Tab
             icon={
               <RaisedButton
                   buttonStyle={styles.raisedButtonMenu}
-                  label={formatMessage(intl.menu.login)}
+                  label={intl.get("menu_login")}
                   onClick={()=>onTabClick("http://mydevop.tinkerware.io/", true)}
                   secondary
               />}
@@ -163,12 +163,12 @@ const Home = ({ applicationActions, applicationAppState, intl, formatMessage }) 
               type="video/mp4"
           />
         </video>
-        <h1 className="align-center pdt-4 title">{formatMessage(intl.slider.title)}<br/>{formatMessage(intl.slider.title2)}</h1>
-        <p className="align-center pdb-2 subtitle">{formatMessage(intl.slider.subtitle)}</p>
+        <h1 className="align-center pdt-4 title">{intl.get("slider_title")}<br/>{intl.get("slider_title2")}</h1>
+        <p className="align-center pdb-2 subtitle">{intl.get("slider_subtitle")}</p>
         <RaisedButton
             buttonStyle={styles.raisedButton}
             className="mb-2"
-            label={formatMessage(intl.slider.button)}
+            label={intl.get("slider_button")}
             labelStyle={styles.raisedButtonLabel}
             onClick={()=>onTabClick("/demo", false)}
             overlayStyle={styles.raisedButtonOverlay}
@@ -176,29 +176,29 @@ const Home = ({ applicationActions, applicationAppState, intl, formatMessage }) 
         />
       </div>
       <div className="section-content bg-white pdt-3">
-        <h2 className="title pdb-2">{formatMessage(intl.integrated_environments_section.title)}</h2>
+        <h2 className="title pdb-2">{intl.get("integrated_environments_section_title")}</h2>
         <div className="row">
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
                 src={[
-                  formatMessage(intl.integrated_environments_section.local_image_url),
-                  formatMessage(intl.integrated_environments_section.local_image_url_2x)
+                  intl.get("integrated_environments_section_local_image_url"),
+                  intl.get("integrated_environments_section_local_image_url_2x")
                 ]}
             />
           </div>
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
                 src={[
-                  formatMessage(intl.integrated_environments_section.test_image_url),
-                  formatMessage(intl.integrated_environments_section.test_image_url_2x)
+                  intl.get("integrated_environments_section_test_image_url"),
+                  intl.get("integrated_environments_section_test_image_url_2x")
                 ]}
             />
           </div>
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
                 src={[
-                  formatMessage(intl.integrated_environments_section.production_image_url),
-                  formatMessage(intl.integrated_environments_section.production_image_url_2x)
+                  intl.get("integrated_environments_section_production_image_url"),
+                  intl.get("integrated_environments_section_production_image_url_2x")
                 ]}
             />
           </div>
@@ -207,13 +207,14 @@ const Home = ({ applicationActions, applicationAppState, intl, formatMessage }) 
       <div className="section-bar">
         <div className="row">
           <div className="small-12 medium-12 large-12 columns pdt-3 pdb-3">
-            <h3 className="title pdb-1">{"Turn into a company with competitive tech"}</h3>
-            <p className="subtitle">{"Be agile reacting quickly when changes occur to increase profitability"}</p>
+            <h3 className="title pdb-1">{intl.get("quotes_section_1_title")}</h3>
+            <p className="subtitle">{intl.get("quotes_section_1_subtitle")}</p>
           </div>
         </div>
       </div>
       <div className="section-content bg-white pdt-3 pdb-3">
-        <h2 className="title">{"Be as productive as"}
+        <h2 className="title">
+          {intl.get("features_section_title")}
           <Slider {...sliderCompanies}>
             <div>{"Facebook"}</div>
             <div>{"Google"}</div>
@@ -221,17 +222,17 @@ const Home = ({ applicationActions, applicationAppState, intl, formatMessage }) 
             <div>{"Amazon"}</div>
           </Slider>
         </h2>
-        <h3 className="subtitle pdb-4">{"Boost your team performance using DevOps tools"}</h3>
+        <h3 className="subtitle pdb-4">{intl.get("features_section_subtitle")}</h3>
         <div className="row">
           <div className="small-12 medium-4 large-4 columns">
             <FontIcon className={"icon icon-bootstrap"}/>
-            <h3 className="icon-title">{"Bootstrap your project"}</h3>
-            <p className="icon-subtitle">{"Select your framework, databases and services and start to develop instantly."}</p>
+            <h3 className="icon-title">{intl.get("features_section_features_1_title")}</h3>
+            <p className="icon-subtitle">{intl.get("features_section_features_1_subtitle")}</p>
           </div>
           <div className="small-12 medium-4 large-4 columns">
             <FontIcon className={"icon icon-test"}/>
-            <h3 className="icon-title">{"Test instantly"}</h3>
-            <p className="icon-subtitle">{"Deploy new features to a provided QA environment and test them immediately."}</p>
+            <h3 className="icon-title">{intl.get("features_section_features_2_title")}</h3>
+            <p className="icon-subtitle">{intl.get("features_section_features_2_subtitle")}</p>
           </div>
           <div className="small-12 medium-4 large-4 columns">
             <span className="icon icon-automate">
@@ -253,75 +254,92 @@ const Home = ({ applicationActions, applicationAppState, intl, formatMessage }) 
               <span className="path16"/>
               <span className="path17"/>
             </span>
-            <h3 className="icon-title">{"Automate everything"}</h3>
-            <p className="icon-subtitle">{"Need CI? Certificates? Security? We take care of them for you."}</p>
+            <h3 className="icon-title">{intl.get("features_section_features_3_title")}</h3>
+            <p className="icon-subtitle">{intl.get("features_section_features_3_subtitle")}</p>
           </div>
         </div>
         <div className="row">
           <div className="small-12 medium-4 large-4 columns">
             <FontIcon className={"icon icon-integrate"}/>
-            <h3 className="icon-title">{"Integrate quickly"}</h3>
-            <p className="icon-subtitle">{"Test locally and in the cloud to publish new features without hassle."}</p>
+            <h3 className="icon-title">{intl.get("features_section_features_4_title")}</h3>
+            <p className="icon-subtitle">{intl.get("features_section_features_4_subtitle")}</p>
           </div>
           <div className="small-12 medium-4 large-4 columns">
             <FontIcon className={"icon icon-upgrade"}/>
-            <h3 className="icon-title">{"Upgrade anytime"}</h3>
-            <p className="icon-subtitle">{"Need a bigger QA environment? Need to handle more traffic? Just one click away."}</p>
+            <h3 className="icon-title">{intl.get("features_section_features_5_title")}</h3>
+            <p className="icon-subtitle">{intl.get("features_section_features_5_subtitle")}</p>
           </div>
           <div className="small-12 medium-4 large-4 columns">
             <FontIcon className={"icon icon-support"}/>
-            <h3 className="icon-title">{"Superhuman Support"}</h3>
-            <p className="icon-subtitle">{"We can help you to integrate DevOps tools in your workflow. And we are available at anytime."}</p>
+            <h3 className="icon-title">{intl.get("features_section_features_6_title")}</h3>
+            <p className="icon-subtitle">{intl.get("features_section_features_6_subtitle")}</p>
           </div>
         </div>
       </div>
       <div className="section-bar">
         <div className="row">
           <div className="small-12 medium-12 large-12 columns pdt-3 pdb-3">
-            <h3 className="title pdb-1">{"Don't Deploy. Replicate!"}</h3>
-            <p className="subtitle">{"Get instant working environments with Fast setup and take it to any level"}</p>
+            <h3 className="title pdb-1">{intl.get("quotes_section_2_title")}</h3>
+            <p className="subtitle">{intl.get("quotes_section_2_subtitle")}</p>
           </div>
         </div>
       </div>
       <div className="section-content bg-white pdt-3">
-        <h2 className="title pdb-2">{"Developers love our platform"}</h2>
+        <h2 className="title pdb-2">{intl.get("how_it_works_section_title")}</h2>
         <div className="row">
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
-                src={[require("../imgs/how-does-it-work-1.png"), require("../imgs/how-does-it-work-1_2x.png")]}
+                src={[
+                  intl.get("how_it_works_section_create_image_url"),
+                  intl.get("how_it_works_section_create_image_url_2x")
+                ]}
             />
           </div>
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
-                src={[require("../imgs/how-does-it-work-2.png"), require("../imgs/how-does-it-work-2_2x.png")]}
+                src={[
+                  intl.get("how_it_works_section_push_image_url"),
+                  intl.get("how_it_works_section_push_image_url_2x")
+                ]}
             />
           </div>
           <div className="small-12 medium-4 large-4 columns how-it-works">
             <RetinaImage
-                src={[require("../imgs/how-does-it-work-3.png"), require("../imgs/how-does-it-work-3_2x.png")]}
+                src={[
+                  intl.get("how_it_works_section_production_image_url"),
+                  intl.get("how_it_works_section_production_image_url_2x")
+                ]}
             />
           </div>
         </div>
       </div>
       <div className="section-bar pdt-3 pdb-4 referals">
-        <h2 className="title pdb-1">{"Experts and visionaries love us"}</h2>
+        <h2 className="title pdb-1">{intl.get("referals_section_title")}</h2>
         <Slider {...settings}>
-          <div>
-            <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
-              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" Awesome help in different development environments to be more productive "}<FontIcon className={"icon icon-quotes-right"}/></p>
-              <RetinaImage
-                  className="company-image"
-                  src={[require("../imgs/ernesto-troncoso.png"), require("../imgs/ernesto-troncoso_2x.png")]}
-              />
-              <div className="row links">
-                <FontIcon
-                    className="icon icon-office"
-                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
+          {/* {formatMessage(intl.referals_section.referals).map((referal,index)=>
+            <div key={index}>
+              <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
+                <p className="quote pdb-2">
+                  <FontIcon className={"icon icon-quotes-left"}/>
+                  {referal.quote}
+                  <FontIcon className={"icon icon-quotes-right "}/>
+                </p>
+                <RetinaImage
+                  src={[
+                    formatMessage(referal.image_url),
+                    formatMessage(referal.image_url_2x)
+                  ]}
                 />
+                <div className="row links">
+                  <FontIcon
+                      className="icon icon-office"
+                      onClick={()=>onTabClick("http://kiubix.mx/", false)}
+                  />
+                </div>
+                <p className="user">{"Ernesto"}</p>
               </div>
-              <p className="user">{"Ernesto"}</p>
             </div>
-          </div>
+          )} */}
           <div>
             <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
               <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" Tinkerware is a highly recommended company. They have always a lot of disposition and they always exceed expectations. "}<FontIcon className={"icon icon-quotes-right"}/></p>
@@ -479,8 +497,7 @@ const Home = ({ applicationActions, applicationAppState, intl, formatMessage }) 
 Home.propTypes = {
   applicationActions: PropTypes.object.isRequired,
   applicationAppState: PropTypes.object.isRequired,
-  intl: PropTypes.object.isRequired,
-  formatMessage: PropTypes.func.isRequired,
+  intl: PropTypes.object.isRequired
 };
 
 export default Home;
