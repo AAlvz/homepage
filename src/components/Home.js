@@ -316,112 +316,149 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
       <div className="section-bar pdt-3 pdb-4 referals">
         <h2 className="title pdb-1">{intl.get("referals_section_title")}</h2>
         <Slider {...settings}>
-          {/* {formatMessage(intl.referals_section.referals).map((referal,index)=>
-            <div key={index}>
-              <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
-                <p className="quote pdb-2">
-                  <FontIcon className={"icon icon-quotes-left"}/>
-                  {referal.quote}
-                  <FontIcon className={"icon icon-quotes-right "}/>
-                </p>
-                <RetinaImage
+          <div>
+            <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
+              <p className="quote pdb-2">
+                <FontIcon className={"icon icon-quotes-left"}/>
+                {intl.get("referals_section_referal_1_quote")}
+                <FontIcon className={"icon icon-quotes-right "}/>
+              </p>
+              <RetinaImage
+                  className="company-image"
                   src={[
-                    formatMessage(referal.image_url),
-                    formatMessage(referal.image_url_2x)
+                    intl.get("referals_section_referal_1_image_url"),
+                    intl.get("referals_section_referal_1_image_url_2x")
                   ]}
-                />
-                <div className="row links">
+              />
+              <div className="row links">
+                {intl.get("referals_section_referal_1_company_url") != ""?
                   <FontIcon
                       className="icon icon-office"
-                      onClick={()=>onTabClick("http://kiubix.mx/", false)}
-                  />
-                </div>
-                <p className="user">{"Ernesto"}</p>
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_1_company_url"), false)}
+                  />:""}
+                {intl.get("referals_section_referal_1_linkedin") != ""?
+                  <FontIcon
+                      className="icon icon-linkedin"
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_1_linkedin"), false)}
+                  />:""}
               </div>
-            </div>
-          )} */}
-          <div>
-            <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
-              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" Tinkerware is a highly recommended company. They have always a lot of disposition and they always exceed expectations. "}<FontIcon className={"icon icon-quotes-right"}/></p>
-              <RetinaImage
-                  className="company-image"
-                  src={[require("../imgs/jorge-silva.png"), require("../imgs/jorge-silva_2x.png")]}
-              />
-              <div className="row links">
-                <FontIcon
-                    className="icon icon-office"
-                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
-                />
-                <FontIcon
-                    className="icon icon-linkedin"
-                    onClick={()=>onTabClick("https://mx.linkedin.com/in/joosiimoo", false)}
-                />
-              </div>
-              <p className="user">{"Jorge Silva"}</p>
+              <p className="user">{intl.get("referals_section_referal_1_client")}</p>
             </div>
           </div>
           <div>
             <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
-              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" It’s great for high standards quality for systems "}<FontIcon className={"icon icon-quotes-right"}/></p>
+              <p className="quote pdb-2">
+                <FontIcon className={"icon icon-quotes-left"}/>
+                {intl.get("referals_section_referal_2_quote")}
+                <FontIcon className={"icon icon-quotes-right "}/>
+              </p>
               <RetinaImage
                   className="company-image"
-                  src={[require("../imgs/ana-cecilia.png"), require("../imgs/ana-cecilia_2x.png")]}
+                  src={[
+                    intl.get("referals_section_referal_2_image_url"),
+                    intl.get("referals_section_referal_2_image_url_2x")
+                  ]}
               />
               <div className="row links">
-                <FontIcon
-                    className="icon icon-office"
-                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
-                />
+                {intl.get("referals_section_referal_2_company_url") != ""?
+                  <FontIcon
+                      className="icon icon-office"
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_2_company_url"), false)}
+                  />:""}
+                {intl.get("referals_section_referal_2_linkedin") != ""?
+                  <FontIcon
+                      className="icon icon-linkedin"
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_2_linkedin"), false)}
+                  />:""}
               </div>
-              <p className="user">{"Ana Duran"}</p>
+              <p className="user">{intl.get("referals_section_referal_2_client")}</p>
             </div>
           </div>
           <div>
             <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
-              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" Our sync process is way more agile, fast and efficient! We used to waste hours. Now it takes a few clicks! "}<FontIcon className={"icon icon-quotes-right"}/></p>
+              <p className="quote pdb-2">
+                <FontIcon className={"icon icon-quotes-left"}/>
+                {intl.get("referals_section_referal_3_quote")}
+                <FontIcon className={"icon icon-quotes-right "}/>
+              </p>
               <RetinaImage
                   className="company-image"
-                  src={[require("../imgs/juan-carlos.png"), require("../imgs/juan-carlos_2x.png")]}
+                  src={[
+                    intl.get("referals_section_referal_3_image_url"),
+                    intl.get("referals_section_referal_3_image_url_2x")
+                  ]}
               />
               <div className="row links">
-                <FontIcon
-                    className="icon icon-office"
-                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
-                />
+                {intl.get("referals_section_referal_3_company_url") != ""?
+                  <FontIcon
+                      className="icon icon-office"
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_3_company_url"), false)}
+                  />:""}
+                {intl.get("referals_section_referal_3_linkedin") != ""?
+                  <FontIcon
+                      className="icon icon-linkedin"
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_3_linkedin"), false)}
+                  />:""}
               </div>
-              <p className="user">{"Juan Carlos"}</p>
+              <p className="user">{intl.get("referals_section_referal_3_client")}</p>
             </div>
           </div>
           <div>
             <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
-              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" A new and awesome way to create customized development environments for each of our projects! Now we don't suffer for different versions of PHP, MySQL or any of our Test environments or Production "}<FontIcon className={"icon icon-quotes-right"}/></p>
+              <p className="quote pdb-2">
+                <FontIcon className={"icon icon-quotes-left"}/>
+                {intl.get("referals_section_referal_4_quote")}
+                <FontIcon className={"icon icon-quotes-right "}/>
+              </p>
               <RetinaImage
                   className="company-image"
-                  src={[require("../imgs/ernesto-troncoso.png"), require("../imgs/ernesto-troncoso_2x.png")]}
+                  src={[
+                    intl.get("referals_section_referal_4_image_url"),
+                    intl.get("referals_section_referal_4_image_url_2x")
+                  ]}
               />
               <div className="row links">
-                <FontIcon
-                    className="icon icon-office"
-                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
-                />
+                {intl.get("referals_section_referal_4_company_url") != ""?
+                  <FontIcon
+                      className="icon icon-office"
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_4_company_url"), false)}
+                  />:""}
+                {intl.get("referals_section_referal_4_linkedin") != ""?
+                  <FontIcon
+                      className="icon icon-linkedin"
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_4_linkedin"), false)}
+                  />:""}
               </div>
-              <p className="user">{"Ernesto"}</p>
+              <p className="user">{intl.get("referals_section_referal_4_client")}</p>
             </div>
           </div>
           <div>
             <div className="small-12 medium-10 medium-centered large-8 large-centered columns">
-              <p className="quote pdb-2"><FontIcon className={"icon icon-quotes-left"}/>{" We became more agile implementing these methodologies! "}<FontIcon className={"icon icon-quotes-right"}/></p>
+              <p className="quote pdb-2">
+                <FontIcon className={"icon icon-quotes-left"}/>
+                {intl.get("referals_section_referal_5_quote")}
+                <FontIcon className={"icon icon-quotes-right "}/>
+              </p>
               <RetinaImage
                   className="company-image"
-                  src={[require("../imgs/ana-cecilia.png"), require("../imgs/ana-cecilia_2x.png")]}
+                  src={[
+                    intl.get("referals_section_referal_5_image_url"),
+                    intl.get("referals_section_referal_5_image_url_2x")
+                  ]}
               />
               <div className="row links">
-                <FontIcon
-                    className="icon icon-office"
-                    onClick={()=>onTabClick("http://kiubix.mx/", false)}
-                />
+                {intl.get("referals_section_referal_5_company_url") != ""?
+                  <FontIcon
+                      className="icon icon-office"
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_5_company_url"), false)}
+                  />:""}
+                {intl.get("referals_section_referal_5_linkedin") != ""?
+                  <FontIcon
+                      className="icon icon-linkedin"
+                      onClick={()=>onTabClick(intl.get("referals_section_referal_5_linkedin"), false)}
+                  />:""}
               </div>
-              <p className="user">{"Ana Duran"}</p>
+              <p className="user">{intl.get("referals_section_referal_5_client")}</p>
             </div>
           </div>
         </Slider>
@@ -429,10 +466,10 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
       <div className="section-content bg-white">
         <div className="row">
           <div className="small-12 medium-12 large-12 columns pdt-2 pdb-2">
-            <h3 className="title pdb-1">{"Are you ready to boost your team performance?"}</h3>
+            <h3 className="title pdb-1">{intl.get("are_you_ready_section_title")}</h3>
             <RaisedButton
                 buttonStyle={styles.raisedButton}
-                label="Yes, I am !"
+                label={intl.get("are_you_ready_section_button")}
                 labelStyle={styles.raisedButtonLabel}
                 onClick={()=>onTabClick("/demo", false)}
                 overlayStyle={styles.raisedButtonOverlay}
@@ -449,22 +486,22 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
           >
             <Tab
                 icon={<FontIcon className="icon icon-home" />}
-                label={"HOME"}
+                label={intl.get("menu_home")}
                 onClick={()=>onTabClick("/", false)}
             />
             <Tab
                 icon={<FontIcon className="icon icon-demo" />}
-                label={"DEMO"}
+                label={intl.get("menu_demo")}
                 onClick={()=>onTabClick("/demo", false)}
             />
             <Tab
                 icon={<FontIcon className="icon icon-blog" />}
-                label={"BLOG"}
+                label={intl.get("menu_blog")}
                 onClick={()=>onTabClick("https://blog.tinkerware.io/", true)}
             />
             <Tab
                 icon={<FontIcon className="icon icon-help" />}
-                label={"HELP"}
+                label={intl.get("menu_help")}
                 onClick={()=>onTabClick("http://help.tinkerware.io/", true)}
             />
           </Tabs>
@@ -477,14 +514,17 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
               onChange={handleChangeLanguage}
               value={applicationAppState.get("navigator_language")}
           >
+            {/* "language": "Lenguage",
+            "english": "Inglés",
+            "spanish": "Español", */}
             <MenuItem
-                label="Language: English"
-                primaryText="English"
+                label={intl.get("language") + ": " + intl.get("english")}
+                primaryText={intl.get("english")}
                 value={"en"}
             />
             <MenuItem
-                label="Language: Spanish"
-                primaryText="Spanish"
+                label={intl.get("language") + ": " + intl.get("spanish")}
+                primaryText={intl.get("spanish")}
                 value={"es"}
             />
           </DropDownMenu>
