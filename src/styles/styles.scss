@@ -734,6 +734,10 @@ input {
   }
 }
 
+.row {
+  max-width: 82.5rem;
+}
+
 .header-slider{
   video{
     position: fixed;
@@ -815,6 +819,11 @@ body {
 a {
   color: white;
   text-decoration: none;
+}
+
+.no-margin {
+  margin: 0;
+  max-width: 100%;
 }
 
 .mb-1 {
@@ -949,6 +958,68 @@ a {
     font-size: 1em;
     line-height: 1.5em;
   }
+  .addons-list {
+    text-align: center;
+    .addons {
+      .addon {
+        font-family: 'SFText-Regular' !important;
+        line-height: 2em;
+        padding: .5em .7em;
+      }
+      .title {
+        font-family: 'SFText-Bold' !important;
+        padding: .5em 1.5em 0 0;
+      }
+      background-color: $quaternary-color;
+      color: #ffffff;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      padding: 1em 0;
+    }
+    .title {
+      font-family: 'SFText-Bold' !important;
+      font-size: 1.3em;
+      padding: 1em 0;
+      margin: 0;
+    }
+  }
+  .pricing-list {
+    text-align: center;
+    // display: flex;
+    .description, .price-content, .subtitle {
+      font-family: 'SFText-Regular' !important;
+    }
+    .description {
+      font-size: 1em;
+    }
+    .price-content {
+      background-color: $secondary-color;
+      color: #ffffff;
+      padding: 2em .5em;
+      .price {
+        .symbol {
+          font-size: .5em;
+        }
+        font-size: 1.5em;
+        line-height: 1;
+        margin: 0;
+      }
+    }
+    .pricing {
+      // flex: 1;
+      height: 600px;
+    }
+    .title {
+      font-family: 'SFText-Bold' !important;
+      font-size: 1.3em;
+      padding: 1em 0;
+      margin: 0;
+    }
+    .subtitle {
+      color: $quaternary-color !important;
+      font-size: 1.1em;
+    }
+  }
 }
 
 .steps {
@@ -1016,7 +1087,7 @@ a {
   transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
   width: 100%;
   .icon {
-    font-size: 5em !important;
+    font-size: 7em !important;
     left: 25%;
     position: absolute !important;
     top: 30%;

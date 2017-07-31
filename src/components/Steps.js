@@ -2,8 +2,10 @@ import { browserHistory } from "react-router";
 import { fromJS } from "immutable";
 import { Step, Stepper, StepLabel } from "material-ui/Stepper";
 import Addons from "./steps/Addons";
+import ContentClear from "material-ui/svg-icons/content/clear";
 import DataBases from "./steps/DataBases";
 import Email from "./steps/Email";
+import FloatingActionButton from "material-ui/FloatingActionButton";
 import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
@@ -11,8 +13,14 @@ import Stacks from "./steps/Stacks";
 import SwipeableViews from "react-swipeable-views";
 
 const Steps = ( {applicationActions, applicationAppState} ) => {
-  const style = {
-   margin: 12,
+  const styles = {
+    raisedButton: {
+      margin: 12
+    },
+    floatingActionButton: {
+      marginTop: ".5em",
+      float: "right"
+    }
   };
   const handleChangeStep = (value) => {
     applicationActions.setActiveStep(fromJS({
@@ -62,6 +70,14 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
   };
   return (
     <div className="small-12 medium-12 large-12 large-centered columns">
+      <FloatingActionButton
+          mini
+          onTouchTap={()=>onTabClick("/", false)}
+          secondary
+          style={styles.floatingActionButton}
+      >
+        <ContentClear />
+      </FloatingActionButton>
       <div className="container">
         <Stepper activeStep={applicationAppState.get("active_step")}>
           <Step>
@@ -118,7 +134,7 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
                   label={"Go to Home"}
                   onTouchTap={()=>onTabClick("/", false)}
                   primary
-                  style={style}
+                  style={styles.raisedButton}
               />
             </div>
           </div>

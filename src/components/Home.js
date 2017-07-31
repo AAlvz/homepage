@@ -6,6 +6,7 @@ import DropDownMenu from "material-ui/DropDownMenu";
 import FontIcon from "material-ui/FontIcon";
 import MenuItem from "material-ui/MenuItem";
 import PropTypes from "prop-types";
+import Paper from "material-ui/Paper";
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 import RetinaImage from "./RetinaImage";
@@ -41,6 +42,16 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
     appBarIconRight: {
       marginLeft: "-24px"
     },
+    paper: {
+      color: "rgb(83, 106, 112)",
+      display: "inline-block",
+      height: "100%",
+      marginBottom: "1em",
+      marginTop: "1em",
+      padding: "0 .5em",
+      textAlign: "center",
+      width: "100%"
+    },
     raisedButtonMenu: {
       lineHeight: "29px",
     },
@@ -55,7 +66,13 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
       fontSize: "1.3em"
     },
     raisedButtonOverlay: {
-      height: "60px",
+      height: "60px"
+    },
+    raisedButtonStyle: {
+      margin: ".5em 0"
+    },
+    pricingRaisedButton: {
+      backgroundColor: "rgb(45, 110, 148)"
     },
     footerTab: {
       backgroundColor: "#546A73",
@@ -148,7 +165,6 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
       <div className="align-center header-slider">
         <video
             autoPlay
-            id="bgvid"
             loop
             muted
             playsInline
@@ -467,6 +483,172 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
         <div className="row">
           <div className="small-12 medium-12 large-12 columns pdt-2 pdb-2">
             <h3 className="title pdb-1">{intl.get("are_you_ready_section_title")}</h3>
+            <h3 className="title">{"Pricing"}</h3>
+            <h3 className="subtitle pdb-1">{"Prices are per month, per site"}</h3>
+          </div>
+          <div className="small-up-2 medium-up-3 large-up-5 pdb-2 pricing-list">
+            <div className="column column-block pricing">
+              <Paper
+                  style={styles.paper}
+                  zDepth={1}
+              >
+                <p className="title">{"STARTUP"}</p>
+                <div className="price-content">
+                  <p className="price">{"Free"}</p>
+                </div>
+                <p className="subtitle">{"Project deploy"}</p>
+                <p className="description">{"Test every feature in isolation with automatically generated staging servers for a git repository"}</p>
+                <RaisedButton
+                    label="Start Free"
+                    labelStyle={styles.raisedButtonLabel}
+                    overlayStyle={styles.pricingRaisedButton}
+                    secondary
+                    style={styles.raisedButtonStyle}
+                />
+              </Paper>
+            </div>
+            <div className="column column-block pricing">
+            <Paper
+                style={styles.paper}
+                zDepth={1}
+            >
+              <p className="title">{"DEVELOPMENT"}</p>
+              <div className="price-content">
+                <p className="price"><span className="symbol">{"$"}</span>{"14.99 USD"}</p>
+              </div>
+              <p className="subtitle">{"Agile project development"}</p>
+              <p className="description">{"CLI"}</p>
+              <p className="description">{"Disposable server"}</p>
+              <p className="description">{"Support Channel"}</p>
+              <RaisedButton
+                  label="Sign Up Now"
+                  labelStyle={styles.raisedButtonLabel}
+                  overlayStyle={styles.pricingRaisedButton}
+                  secondary
+                  style={styles.raisedButtonStyle}
+              />
+            </Paper>
+            </div>
+            <div className="column column-block pricing">
+              <Paper
+                  style={styles.paper}
+                  zDepth={1}
+              >
+                <p className="title">{"MEDIUM"}</p>
+                <div className="price-content">
+                  <p className="price"><span className="symbol">{"$"}</span>{"49.99 USD"}</p>
+                </div>
+                <p className="subtitle">{"Agile project team development"}</p>
+                <p className="description">{"CLI"}</p>
+                <p className="description">{"Disposable server"}</p>
+                <p className="description">{"Local Environment"}</p>
+                <p className="description">{"Collaborative Teams"}</p>
+                <p className="description">{"Support Channel"}</p>
+                <RaisedButton
+                    label="Sign Up Now"
+                    labelStyle={styles.raisedButtonLabel}
+                    overlayStyle={styles.pricingRaisedButton}
+                    secondary
+                    style={styles.raisedButtonStyle}
+                />
+              </Paper>
+            </div>
+            <div className="column column-block pricing">
+              <Paper
+                  style={styles.paper}
+                  zDepth={1}
+              >
+                <p className="title">{"LARGE"}</p>
+                <div className="price-content">
+                  <p className="price"><span className="symbol">{"$"}</span>{"199.99 USD"}</p>
+                </div>
+                <p className="subtitle">{"Project team performance"}</p>
+                <p className="description">{"CLI"}</p>
+                <p className="description">{"Disposable server"}</p>
+                <p className="description">{"Local Environment"}</p>
+                <p className="description">{"Collaborative Teams"}</p>
+                <p className="description">{"High performance"}</p>
+                <p className="description">{"Support Channel"}</p>
+                <RaisedButton
+                    label="Sign Up Now"
+                    labelStyle={styles.raisedButtonLabel}
+                    overlayStyle={styles.pricingRaisedButton}
+                    secondary
+                    style={styles.raisedButtonStyle}
+                />
+              </Paper>
+            </div>
+            <div className="column column-block pricing">
+              <Paper
+                  style={styles.paper}
+                  zDepth={1}
+              >
+                <p className="title">{"ENTERPRISE"}</p>
+                <div className="price-content">
+                  <p className="price"><span className="symbol">{"Annual Contracts"}</span></p>
+                </div>
+                <p className="subtitle">{"Mission critical / Complex apps / Transactional"}</p>
+                <p className="description">{"CLI"}</p>
+                <p className="description">{"Disposable server"}</p>
+                <p className="description">{"Local Environment"}</p>
+                <p className="description">{"Collaborative Teams"}</p>
+                <p className="description">{"Customized security"}</p>
+                <p className="description">{"Team performance Metrics"}</p>
+                <p className="description">{"24 / 7 support"}</p>
+                <RaisedButton
+                    label="Sign Up Now"
+                    labelStyle={styles.raisedButtonLabel}
+                    overlayStyle={styles.pricingRaisedButton}
+                    secondary
+                    style={styles.raisedButtonStyle}
+                />
+              </Paper>
+            </div>
+          </div>
+          <div className="small-12 medium-12 large-12 columns pdb-2 addons-list">
+            <div className="row no-margin columns">
+              <div className="small-12 medium-12 large-12 columns addons">
+                <div className="small-12 medium-3 large-2 columns">
+                  <span className="title">{"ADD-ONS"}</span>
+                </div>
+                <div className="small-12 medium-9 large-10 columns">
+                  <div className="row mb-1">
+                    <div className="small-12 medium-4 large-4 columns">
+                      <span className="addon">{"$10 / additional users"}</span>
+                    </div>
+                    <div className="small-12 medium-4 large-4 columns">
+                      <span className="addon">{"$40 / automated test environment"}</span>
+                    </div>
+                    <div className="small-12 medium-4 large-4 columns">
+                      <span className="addon">{"$10 / monitoring"}</span>
+                    </div>
+                  </div>
+                  <div className="row mb-1">
+                    <div className="small-12 medium-4 large-4 columns">
+                      <span className="addon">{"$15 / custom security"}</span>
+                    </div>
+                    <div className="small-12 medium-4 large-4 columns">
+                      <span className="addon">{"$25 / team performance Metrics"}</span>
+                    </div>
+                    <div className="small-12 medium-4 large-4 columns">
+                      <span className="addon">{"$21 / additional 3 environments"}</span>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="small-12 medium-4 large-4 columns">
+                      <span className="addon">{"$50 / add 1 new technology"}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="section-content bg-white">
+        <div className="row">
+          <div className="small-12 medium-12 large-12 columns pdt-2 pdb-2">
+            <h3 className="title pdb-1">{"Are you ready to boost your team performance?"}</h3>
             <RaisedButton
                 buttonStyle={styles.raisedButton}
                 label={intl.get("are_you_ready_section_button")}
