@@ -105,26 +105,26 @@ const Steps = ( {applicationActions, applicationAppState, intl} ) => {
               stacksOptions={applicationAppState.getIn(["steps","stacks"])}
           />
           <DataBases
-              intl={intl}
               databases={applicationAppState.get("databases")?applicationAppState.get("databases"):fromJS([])}
               databasesOptions={applicationAppState.getIn(["steps","databases"])}
+              intl={intl}
               removeDatabase={applicationActions.removeDatabase}
               setActiveStep={handleChangeStep}
               setDatabase={applicationActions.setDatabase}
           />
           <Addons
-              intl={intl}
               addons={applicationAppState.get("addons")?applicationAppState.get("addons"):fromJS([])}
               addonsOptions={applicationAppState.getIn(["steps","addons"])}
+              intl={intl}
               removeAddons={applicationActions.removeAddons}
               setActiveStep={handleChangeStep}
               setAddons={applicationActions.setAddons}
           />
           <Email
-              intl={intl}
               cellphone={applicationAppState.get("cellphone")?applicationAppState.get("cellphone"):fromJS("")}
               email={applicationAppState.get("email")?applicationAppState.get("email"):fromJS("")}
               handleSaveUser={handleSaveUser}
+              intl={intl}
               setActiveStep={handleChangeStep}
               setCellphone={applicationActions.setCellphone}
               setEmail={applicationActions.setEmail}
