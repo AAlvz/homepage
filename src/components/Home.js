@@ -424,9 +424,9 @@ const Home = () => {
                 <RaisedButton
                     label="Start Free"
                     labelStyle={styles.raisedButtonLabel}
+                    overlayStyle={styles.pricingRaisedButton}
                     secondary
                     style={styles.raisedButtonStyle}
-                    overlayStyle={styles.pricingRaisedButton}
                 />
               </Paper>
             </div>
@@ -446,9 +446,9 @@ const Home = () => {
               <RaisedButton
                   label="Sign Up Now"
                   labelStyle={styles.raisedButtonLabel}
+                  overlayStyle={styles.pricingRaisedButton}
                   secondary
                   style={styles.raisedButtonStyle}
-                  overlayStyle={styles.pricingRaisedButton}
               />
             </Paper>
             </div>
@@ -470,9 +470,9 @@ const Home = () => {
                 <RaisedButton
                     label="Sign Up Now"
                     labelStyle={styles.raisedButtonLabel}
+                    overlayStyle={styles.pricingRaisedButton}
                     secondary
                     style={styles.raisedButtonStyle}
-                    overlayStyle={styles.pricingRaisedButton}
                 />
               </Paper>
             </div>
@@ -495,9 +495,9 @@ const Home = () => {
                 <RaisedButton
                     label="Sign Up Now"
                     labelStyle={styles.raisedButtonLabel}
+                    overlayStyle={styles.pricingRaisedButton}
                     secondary
                     style={styles.raisedButtonStyle}
-                    overlayStyle={styles.pricingRaisedButton}
                 />
               </Paper>
             </div>
@@ -521,9 +521,9 @@ const Home = () => {
                 <RaisedButton
                     label="Sign Up Now"
                     labelStyle={styles.raisedButtonLabel}
+                    overlayStyle={styles.pricingRaisedButton}
                     secondary
                     style={styles.raisedButtonStyle}
-                    overlayStyle={styles.pricingRaisedButton}
                 />
               </Paper>
             </div>
