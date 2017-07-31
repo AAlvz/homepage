@@ -482,9 +482,8 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
       <div className="section-content bg-white">
         <div className="row">
           <div className="small-12 medium-12 large-12 columns pdt-2 pdb-2">
-            <h3 className="title pdb-1">{intl.get("are_you_ready_section_title")}</h3>
-            <h3 className="title">{"Pricing"}</h3>
-            <h3 className="subtitle pdb-1">{"Prices are per month, per site"}</h3>
+            <h3 className="title">{intl.get("pricing")}</h3>
+            <h3 className="subtitle pdb-1">{intl.get("pricing_subtitle")}</h3>
           </div>
           <div className="small-up-2 medium-up-3 large-up-5 pdb-2 pricing-list">
             <div className="column column-block pricing">
@@ -492,14 +491,14 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                   style={styles.paper}
                   zDepth={1}
               >
-                <p className="title">{"STARTUP"}</p>
+                <p className="title">{intl.get("pricing_plan_startup")}</p>
                 <div className="price-content">
-                  <p className="price">{"Free"}</p>
+                  <p className="price">{intl.get("pricing_free")}</p>
                 </div>
-                <p className="subtitle">{"Project deploy"}</p>
-                <p className="description">{"Test every feature in isolation with automatically generated staging servers for a git repository"}</p>
+                <p className="subtitle">{intl.get("pricing_project_deploy")}</p>
+                <p className="description">{intl.get("pricing_test_in_insolation")}</p>
                 <RaisedButton
-                    label="Start Free"
+                    label={intl.get("pricing_start_free")}
                     labelStyle={styles.raisedButtonLabel}
                     overlayStyle={styles.pricingRaisedButton}
                     secondary
@@ -512,16 +511,16 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                 style={styles.paper}
                 zDepth={1}
             >
-              <p className="title">{"DEVELOPMENT"}</p>
+              <p className="title">{intl.get("pricing_plan_development")}</p>
               <div className="price-content">
                 <p className="price"><span className="symbol">{"$"}</span>{"14.99 USD"}</p>
               </div>
-              <p className="subtitle">{"Agile project development"}</p>
-              <p className="description">{"CLI"}</p>
-              <p className="description">{"Disposable server"}</p>
-              <p className="description">{"Support Channel"}</p>
+              <p className="subtitle">{intl.get("pricing_free")}</p>
+              <p className="description">{intl.get("pricing_cli")}</p>
+              <p className="description">{intl.get("pricing_disposable_server")}</p>
+              <p className="description">{intl.get("pricing_support_channel")}</p>
               <RaisedButton
-                  label="Sign Up Now"
+                  label={intl.get("pricing_signup_now")}
                   labelStyle={styles.raisedButtonLabel}
                   overlayStyle={styles.pricingRaisedButton}
                   secondary
@@ -534,18 +533,18 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                   style={styles.paper}
                   zDepth={1}
               >
-                <p className="title">{"MEDIUM"}</p>
+                <p className="title">{intl.get("pricing_plan_medium")}</p>
                 <div className="price-content">
                   <p className="price"><span className="symbol">{"$"}</span>{"49.99 USD"}</p>
                 </div>
-                <p className="subtitle">{"Agile project team development"}</p>
-                <p className="description">{"CLI"}</p>
-                <p className="description">{"Disposable server"}</p>
-                <p className="description">{"Local Environment"}</p>
-                <p className="description">{"Collaborative Teams"}</p>
-                <p className="description">{"Support Channel"}</p>
+                <p className="subtitle">{intl.get("pricing_agile_project_development")}</p>
+                <p className="description">{intl.get("pricing_cli")}</p>
+                <p className="description">{intl.get("pricing_disposable_server")}</p>
+                <p className="description">{intl.get("pricing_local_environment")}</p>
+                <p className="description">{intl.get("pricing_collaborative_teams")}</p>
+                <p className="description">{intl.get("pricing_support_channel")}</p>
                 <RaisedButton
-                    label="Sign Up Now"
+                    label={intl.get("pricing_signup_now")}
                     labelStyle={styles.raisedButtonLabel}
                     overlayStyle={styles.pricingRaisedButton}
                     secondary
@@ -558,19 +557,19 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                   style={styles.paper}
                   zDepth={1}
               >
-                <p className="title">{"LARGE"}</p>
+                <p className="title">{intl.get("pricing_plan_large")}</p>
                 <div className="price-content">
                   <p className="price"><span className="symbol">{"$"}</span>{"199.99 USD"}</p>
                 </div>
-                <p className="subtitle">{"Project team performance"}</p>
-                <p className="description">{"CLI"}</p>
-                <p className="description">{"Disposable server"}</p>
-                <p className="description">{"Local Environment"}</p>
-                <p className="description">{"Collaborative Teams"}</p>
-                <p className="description">{"High performance"}</p>
-                <p className="description">{"Support Channel"}</p>
+                <p className="subtitle">{intl.get("pricing_project_team_performance")}</p>
+                <p className="description">{intl.get("pricing_cli")}</p>
+                <p className="description">{intl.get("pricing_disposable_server")}</p>
+                <p className="description">{intl.get("pricing_local_environment")}</p>
+                <p className="description">{intl.get("pricing_collaborative_teams")}</p>
+                <p className="description">{intl.get("pricing_high_performance")}</p>
+                <p className="description">{intl.get("pricing_support_channel")}</p>
                 <RaisedButton
-                    label="Sign Up Now"
+                    label={intl.get("pricing_signup_now")}
                     labelStyle={styles.raisedButtonLabel}
                     overlayStyle={styles.pricingRaisedButton}
                     secondary
@@ -583,20 +582,20 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                   style={styles.paper}
                   zDepth={1}
               >
-                <p className="title">{"ENTERPRISE"}</p>
+                <p className="title">{intl.get("pricing_plan_enterprise")}</p>
                 <div className="price-content">
-                  <p className="price"><span className="symbol">{"Annual Contracts"}</span></p>
+                  <p className="price"><span className="symbol">{intl.get("pricing_anual_contracts")}</span></p>
                 </div>
-                <p className="subtitle">{"Mission critical / Complex apps / Transactional"}</p>
-                <p className="description">{"CLI"}</p>
-                <p className="description">{"Disposable server"}</p>
-                <p className="description">{"Local Environment"}</p>
-                <p className="description">{"Collaborative Teams"}</p>
-                <p className="description">{"Customized security"}</p>
-                <p className="description">{"Team performance Metrics"}</p>
-                <p className="description">{"24 / 7 support"}</p>
+                <p className="subtitle">{intl.get("pricing_mission_complex_transactional")}</p>
+                <p className="description">{intl.get("pricing_cli")}</p>
+                <p className="description">{intl.get("pricing_disposable_server")}</p>
+                <p className="description">{intl.get("pricing_local_environment")}</p>
+                <p className="description">{intl.get("pricing_collaborative_teams")}</p>
+                <p className="description">{intl.get("pricing_customized_security")}</p>
+                <p className="description">{intl.get("pricing_team_performance_metrics")}</p>
+                <p className="description">{intl.get("pricing_24-7_support")}</p>
                 <RaisedButton
-                    label="Sign Up Now"
+                    label={intl.get("pricing_signup_now")}
                     labelStyle={styles.raisedButtonLabel}
                     overlayStyle={styles.pricingRaisedButton}
                     secondary
@@ -609,34 +608,34 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
             <div className="row no-margin columns">
               <div className="small-12 medium-12 large-12 columns addons">
                 <div className="small-12 medium-3 large-2 columns">
-                  <span className="title">{"ADD-ONS"}</span>
+                  <span className="title">{intl.get("addons")}</span>
                 </div>
                 <div className="small-12 medium-9 large-10 columns">
                   <div className="row mb-1">
                     <div className="small-12 medium-4 large-4 columns">
-                      <span className="addon">{"$10 / additional users"}</span>
+                      <span className="addon">{intl.get("addons_additional_users")}</span>
                     </div>
                     <div className="small-12 medium-4 large-4 columns">
-                      <span className="addon">{"$40 / automated test environment"}</span>
+                      <span className="addon">{intl.get("addons_automated_test_environment")}</span>
                     </div>
                     <div className="small-12 medium-4 large-4 columns">
-                      <span className="addon">{"$10 / monitoring"}</span>
+                      <span className="addon">{intl.get("addons_monitoring")}</span>
                     </div>
                   </div>
                   <div className="row mb-1">
                     <div className="small-12 medium-4 large-4 columns">
-                      <span className="addon">{"$15 / custom security"}</span>
+                      <span className="addon">{intl.get("addons_custom_security")}</span>
                     </div>
                     <div className="small-12 medium-4 large-4 columns">
-                      <span className="addon">{"$25 / team performance Metrics"}</span>
+                      <span className="addon">{intl.get("addons_team_performance_metrics")}</span>
                     </div>
                     <div className="small-12 medium-4 large-4 columns">
-                      <span className="addon">{"$21 / additional 3 environments"}</span>
+                      <span className="addon">{intl.get("addons_additional_environments")}</span>
                     </div>
                   </div>
                   <div className="row">
                     <div className="small-12 medium-4 large-4 columns">
-                      <span className="addon">{"$50 / add 1 new technology"}</span>
+                      <span className="addon">{intl.get("addons_new_technology")}</span>
                     </div>
                   </div>
                 </div>
@@ -648,7 +647,7 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
       <div className="section-content bg-white">
         <div className="row">
           <div className="small-12 medium-12 large-12 columns pdt-2 pdb-2">
-            <h3 className="title pdb-1">{"Are you ready to boost your team performance?"}</h3>
+            <h3 className="title pdb-1">{intl.get("are_you_ready_section_title")}</h3>
             <RaisedButton
                 buttonStyle={styles.raisedButton}
                 label={intl.get("are_you_ready_section_button")}
