@@ -695,9 +695,6 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
               onChange={handleChangeLanguage}
               value={applicationAppState.get("navigator_language")}
           >
-            {/* "language": "Lenguage",
-            "english": "Inglés",
-            "spanish": "Español", */}
             <MenuItem
                 label={intl.get("language") + ": " + intl.get("english")}
                 primaryText={intl.get("english")}

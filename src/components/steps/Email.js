@@ -4,7 +4,7 @@ import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 import TextField from "material-ui/TextField";
 
-const Email = ( { cellphone, handleSaveUser, email, setActiveStep, setEmail, setCellphone} ) => {
+const Email = ( { cellphone, handleSaveUser, email, setActiveStep, setEmail, setCellphone, intl} ) => {
   const style = {
    margin: 12,
   };
@@ -20,34 +20,34 @@ const Email = ( { cellphone, handleSaveUser, email, setActiveStep, setEmail, set
   };
   return (
     <div className="align-center steps">
-      <p className="align-center pdt-2 title">{"Where do we send your local environment?"}</p>
+      <p className="align-center pdt-2 title">{intl.get("demo_where_to_send_local_environments")}</p>
       <div className="small-12 medium-6 large-6 medium-centered large-centered">
         <TextField
-            floatingLabelText={"Email"}
+            floatingLabelText={intl.get("email")}
             fullWidth
             name={email}
             onChange={handleEmail}
             type="text"
         />
         <TextField
-            floatingLabelText={"Cellphone"}
+            floatingLabelText={intl.get("cellphone")}
             fullWidth
             name={cellphone}
             onChange={handleCellphone}
             type="text"
         />
       </div>
-      <p className="align-center pdt-1 subtitle">{"We will contact you for a quick demo"}</p>
+      <p className="align-center pdt-1 subtitle">{intl.get("demo_we_will_contact_you_for_quick_demo")}</p>
       <div className="pdt-5">
         <RaisedButton
-            label={"Previous"}
+            label={intl.get("previous")}
             onTouchTap={()=>setActiveStep(2)}
             primary
             style={style}
         />
         <RaisedButton
             disabled={email?false:true}
-            label={"Next"}
+            label={intl.get("send")}
             onTouchTap={()=>{setActiveStep(4); handleSaveUser();}}
             primary
             style={style}
@@ -61,6 +61,7 @@ Email.propTypes = {
   cellphone: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   handleSaveUser: PropTypes.func.isRequired,
+  intl: PropTypes.object.isRequired,
   setActiveStep: PropTypes.func.isRequired,
   setCellphone: PropTypes.func.isRequired,
   setEmail: PropTypes.func.isRequired

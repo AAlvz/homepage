@@ -12,7 +12,7 @@ import React from "react";
 import Stacks from "./steps/Stacks";
 import SwipeableViews from "react-swipeable-views";
 
-const Steps = ( {applicationActions, applicationAppState} ) => {
+const Steps = ( {applicationActions, applicationAppState, intl} ) => {
   const styles = {
     raisedButton: {
       margin: 12
@@ -81,22 +81,23 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
       <div className="container">
         <Stepper activeStep={applicationAppState.get("active_step")}>
           <Step>
-            <StepLabel>{"Frameworks"}</StepLabel>
+            <StepLabel>{intl.get("frameworks")}</StepLabel>
           </Step>
           <Step>
-            <StepLabel>{"DataBases"}</StepLabel>
+            <StepLabel>{intl.get("databases")}</StepLabel>
           </Step>
           <Step>
-            <StepLabel>{"Add-ons"}</StepLabel>
+            <StepLabel>{intl.get("addons")}</StepLabel>
           </Step>
           <Step>
-            <StepLabel>{"Local Environment"}</StepLabel>
+            <StepLabel>{intl.get("local_environment")}</StepLabel>
           </Step>
         </Stepper>
         <SwipeableViews
             index={applicationAppState.get("active_step")}
         >
           <Stacks
+              intl={intl}
               removeStack={applicationActions.removeStack}
               setActiveStep={handleChangeStep}
               setStack={applicationActions.setStack}
@@ -104,6 +105,7 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
               stacksOptions={applicationAppState.getIn(["steps","stacks"])}
           />
           <DataBases
+              intl={intl}
               databases={applicationAppState.get("databases")?applicationAppState.get("databases"):fromJS([])}
               databasesOptions={applicationAppState.getIn(["steps","databases"])}
               removeDatabase={applicationActions.removeDatabase}
@@ -111,6 +113,7 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
               setDatabase={applicationActions.setDatabase}
           />
           <Addons
+              intl={intl}
               addons={applicationAppState.get("addons")?applicationAppState.get("addons"):fromJS([])}
               addonsOptions={applicationAppState.getIn(["steps","addons"])}
               removeAddons={applicationActions.removeAddons}
@@ -118,6 +121,7 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
               setAddons={applicationActions.setAddons}
           />
           <Email
+              intl={intl}
               cellphone={applicationAppState.get("cellphone")?applicationAppState.get("cellphone"):fromJS("")}
               email={applicationAppState.get("email")?applicationAppState.get("email"):fromJS("")}
               handleSaveUser={handleSaveUser}
@@ -126,12 +130,15 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
               setEmail={applicationActions.setEmail}
           />
           <div className="align-center steps">
-            <p className="align-center pdt-3 title">{"Thanks"}</p>
-            <p className="align-center pdt-2 subtitle">{"We are in "}<strong>{"private beta."}</strong></p>
-            <p className="align-center subtitle">{"We will contact you soon to become more efficient!"}</p>
+            <p className="align-center pdt-3 title">{intl.get("thanks")}</p>
+            <p className="align-center pdt-2 subtitle">
+              {intl.get("demo_we_are_in")}
+              <strong>{intl.get("demo_private_beta")}</strong>
+            </p>
+            <p className="align-center subtitle">{intl.get("demo_we_will_contact_you_soon")}</p>
             <div className="pdt-5">
               <RaisedButton
-                  label={"Go to Home"}
+                  label={intl.get("demo_go_to_home")}
                   onTouchTap={()=>onTabClick("/", false)}
                   primary
                   style={styles.raisedButton}
@@ -146,7 +153,8 @@ const Steps = ( {applicationActions, applicationAppState} ) => {
 
 Steps.propTypes = {
   applicationActions: PropTypes.object.isRequired,
-  applicationAppState: PropTypes.object.isRequired
+  applicationAppState: PropTypes.object.isRequired,
+  intl: PropTypes.object.isRequired
 };
 
 export default Steps;
