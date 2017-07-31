@@ -6,15 +6,22 @@ import React from "react";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    let currentLocale = props.locale;
+    // let currentLocale = props.locale;
+    // intl.init({
+    //   currentLocale,
+    //   locales: {
+    //     [currentLocale]: require(`../locales/${currentLocale}`)
+    //   }
+    // });
+  }
+  render() {
+    let currentLocale = this.props.locale;
     intl.init({
       currentLocale,
       locales: {
         [currentLocale]: require(`../locales/${currentLocale}`)
       }
     });
-  }
-  render() {
     return (
       this.props.children
     );
