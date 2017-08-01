@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 
-const Steps = ( {setActiveStep, setDatabase, removeDatabase, databasesOptions, databases} ) => {
+const Steps = ( {setActiveStep, setDatabase, removeDatabase, databasesOptions, databases, intl} ) => {
   const style = {
    margin: 12,
   };
@@ -19,8 +19,8 @@ const Steps = ( {setActiveStep, setDatabase, removeDatabase, databasesOptions, d
       }));
   };
   return (
-    <div className="align-center">
-      <h1 className="align-center">{"Selecciona tu base de datos"}</h1>
+    <div className="align-center steps">
+      <p className="align-center title">{intl.get("demo_select_your_databases")}</p>
       <Options
           handleChange={handleChangeDatabase}
           options={databasesOptions}
@@ -28,14 +28,14 @@ const Steps = ( {setActiveStep, setDatabase, removeDatabase, databasesOptions, d
       />
       <div className="pdt-2">
         <RaisedButton
-            label={"Anterior"}
+            label={intl.get("previous")}
             onTouchTap={()=>setActiveStep(0)}
             primary
             style={style}
         />
         <RaisedButton
             disabled={databases.size==0?true:false}
-            label={"Siguiente"}
+            label={intl.get("next")}
             onTouchTap={()=>setActiveStep(2)}
             primary
             style={style}
@@ -46,11 +46,12 @@ const Steps = ( {setActiveStep, setDatabase, removeDatabase, databasesOptions, d
 };
 
 Steps.propTypes = {
+  databases: PropTypes.object.isRequired,
+  databasesOptions: PropTypes.object.isRequired,
+  intl: PropTypes.object.isRequired,
   removeDatabase: PropTypes.func.isRequired,
   setActiveStep: PropTypes.func.isRequired,
-  setDatabase: PropTypes.func.isRequired,
-  databases: PropTypes.object.isRequired,
-  databasesOptions: PropTypes.object.isRequired
+  setDatabase: PropTypes.func.isRequired
 };
 
 export default Steps;

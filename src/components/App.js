@@ -1,11 +1,20 @@
+import { connect } from "react-redux";
+import intl from "react-intl-universal";
 import PropTypes from "prop-types";
 import React from "react";
 
-// This is a class-based component because the current
-// version of hot reloading won't hot reload a stateless
-// component at the top-level.
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
+    let currentLocale = this.props.locale;
+    intl.init({
+      currentLocale,
+      locales: {
+        [currentLocale]: require(`../locales/${currentLocale}`)
+      }
+    });
     return (
       this.props.children
     );
@@ -13,7 +22,14 @@ class App extends React.Component {
 }
 
 App.propTypes = {
+  locale: PropTypes.string,
   children: PropTypes.element
 };
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    locale: state.applicationAppState.get("navigator_language")
+  };
+}
+
+export default connect(mapStateToProps)(App);

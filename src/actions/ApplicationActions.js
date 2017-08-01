@@ -4,6 +4,10 @@ export function setEmail(value) {
   return { type: types.SET_EMAIL, value };
 }
 
+export function setCellphone(value) {
+  return { type: types.SET_CELLPHONE, value };
+}
+
 export function setStack(value) {
   return { type: types.SET_STACK, value };
 }
@@ -26,6 +30,10 @@ export function requestPostUser(value) {
 
 export function setActiveStep(value) {
   return { type: types.SET_ACTIVE_STEP, value };
+}
+
+export function setNavigatorLanguage(value) {
+  return { type: types.SET_NAVIGATOR_LANGUAGE, value };
 }
 
 export function removeDatabase(value) {

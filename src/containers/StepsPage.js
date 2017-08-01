@@ -2,6 +2,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as applicationActions from "../actions/ApplicationActions";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
+import intl from "react-intl-universal";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
@@ -17,6 +18,7 @@ export class StepsPage extends Component {
         <Steps
             applicationActions={this.props.applicationActions}
             applicationAppState={this.props.applicationAppState}
+            intl={intl}
         />
       </MuiThemeProvider>
     </div>

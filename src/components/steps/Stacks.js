@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 
-const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) => {
+const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks, intl} ) => {
   const style = {
    margin: 12,
   };
@@ -19,8 +19,8 @@ const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) 
       }));
   };
   return (
-    <div className="align-center">
-      <h1 className="align-center">{"¿Qué framework quieres?"}</h1>
+    <div className="align-center steps">
+      <p className="align-center title">{intl.get("demo_which_framework_you_need")}</p>
       <Options
           handleChange={handleChangeStack}
           options={stacksOptions}
@@ -29,7 +29,7 @@ const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) 
       <div className="pdt-2">
         <RaisedButton
             disabled={stacks.size==0?true:false}
-            label={"Siguiente"}
+            label={intl.get("next")}
             onTouchTap={()=>setActiveStep(1)}
             primary
             style={style}
@@ -40,6 +40,7 @@ const Steps = ( {setActiveStep, setStack, removeStack, stacksOptions, stacks} ) 
 };
 
 Steps.propTypes = {
+  intl: PropTypes.object.isRequired,
   removeStack: PropTypes.func.isRequired,
   setActiveStep: PropTypes.func.isRequired,
   setStack: PropTypes.func.isRequired,

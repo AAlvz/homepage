@@ -14,6 +14,17 @@ describe("application", () => {
         "email": "some@email.com"}))
     ).to.be.true;
   });
+  it("handles SET_CELLPHONE", () => {
+    const initialState = Map();
+    const action = {type:"SET_CELLPHONE", value: fromJS({
+        cellphone: "000-000-0000"})};
+    const nextState = application(initialState, action);
+
+    expect(
+      Immutable.is(nextState, fromJS({
+        "cellphone": "000-000-0000"}))
+    ).to.be.true;
+  });
   it("handles SET_STACK", () => {
     const initialState = Map();
     const action = {type:"SET_STACK", value: fromJS({
