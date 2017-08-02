@@ -7,7 +7,6 @@ const RetinaImage = ( {className, src} ) => {
     <img
         className={className}
         src={isRetina()?require(`../imgs/${src[0]}`):require(`../imgs/${src[1]}`)}
-        // require(`../locales/${currentLocale}`)
     />
   );
 };
