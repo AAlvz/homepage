@@ -997,9 +997,6 @@ a {
       color: #ffffff;
       padding: 2em .5em;
       .price {
-        .symbol {
-          font-size: .5em;
-        }
         font-size: 1.5em;
         line-height: 1;
         margin: 0;
@@ -1008,12 +1005,6 @@ a {
     .pricing {
       // flex: 1;
       height: 600px;
-    }
-    .title {
-      font-family: 'SFText-Bold' !important;
-      font-size: 1.3em;
-      padding: 1em 0;
-      margin: 0;
     }
     .subtitle {
       color: $quaternary-color !important;
