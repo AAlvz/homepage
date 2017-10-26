@@ -503,42 +503,21 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
             <h3 className="title">{intl.get("pricing")}</h3>
             <h3 className="subtitle pdb-1">{intl.get("pricing_subtitle")}</h3>
           </div>
-          <div className="small-up-2 medium-up-3 large-up-5 pdb-2 pricing-list">
-            <div className="column column-block pricing">
-              <Paper
-                  style={styles.paper}
-                  zDepth={1}
-              >
-                <p className="title">{intl.get("pricing_plan_startup")}</p>
-                <div className="price-content">
-                  <p className="price">{intl.get("pricing_free")}</p>
-                </div>
-                <p className="subtitle">{intl.get("pricing_project_deploy")}</p>
-                <p className="description">{intl.get("pricing_test_in_insolation")}</p>
-                <RaisedButton
-                    label={intl.get("pricing_start_free")}
-                    labelStyle={styles.raisedButtonLabel}
-                    overlayStyle={styles.pricingRaisedButton}
-                    secondary
-                    style={styles.raisedButtonStyle}
-                />
-              </Paper>
-            </div>
+          <div className="small-up-2 medium-up-4 large-up-4 pdb-2 pricing-list">
             <div className="column column-block pricing">
             <Paper
                 style={styles.paper}
                 zDepth={1}
             >
-              <p className="title">{intl.get("pricing_plan_development")}</p>
               <div className="price-content">
-                <p className="price"><span className="symbol">{"$"}</span>{"14.99 USD"}</p>
+                <p className="price">{intl.get("pricing_plan_basic")}</p>
               </div>
               <p className="subtitle">{intl.get("pricing_free")}</p>
               <p className="description">{intl.get("pricing_cli")}</p>
               <p className="description">{intl.get("pricing_disposable_server")}</p>
               <p className="description">{intl.get("pricing_support_channel")}</p>
               <RaisedButton
-                  label={intl.get("pricing_signup_now")}
+                  label={intl.get("pricing_contact_us")}
                   labelStyle={styles.raisedButtonLabel}
                   overlayStyle={styles.pricingRaisedButton}
                   secondary
@@ -551,9 +530,8 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                   style={styles.paper}
                   zDepth={1}
               >
-                <p className="title">{intl.get("pricing_plan_medium")}</p>
                 <div className="price-content">
-                  <p className="price"><span className="symbol">{"$"}</span>{"49.99 USD"}</p>
+                  <p className="price">{intl.get("pricing_plan_developer")}</p>
                 </div>
                 <p className="subtitle">{intl.get("pricing_agile_project_development")}</p>
                 <p className="description">{intl.get("pricing_cli")}</p>
@@ -562,7 +540,7 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                 <p className="description">{intl.get("pricing_collaborative_teams")}</p>
                 <p className="description">{intl.get("pricing_support_channel")}</p>
                 <RaisedButton
-                    label={intl.get("pricing_signup_now")}
+                    label={intl.get("pricing_contact_us")}
                     labelStyle={styles.raisedButtonLabel}
                     overlayStyle={styles.pricingRaisedButton}
                     secondary
@@ -575,9 +553,8 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                   style={styles.paper}
                   zDepth={1}
               >
-                <p className="title">{intl.get("pricing_plan_large")}</p>
                 <div className="price-content">
-                  <p className="price"><span className="symbol">{"$"}</span>{"199.99 USD"}</p>
+                  <p className="price">{intl.get("pricing_plan_advance")}</p>
                 </div>
                 <p className="subtitle">{intl.get("pricing_project_team_performance")}</p>
                 <p className="description">{intl.get("pricing_cli")}</p>
@@ -587,7 +564,7 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                 <p className="description">{intl.get("pricing_high_performance")}</p>
                 <p className="description">{intl.get("pricing_support_channel")}</p>
                 <RaisedButton
-                    label={intl.get("pricing_signup_now")}
+                    label={intl.get("pricing_contact_us")}
                     labelStyle={styles.raisedButtonLabel}
                     overlayStyle={styles.pricingRaisedButton}
                     secondary
@@ -600,9 +577,8 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                   style={styles.paper}
                   zDepth={1}
               >
-                <p className="title">{intl.get("pricing_plan_enterprise")}</p>
                 <div className="price-content">
-                  <p className="price"><span className="symbol">{intl.get("pricing_anual_contracts")}</span></p>
+                  <p className="price">{intl.get("pricing_plan_enterprise")}</p>
                 </div>
                 <p className="subtitle">{intl.get("pricing_mission_complex_transactional")}</p>
                 <p className="description">{intl.get("pricing_cli")}</p>
@@ -613,7 +589,7 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
                 <p className="description">{intl.get("pricing_team_performance_metrics")}</p>
                 <p className="description">{intl.get("pricing_24-7_support")}</p>
                 <RaisedButton
-                    label={intl.get("pricing_signup_now")}
+                    label={intl.get("pricing_contact_us")}
                     labelStyle={styles.raisedButtonLabel}
                     overlayStyle={styles.pricingRaisedButton}
                     secondary
