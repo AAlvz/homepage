@@ -48,12 +48,27 @@
 </head>
 <body>
 <div id="app"></div>
-<script async type="text/javascript">
-window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-$.src="https://v2.zopim.com/?4j4wVoashveNFzU7alfx80dTDXihijBD";z.t=+new Date;$.
-type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('i6peids4decc');
 </script>
 </body>
 </html>
