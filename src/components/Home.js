@@ -96,7 +96,6 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
       margin: "0 .9em"
     },
   };
-  console.log(<MenuItem/>)
   const handleChangeLanguage = (event, index, value) => {
     applicationActions.setNavigatorLanguage(fromJS({
       navigator_language: value
@@ -708,23 +707,6 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
         </div>
         <div className="row">
           <p className="align-center">{"TINKERWARE © 2017. ALL RIGHT RESERVED"}</p>
-          <DropDownMenu
-              listStyle={styles.menuItem}
-              menuItemStyle={styles.menuItem}
-              onChange={handleChangeLanguage}
-              value={applicationAppState.get("navigator_language")}
-          >
-            <MenuItem
-                label={intl.get("language") + ": " + intl.get("english")}
-                primaryText={intl.get("english")}
-                value={"en"}
-            />
-            <MenuItem
-                label={intl.get("language") + ": " + intl.get("spanish")}
-                primaryText={intl.get("spanish")}
-                value={"es"}
-            />
-          </DropDownMenu>
         </div>
       </div>
     </div>
