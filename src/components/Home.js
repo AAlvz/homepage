@@ -78,7 +78,7 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
       backgroundColor: "#546A73",
     },
     menuItem: {
-      backgroundColor: "#546A73",
+      backgroundColor: "#546A73"
     },
     inkTab:{
       backgroundColor: "#546A73",
@@ -96,6 +96,7 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
       margin: "0 .9em"
     },
   };
+  console.log(<MenuItem/>)
   const handleChangeLanguage = (event, index, value) => {
     applicationActions.setNavigatorLanguage(fromJS({
       navigator_language: value
@@ -140,6 +141,24 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
               />}
             style={styles.tabRaisedButton}
         />
+        <DropDownMenu
+            listStyle={styles.menuItem}
+            menuItemStyle={styles.menuItem}
+            onChange={handleChangeLanguage}
+            underlineStyle={{display: 'none'}}
+            value={applicationAppState.get("navigator_language")}
+        >
+          <MenuItem
+              label={" " + intl.get("english")}
+              primaryText={intl.get("english")}
+              value={"en"}
+          />
+          <MenuItem
+              label={" " + intl.get("spanish")}
+              primaryText={intl.get("spanish")}
+              value={"es"}
+          />
+        </DropDownMenu>
     </Tabs>
   );
   return (
