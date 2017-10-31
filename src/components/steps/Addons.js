@@ -36,7 +36,7 @@ const Addons = ( {setActiveStep, setAddons, removeAddons, addonsOptions, addons,
         <RaisedButton
             disabled={addons.size==0?true:false}
             label={intl.get("next")}
-            onTouchTap={()=>setActiveStep(3)}
+            // onTouchTap={()=>setActiveStep(3)}
             primary
             style={style}
         />

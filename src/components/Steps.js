@@ -120,31 +120,6 @@ const Steps = ( {applicationActions, applicationAppState, intl} ) => {
               setActiveStep={handleChangeStep}
               setAddons={applicationActions.setAddons}
           />
-          <Email
-              cellphone={applicationAppState.get("cellphone")?applicationAppState.get("cellphone"):fromJS("")}
-              email={applicationAppState.get("email")?applicationAppState.get("email"):fromJS("")}
-              handleSaveUser={handleSaveUser}
-              intl={intl}
-              setActiveStep={handleChangeStep}
-              setCellphone={applicationActions.setCellphone}
-              setEmail={applicationActions.setEmail}
-          />
-          <div className="align-center steps">
-            <p className="align-center pdt-3 title">{intl.get("thanks")}</p>
-            <p className="align-center pdt-2 subtitle">
-              {intl.get("demo_we_are_in")}
-              <strong>{intl.get("demo_private_beta")}</strong>
-            </p>
-            <p className="align-center subtitle">{intl.get("demo_we_will_contact_you_soon")}</p>
-            <div className="pdt-5">
-              <RaisedButton
-                  label={intl.get("demo_go_to_home")}
-                  onTouchTap={()=>onTabClick("/", false)}
-                  primary
-                  style={styles.raisedButton}
-              />
-            </div>
-          </div>
         </SwipeableViews>
       </div>
     </div>
