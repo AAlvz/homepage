@@ -12,13 +12,11 @@
     "prestart": "npm-run-all --parallel start-message",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
-    "open:dist": "babel-node tools/distServer.js",
     "open:test": "babel-node tools/testServer.js",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "rimraf ./dist",
-    "production": "node tools/distServer.js",
     "prebuild": "npm run clean-dist",
     "build": "babel-node tools/build.js",
     "test-server": "npm-run-all --parallel mock-server test:watch open:test lint:watch",
@@ -31,12 +29,7 @@
   },
   "author": "TinkerWare",
   "license": "MIT",
-  "dependencies": {
-    "body-parser": "1.17.1",
-    "compression": "1.6.2",
-    "express": "4.15.2",
-    "mailchimp-v3-api": "1.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "6.7.7",
     "babel-cli": "6.24.0",
