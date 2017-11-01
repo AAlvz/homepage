@@ -512,7 +512,7 @@ const Home = ({ applicationActions, applicationAppState, intl }) => {
               <div className="price-content">
                 <p className="price">{intl.get("pricing_plan_basic")}</p>
               </div>
-              <p className="subtitle">{intl.get("pricing_free")}</p>
+              <p className="subtitle">{intl.get("pricing_basic")}</p>
               <p className="description">{intl.get("pricing_cli")}</p>
               <p className="description">{intl.get("pricing_disposable_server")}</p>
               <p className="description">{intl.get("pricing_support_channel")}</p>

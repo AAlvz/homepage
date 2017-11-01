@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 import React from "react";
 
-const Addons = ( {setActiveStep, setAddons, removeAddons, addonsOptions, addons, intl} ) => {
+const Addons = ( {activeStack, setActiveStep, setAddons, removeAddons, addonsOptions, addons, onClickDeploy, intl} ) => {
   const style = {
    margin: 12,
   };
@@ -35,8 +35,8 @@ const Addons = ( {setActiveStep, setAddons, removeAddons, addonsOptions, addons,
         />
         <RaisedButton
             disabled={addons.size==0?true:false}
-            label={intl.get("next")}
-            // onTouchTap={()=>setActiveStep(3)}
+            label={intl.get("deploy")}
+            onTouchTap={()=>onClickDeploy("https:demo.tinkerware.io/"+activeStack,true)}
             primary
             style={style}
         />
@@ -46,9 +46,11 @@ const Addons = ( {setActiveStep, setAddons, removeAddons, addonsOptions, addons,
 };
 
 Addons.propTypes = {
+  activeStack: PropTypes.string.isRequired,
   addons: PropTypes.object.isRequired,
   addonsOptions: PropTypes.object.isRequired,
   intl: PropTypes.object.isRequired,
+  onClickDeploy: PropTypes.func.isRequired,
   removeAddons: PropTypes.func.isRequired,
   setActiveStep: PropTypes.func.isRequired,
   setAddons: PropTypes.func.isRequired
