@@ -119,6 +119,8 @@ const Steps = ( {applicationActions, applicationAppState, intl} ) => {
               removeAddons={applicationActions.removeAddons}
               setActiveStep={handleChangeStep}
               setAddons={applicationActions.setAddons}
+              activeStack={applicationAppState.get("stacks")?applicationAppState.get("stacks").first():""}
+              onClickDeploy={onTabClick}
           />
         </SwipeableViews>
       </div>
