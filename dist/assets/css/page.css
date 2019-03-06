@@ -20748,7 +20748,8 @@ a.text-lightest:hover, a.text-lightest:focus {
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  font-size: 1.2rem; }
 
 h1 {
   font-family: 'Work Sans', sans-serif; }
