@@ -1,15 +1,7 @@
-FROM node:4.8.1-alpine
+FROM node:10.16-alpine
 WORKDIR /app
 ADD . /app
 
-ENV API_HOST="https://api.tinkerware.io"
-
-EXPOSE 3000
+RUN apk add yarn
 RUN yarn
-RUN npm run build
-
-RUN rm -rf node_modules
-
-RUN yarn --production
-
-CMD npm run production
+RUN node_modules/gulp/bin/gulp.js dist
