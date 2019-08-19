@@ -1,8 +1,9 @@
 language: node_js
 cache: yarn
 node_js:
-  - "10"
-  - "8"
+  - "10.16.3"
+  - "9.11.2"
+  - "8.16.1"
 script: echo "Placeholder message"
 # script: yarn run test:CI
 # after_success:
