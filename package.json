@@ -54,7 +54,7 @@
     "smoothscroll-for-websites": "^1.4.6",
     "themify-icons": "^1.0.0",
     "typed.js": "^2.0.9",
-    "uglifyjs-webpack-plugin": "^2.0.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "waypoints": "^4.0.1",
     "webpack-stream": "^5.1.1"
   },
