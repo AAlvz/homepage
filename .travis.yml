@@ -3,7 +3,8 @@ cache: yarn
 node_js:
   - "10"
   - "8"
-script: yarn run test:CI
-after_success:
-  # Send coverage data to coveralls.
-  - yarn run test:cover:CI
+script: echo "Placeholder message"
+# script: yarn run test:CI
+# after_success:
+#   # Send coverage data to coveralls.
+#   - yarn run test:cover:CI
