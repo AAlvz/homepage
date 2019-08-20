@@ -54,3 +54,6 @@ tools/srcServer.js
 
 # Mac files
 .DS_Store
+
+# Dist folder
+dist
