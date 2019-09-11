@@ -434,25 +434,36 @@
             <p class="lead">Get in touch!</p>
           </header>
           <div class="row">
-            <form class="col-md-6 col-xl-6 mx-auto input-border" target="_blank"
+            <form class="col-md-6 col-xl-6 mx-auto input-border" target="_blank" id="frm-contact-data"
               action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSdlzNbeexmQu0iM-WOZGEOqUsZ5mrYy5-4a-DifKd6lNo7gHA/formResponse">
               <div class="form-group">
-                <input type="text" class="form-control form-control-lg" placeholder="Company name" name="entry.1436068466">
+                <input type="text" id="frm-company" class="form-control form-control-lg" placeholder="Company name" name="entry.1436068466" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-lg" placeholder="Name" name="entry.187106358">
+                <input type="text" id="frm-name" class="form-control form-control-lg" placeholder="Name" name="entry.187106358" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-lg" placeholder="Email" name="entry.624019895">
+                <input type="email" id="frm-email" class="form-control form-control-lg" placeholder="Email" name="entry.624019895" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-lg" placeholder="Phone" name="entry.682480899">
+                <input type="text" id="frm-phone" class="form-control form-control-lg" placeholder="Phone" name="entry.682480899" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-lg" placeholder="Message" name="entry.1052655195">
+                <input type="text" id="frm-message" class="form-control form-control-lg" placeholder="Message" name="entry.1052655195" required>
               </div>
-              <button type="submit" class="btn btn-block btn-xl btn-success">Submit message</button>
+              <button onclick="submit_form()" class="btn btn-block btn-xl btn-success">Submit message</button>
             </form>
+            <script>
+              check_fields_validity = function() {
+                return ($('#frm-company').val() != "" && $('#frm-name').val() != "" && document.getElementById('frm-email').checkValidity() && emailField.val() != "" && $('#frm-phone').val() && $('#frm-message').val())
+              }
+
+              submit_form = function() {
+                if (check_fields_validity()) {
+                  document.getElementById('frm-contact-data').submit();
+                }
+              }
+            </script>
           </div>
         </div>
       </section>
