@@ -87,18 +87,19 @@ h1 {
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:800);
+
 .snip1214 {
   font-family: Dosis, sans-serif;
   color: #000000;
   text-align: center;
+  padding: 0% 12.5%;
   font-size: 16px;
   width: 100%;
-  max-width: 1000px;
   margin: 40px 10px;
 }
 .snip1214 .plan {
   margin: 0;
-  width: 25%;
+  width: 33.3%;
   position: relative;
   float: left;
   background-color: #ffffff;
@@ -204,6 +205,10 @@ h1 {
   border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
 @media only screen and (max-width: 767px) {
+  .snip1214 {
+    padding: 0%;
+  }
+
   .snip1214 .plan {
     width: 50%;
   }
@@ -225,6 +230,10 @@ h1 {
   }
 }
 @media only screen and (max-width: 440px) {
+  .snip1214 {
+    padding: 0%;
+  }
+
   .snip1214 .plan {
     width: 100%;
   }
