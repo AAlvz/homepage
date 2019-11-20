@@ -8,6 +8,8 @@ phases:
       - curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
       - apt install nodejs
       - npm install gulp -g
+      runtime-versions:
+        node: 13.1.0
   pre_build:
     commands:
       - echo "Nothing to do in this phase"
