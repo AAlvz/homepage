@@ -9,6 +9,7 @@ phases:
       - apt install curl -y
       # - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
       # - apt install nodejs
+      - npm install
       - npm install -g gulp
   pre_build:
     commands:
