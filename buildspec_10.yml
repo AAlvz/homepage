@@ -5,8 +5,8 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      - apt update -y
-      - apt install curl -y
+      # - apt update -y
+      # - apt install curl -y
       # - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
       # - apt install nodejs
       - npm install
@@ -26,3 +26,4 @@ phases:
 artifacts:
   files:
     - dist/**/*
+  discard-paths: yes
