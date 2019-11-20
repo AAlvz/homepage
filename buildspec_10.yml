@@ -9,7 +9,7 @@ phases:
       - apt install nodejs
       - npm install gulp -g
       runtime-versions:
-        node: 10.17.0
+        node: 10
   pre_build:
     commands:
       - echo "Nothing to do in this phase"
