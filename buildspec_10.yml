@@ -3,13 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
+      runtime-versions:
+        node: 10
       - apt update -y
       - apt install curl -y
       - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
       - apt install nodejs
-      - npm install gulp -g
-      runtime-versions:
-        node: 10
+      - npm install -g gulp
   pre_build:
     commands:
       - echo "Nothing to do in this phase"
