@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - npm install
+      - npm install -g gulp
+  pre_build:
+    commands:
+      - echo "Nothing to do in this phase"
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - gulp dist
+      - echo "Error loading page" > dist/error.html
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist'
