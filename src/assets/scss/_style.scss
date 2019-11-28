@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Work+Sans:400,700');
 
+
 // Write your custom style. Feel free to split your code to several files
 body {
   font-family: 'Lato', sans-serif;
@@ -238,3 +239,21 @@ h1 {
     width: 100%;
   }
 }
+
+
+//Tech Stack and Methodlogies mobile code here:
+
+@media screen and (max-width: 768px){
+  .tech-stack-mobile{
+    margin-top: 50px;
+    display: flex;
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: pre-wrap;
+  }
+}
+
+@import "career";
+
