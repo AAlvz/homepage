@@ -7,7 +7,7 @@
 // Override default variables of TheSaaS and personalize the font and colors
 // for your own project.
 //
-@import "_theme";
+@import "theme";
 
 
 //--------------------------------------------------------------------------
@@ -62,4 +62,4 @@
 // Write your custom style. Feel free to split your code to several files
 // and import the other files here or inside _style.scss
 //
-@import "_style";
+@import "style";
