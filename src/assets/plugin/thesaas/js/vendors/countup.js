@@ -3,8 +3,7 @@
  * Load required plugins.
  */
 require('waypoints/lib/jquery.waypoints');
-window.CountUp = require('countup.js');
-
+import { CountUp } from 'countup.js';
 
 /**
  * Configure the plugin.
@@ -42,34 +41,37 @@ window.CountUp = require('countup.js');
 
 
 
-$.fn.countup = function(params) {
-  if (typeof CountUp !== 'function') {
-    console.error('countUp.js is a required dependency of countUp-jquery.js.');
-    return;
-  }
+(function ($) {
+  $.fn.countup = function (params) {
+    // make sure dependency is present
+    if (typeof CountUp !== 'function') {
+      console.error('countUp.js is a required dependency of countUp-jquery.js.');
+      return;
+    }
+    
+    var defaults = {
+      startVal: 0,
+      decimalPlaces: 0,
+      duration: 4,
+    };
 
-  var defaults = {
-    startVal: 0,
-    decimals: 0,
-    duration: 4,
+    if (typeof params === 'number') {
+      defaults.endVal = params;
+    }
+    else if (typeof params === 'object') {
+      $.extend(defaults, params);
+    }
+    else {
+      console.error('countUp-jquery requires its argument to be either an object or number');
+      return;
+    }
+
+    this.each(function (i, elem) {
+      var countUp = new CountUp(elem, defaults.endVal, defaults.options);
+      countUp.start();
+    });
+
+    return this;
   };
 
-  if (typeof params === 'number') {
-    defaults.endVal = params;
-  }
-  else if (typeof params === 'object') {
-    $.extend(defaults, params);
-  }
-  else {
-    console.error('countUp-jquery requires its argument to be either an object or number');
-    return;
-  }
-
-  this.each(function(i, elem) {
-    var countUp = new CountUp(elem, defaults.startVal, defaults.endVal, defaults.decimals, defaults.duration, defaults.options);
-
-    countUp.start();
-  });
-
-  return this;
-};
+}(jQuery));

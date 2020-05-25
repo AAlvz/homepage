@@ -9,7 +9,7 @@
 
     var validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    $('[data-form="mailer"]').each(function(){
+    $('[data-form="mailer"]').each(function() {
 
       var form      = $(this),
           email     = form.find('[name="email"]'),
@@ -17,14 +17,36 @@
           onSuccess = form.dataAttr('on-success', null),
           onError   = form.dataAttr('on-error', null);
 
-      form.on('submit', function(){
+      form.on('submit', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
 
         form.children('.alert-danger').remove();
+
+        form.find('[required]').each(function() {
+          if ( $(this).val().length < 1 ) {
+            $(this).addClass('is-invalid');
+          }
+          else {
+            $(this).removeClass('is-invalid');
+          }
+        });
+
+        form.find('[type="email"]').each(function() {
+          if ( ! validEmail.test( $(this).val() ) ) {
+            $(this).addClass('is-invalid');
+          }
+          else {
+            $(this).removeClass('is-invalid');
+          }
+        });
+
+
 
         if ( email.length ) {
           if ( email.val().length < 1 || ! validEmail.test( email.val() ) ) {
             email.addClass('is-invalid');
-            return false;
+            //return false;
           }
         }
 
@@ -32,8 +54,12 @@
         if ( message.length ) {
           if ( message.val().length < 1 ) {
             message.addClass('is-invalid');
-            return false;
+            //return false;
           }
+        }
+
+        if (form.find('.is-invalid').length) {
+          return false;
         }
 
         $.ajax({
@@ -61,6 +87,14 @@
 
         return false;
       });
+
+
+      form.find('[required], [type="email"]').each(function() {
+        $(this).on('focus', function() {
+          $(this).removeClass('is-invalid');
+        });
+      });
+
 
       email.on('focus', function() {
         $(this).removeClass('is-invalid');

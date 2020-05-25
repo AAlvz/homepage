@@ -109,7 +109,4 @@
     return name.replace(/-([a-z])/g, function(x){return x[1].toUpperCase();});
   }
 
-
-
 }(jQuery);
-

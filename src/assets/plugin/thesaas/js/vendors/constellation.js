@@ -17,7 +17,9 @@
       var canvas = $(this),
           color  = canvas.dataAttr( 'color', 'rgba(255, 255, 255, .8)' ),
           length = canvas.dataAttr( 'length', 150 ),
-          radius = canvas.dataAttr( 'radius', 150 );
+          radius = canvas.dataAttr( 'radius', 150 ),
+          starW  = canvas.dataAttr( 'starWidth', 1 ),
+          lineW  = canvas.dataAttr( 'lineWidth', 0.2 );
 
       if ( color == 'dark' ) {
         color = 'rgba(0, 0, 0, .6)';
@@ -29,11 +31,11 @@
         radius: radius,
         star: {
           color: color,
-          width: 1
+          width: starW
         },
         line: {
           color: color,
-          width: 0.2
+          width: lineW
         }
       });
     });
@@ -42,6 +44,8 @@
 
 }(jQuery);
 
+
+// https://codepen.io/acauamontiel/pen/mJdnw
 
 /*!
  * Mantis.js / jQuery / Zepto.js plugin for Constellation

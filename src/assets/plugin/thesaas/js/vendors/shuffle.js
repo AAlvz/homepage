@@ -42,6 +42,10 @@ window.Shuffle = require('shufflejs/dist/shuffle.min.js');
             var isActive = btn.hasClass('active');
             var btnGroup = btn.data('group');
 
+            if (isActive) {
+              return;
+            }
+
             $(this).closest('[data-shuffle="filter"]').find('[data-shuffle="button"].active').removeClass('active');
 
             var filterGroup;
@@ -61,7 +65,7 @@ window.Shuffle = require('shufflejs/dist/shuffle.min.js');
 
 
       if ( search.length ) {
-        search.on('keyup', function() {
+        search.on('input mouseup change', function() {
           var searchText = $(this).val().toLowerCase();
           shuffleInstance.filter(function(element, shuffle) {
             var itemText = element.textContent.toLowerCase().trim();

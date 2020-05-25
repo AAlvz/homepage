@@ -4,6 +4,7 @@
 //----------------------------------------------------/
 
 // Fonts
+$fonts-dir:                       '../fonts/' !default;
 $font-family-title:               inherit !default;
 $font-icon-fontawesome:           FontAwesome !default;
 $font-icon-themify:               themify !default;
@@ -205,6 +206,13 @@ $height-xl:            64px;
 $height-xxl:           96px;
 $height-xxxl:          128px;
 
+
+// Characters which are escaped by the escape-svg function
+$escaped-characters: (
+  ("<","%3c"),
+  (">","%3e"),
+  ("#","%23"),
+) !default;
 
 //----------------------------------------------------/
 // Bootstrap overwrites
@@ -497,6 +505,7 @@ $pagination-hover-border-color:     $color-divider !default;
 
 // Popovers
 //
+$popover-font-size:                 $font-size-xs !default;
 $popover-border-color:              $color-divider-light !default;
 $popover-box-shadow:                0 2px 15px rgba(0,0,0,0.5) !default;
 
@@ -504,6 +513,12 @@ $popover-header-bg:                 $color-bg-lighter !default;
 
 $popover-arrow-width:               .6rem !default;
 $popover-arrow-height:              .3rem !default;
+
+
+// Tooltips
+//
+$tooltip-font-size:                 $font-size-xs !default;
+
 
 // Dropdowns
 //
@@ -623,3 +638,4 @@ $breadcrumb-divider:                "" !default;
 // Timeline
 //
 $timeline-color: $color-primary;
+

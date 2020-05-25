@@ -13,6 +13,10 @@
     transform: scale(1);
   }
 
+  &:checked ~ .custom-control-label::before {
+    border-color: $color-divider;
+  }
+
   &:disabled ~ .custom-control-label {
     opacity: .7;
 

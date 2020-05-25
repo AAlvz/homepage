@@ -86,3 +86,11 @@
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
 }
+
+
+// IE11 fix
+//
+@media all and (-ms-high-contrast:none) {
+  .modal-dialog { display: block; padding-top: 4rem; } /* IE10 */
+  *::-ms-backdrop, .modal-dialog { display: block; padding-top: 4rem; } /* IE11 */
+}

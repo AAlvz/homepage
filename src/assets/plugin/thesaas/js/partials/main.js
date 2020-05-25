@@ -1,4 +1,3 @@
-
 /**
  * Load required plugins.
  */
@@ -8,39 +7,36 @@ require('bootstrap');
 window.SmoothScroll = require('smoothscroll-for-websites');
 require('objectFitPolyfill');
 
-
 /**
  * Create window.page and init the application.
  */
 
-+function($, window){
-
++(function($, window) {
   var page = {
-    name:       'TheSaaS',
-    version:    '2.1.4',
-    vendors:    [],
+    name: 'TheSaaS',
+    version: '2.2.3',
+    vendors: [],
 
     // Cache popular elements
-    body:       $('body'),
-    navbar:     $('.navbar'),
-    header:     $('.header'),
-    footer:     $('.footer'),
-  }
+    body: $('body'),
+    navbar: $('.navbar'),
+    header: $('.header'),
+    footer: $('.footer'),
+  };
 
   page.defaults = {
-    googleApiKey:       null,
+    googleApiKey: null,
     googleAnalyticsKey: null,
-    reCaptchaSiteKey:   null,
-    reCaptchaLanguage:  null,
+    reCaptchaSiteKey: null,
+    reCaptchaLanguage: null,
     disableAOSonMobile: true,
-    smoothScroll:       false,
-  }
+    smoothScroll: false,
+  };
 
   /**
    * Call all the required initializers.
    */
   page.init = function() {
-
     // Vendors
     //
     page.initVendors();
@@ -61,29 +57,25 @@ require('objectFitPolyfill');
     page.initSidebar();
     page.initVideo();
 
-
     // Anchor for headings
     //
     $('[data-provide="anchor"]').each(function() {
       var heading = $(this);
-      heading.append('<a class="anchor" href="#'+ heading.attr('id') +'"></a>');
+      heading.append('<a class="anchor" href="#' + heading.attr('id') + '"></a>');
     });
-
-
-  }
-
+  };
 
   /**
    * Initialize all of the loaded vendors.
    */
   page.initVendors = function() {
     page.vendors.forEach(function(vendor) {
-      var fn = window.page[ "init"+ vendor ];
-      if(typeof fn === 'function') {
+      var fn = window.page['init' + vendor];
+      if (typeof fn === 'function') {
         fn();
       }
     });
-  }
+  };
 
   /**
    * Register loaded vendor to be initialized after DOM load.
@@ -91,17 +83,14 @@ require('objectFitPolyfill');
    */
   page.registerVendor = function($name) {
     page.vendors.push($name);
-  }
+  };
 
   window.page = page;
-}(jQuery, window);
-
+})(jQuery, window);
 
 /**
  * Once the DOM is loaded, start the magic.
  */
-$(function () {
+$(function() {
   //page.init();
 });
-
-

@@ -196,3 +196,15 @@
     column-count: 1;
   }
 }
+
+
+
+//----------------------------------------------------/
+// IE-11 Fixes 
+//----------------------------------------------------/
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  [data-shuffle="list"] a.card {
+    display: inline-block;
+  }
+}

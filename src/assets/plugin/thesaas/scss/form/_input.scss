@@ -6,6 +6,10 @@
     font-weight: 300;
   }
 
+  &.is-invalid {
+    transition: border 0.3s ease-out;
+  }
+
 }
 
 label {
@@ -26,10 +30,11 @@ label {
   height: 100%;
 }
 
+/*
 select:invalid {
   color: red;
 }
-
+*/
 
 //----------------------------------------------------/
 // File upload
@@ -74,5 +79,12 @@ select:invalid {
 // Mailer
 //----------------------------------------------------/
 [data-form="mailer"] .d-on-success {
+  display: none;
+}
+
+
+// Shuffle remove close button of IE & Edge
+//
+.form-control[data-shuffle="search"]::-ms-clear {
   display: none;
 }

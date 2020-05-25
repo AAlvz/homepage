@@ -27,6 +27,10 @@
     }
   }
 
+  .navbar-toggler-icon {
+    background-image: escape-svg($navbar-dark-toggler-icon-bg);
+  }
+
   .navbar-divider {
     background-color: $navbar-dark-color;
   }
