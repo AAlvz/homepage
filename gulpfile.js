@@ -16,7 +16,7 @@ const changed = require('gulp-changed');
 const del = require('del');
 const sequence = require('run-sequence');
 const pkg = require('./package.json')
-
+const googleWebFonts = require('gulp-google-webfonts');
 var production = false;
 
 const file = {
@@ -30,13 +30,15 @@ const page = {
   scss:   'src/assets/scss/page.scss',
 }
 
+const error_page = {
+  scss: 'src/assets/scss/error.scss',
+}
+
 const dir = {
   css:    'src/assets/css/',
   js:     'src/assets/js/',
   font:   'src/assets/fonts/',
 }
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -81,6 +83,31 @@ function scss() {
   // Create unminified version if it's in production mode
   if ( production ) {
     stream = gulp.src(page.scss)
+      .pipe( sourcemaps.init() )
+      .pipe( sass({importer: tildeImporter}).on('error', sass.logError) )
+      .pipe( autoprefixer())
+      .pipe( sourcemaps.write('.') )
+      .pipe( gulp.dest(dir.css) );
+  }
+
+  return stream;
+
+};
+
+function error_scss() {
+
+  var stream = gulp.src(error_page.scss)
+    .pipe( sourcemaps.init() )
+    .pipe( rename( { suffix: '.min' } ) )
+    .pipe( sass({ importer: tildeImporter, outputStyle: 'compressed' }).on('error', sass.logError) )
+    .pipe( autoprefixer())
+    .pipe( sourcemaps.write('.') )
+    .pipe( gulp.dest(dir.css) )
+    .pipe( browserSync.stream() );
+
+  // Create unminified version if it's in production mode
+  if ( production ) {
+    stream = gulp.src(error_page.scss)
       .pipe( sourcemaps.init() )
       .pipe( sass({importer: tildeImporter}).on('error', sass.logError) )
       .pipe( autoprefixer())
@@ -179,8 +206,29 @@ function distClean() {
 */
 function img() {
   return gulp.src('src/assets/img/**/*.{jpg,jpeg,png,gif}')
-    .pipe( imagemin() )
+    .pipe(imagemin([
+      imagemin.gifsicle({ interlaced: true }),
+      imagemin.jpegtran({ progressive: true }),
+      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.svgo({ plugins: [{ removeViewBox: false }] })
+     ]))
     .pipe( gulp.dest('src/assets/img/') );
+};
+
+/*
+|--------------------------------------------------------------------------
+| Google Fonts
+|--------------------------------------------------------------------------
+|
+*/
+function googleFonts() {
+  return gulp.src('./fonts.list')
+    .pipe(googleWebFonts({
+      fontsFolder: '../fonts',
+      cssDir: '../scss',
+      cssFilename: '_google-fonts.scss'
+    }))
+    .pipe(gulp.dest('src/assets/fonts/'));
 };
 
 /*
@@ -199,9 +247,9 @@ function setDevMode(done) {
   done();
 }
 
-
-
-exports.dev     = gulp.series(copyFonts, scss, js);
-exports.dist    = gulp.series(setProductionMode, distClean, copyFonts, scss, jsProductionMinified, jsProductionExpanded, distCopy, setDevMode);
+exports.dev = gulp.series(copyFonts, scss, error_scss, js);
+exports.dist = gulp.series(setProductionMode, distClean, copyFonts, scss, error_scss, jsProductionMinified, jsProductionExpanded, distCopy, setDevMode);
+exports.img = img;
+exports.googlefonts = googleFonts;
 exports.watch   = serve;
-exports.default = serve;
+exports.default = gulp.series(googleFonts,img,serve);

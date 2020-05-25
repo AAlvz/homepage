@@ -1,7 +1,7 @@
 {
-  "name": "TheSaaS",
+  "name": "homepage",
   "version": "2.2.3",
-  "description": "Responsive Bootstrap 4 SaaS, Software & WebApp Template",
+  "description": "Content for homepage",
   "private": true,
   "keywords": [
     "landing",
@@ -9,13 +9,15 @@
     "webapp",
     "saas"
   ],
-  "author": "TheThemeio",
-  "homepage": "http://thetheme.io/thesaas",
+  "author": "ileonelperea",
+  "homepage": "https://thetheme.io/thesaas",
   "license": "ISC",
   "scripts": {
-    "watch": "gulp",
     "dev": "gulp dev",
-    "dist": "gulp dist"
+    "dist": "gulp dist",
+    "googlefonts": "gulp googlefonts",
+    "img": "gulp img",
+    "watch": "gulp"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
@@ -37,6 +39,7 @@
     "gulp-changed": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-file": "^0.4.0",
+    "gulp-google-webfonts": "^2.1.0",
     "gulp-imagemin": "^6.2.0",
     "gulp-load-plugins": "^2.0.1",
     "gulp-rename": "^2.0.0",

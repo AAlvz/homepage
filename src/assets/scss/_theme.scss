@@ -5,7 +5,7 @@
 // the following variables.
 
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Dosis:200,400,500,600|Lato|Work+Sans:400,700");
+@import "_google-fonts";
 
 //----------------------------------------
 // Color system
@@ -62,7 +62,7 @@ $color-subtitle:                  $color-text-light;
 //----------------------------------------
 // Fonts
 //----------------------------------------
-$fonts-dir:                       '../fonts/';
+$fonts-dir:                       '../fonts';
 $font-family-base:                "Open Sans", sans-serif;
 $font-family-title:               Dosis, sans-serif;
 
